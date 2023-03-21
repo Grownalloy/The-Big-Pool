@@ -1,6 +1,6 @@
 ﻿namespace The_Big_Pool.UserControls
 {
-    partial class UC_Swim
+    partial class UC_Home
     {
         /// <summary> 
         /// Required designer variable.
@@ -34,18 +34,18 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(309, 239);
+            label1.Location = new Point(324, 239);
             label1.Name = "label1";
-            label1.Size = new Size(133, 25);
+            label1.Size = new Size(139, 25);
             label1.TabIndex = 0;
-            label1.Text = "Welcome Swim";
+            label1.Text = "Welcome Home";
             // 
-            // UC_Swim
+            // UC_Home
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(label1);
-            Name = "UC_Swim";
+            Name = "UC_Home";
             Size = new Size(731, 640);
             ResumeLayout(false);
             PerformLayout();
