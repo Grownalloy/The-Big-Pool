@@ -33,41 +33,41 @@
             label1 = new Label();
             button1 = new Button();
             panelCategory = new Panel();
-            panelDifficulty = new Panel();
-            panelTime = new Panel();
-            panelDistance = new Panel();
             groupBoxCategory = new GroupBox();
-            radioButtonStroke = new RadioButton();
-            radioButtonMedley = new RadioButton();
-            radioButtonFreestyle = new RadioButton();
-            radioButtonPace = new RadioButton();
             radioButtonSprint = new RadioButton();
+            radioButtonPace = new RadioButton();
+            radioButtonFreestyle = new RadioButton();
+            radioButtonMedley = new RadioButton();
+            radioButtonStroke = new RadioButton();
+            panelDifficulty = new Panel();
             groupBoxDifficulty = new GroupBox();
-            radioButtonGarnet = new RadioButton();
-            radioButtonBronze = new RadioButton();
-            radioButtonSilver = new RadioButton();
-            radioButtonGold = new RadioButton();
             radioButtonSenior = new RadioButton();
-            textBox1 = new TextBox();
-            label3 = new Label();
-            label4 = new Label();
-            groupBoxDistance = new GroupBox();
+            radioButtonGold = new RadioButton();
+            radioButtonSilver = new RadioButton();
+            radioButtonBronze = new RadioButton();
+            radioButtonGarnet = new RadioButton();
+            panelTime = new Panel();
             groupBox1 = new GroupBox();
-            label2 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
             textBox4 = new TextBox();
+            textBox3 = new TextBox();
+            textBox2 = new TextBox();
+            label6 = new Label();
+            label5 = new Label();
+            label2 = new Label();
+            panelDistance = new Panel();
+            label4 = new Label();
+            textBox1 = new TextBox();
+            groupBoxDistance = new GroupBox();
+            label3 = new Label();
             panel1.SuspendLayout();
             panelCategory.SuspendLayout();
-            panelDifficulty.SuspendLayout();
-            panelTime.SuspendLayout();
-            panelDistance.SuspendLayout();
             groupBoxCategory.SuspendLayout();
+            panelDifficulty.SuspendLayout();
             groupBoxDifficulty.SuspendLayout();
-            groupBoxDistance.SuspendLayout();
+            panelTime.SuspendLayout();
             groupBox1.SuspendLayout();
+            panelDistance.SuspendLayout();
+            groupBoxDistance.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -101,6 +101,7 @@
             button1.TabIndex = 1;
             button1.Text = "Generate Practice Swim";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // panelCategory
             // 
@@ -110,35 +111,6 @@
             panelCategory.Name = "panelCategory";
             panelCategory.Size = new Size(223, 258);
             panelCategory.TabIndex = 2;
-            // 
-            // panelDifficulty
-            // 
-            panelDifficulty.BackColor = Color.DeepSkyBlue;
-            panelDifficulty.Controls.Add(groupBoxDifficulty);
-            panelDifficulty.Location = new Point(376, 106);
-            panelDifficulty.Name = "panelDifficulty";
-            panelDifficulty.Size = new Size(223, 258);
-            panelDifficulty.TabIndex = 3;
-            // 
-            // panelTime
-            // 
-            panelTime.BackColor = Color.DeepSkyBlue;
-            panelTime.Controls.Add(groupBox1);
-            panelTime.Location = new Point(376, 388);
-            panelTime.Name = "panelTime";
-            panelTime.Size = new Size(277, 121);
-            panelTime.TabIndex = 4;
-            // 
-            // panelDistance
-            // 
-            panelDistance.BackColor = Color.DeepSkyBlue;
-            panelDistance.Controls.Add(label4);
-            panelDistance.Controls.Add(textBox1);
-            panelDistance.Controls.Add(groupBoxDistance);
-            panelDistance.Location = new Point(77, 388);
-            panelDistance.Name = "panelDistance";
-            panelDistance.Size = new Size(277, 121);
-            panelDistance.TabIndex = 5;
             // 
             // groupBoxCategory
             // 
@@ -156,38 +128,16 @@
             groupBoxCategory.TabStop = false;
             groupBoxCategory.Text = "Category";
             // 
-            // radioButtonStroke
+            // radioButtonSprint
             // 
-            radioButtonStroke.AutoSize = true;
-            radioButtonStroke.Location = new Point(38, 33);
-            radioButtonStroke.Name = "radioButtonStroke";
-            radioButtonStroke.Size = new Size(97, 35);
-            radioButtonStroke.TabIndex = 0;
-            radioButtonStroke.TabStop = true;
-            radioButtonStroke.Text = "Stroke";
-            radioButtonStroke.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonMedley
-            // 
-            radioButtonMedley.AutoSize = true;
-            radioButtonMedley.Location = new Point(38, 68);
-            radioButtonMedley.Name = "radioButtonMedley";
-            radioButtonMedley.Size = new Size(102, 35);
-            radioButtonMedley.TabIndex = 1;
-            radioButtonMedley.TabStop = true;
-            radioButtonMedley.Text = "Medley";
-            radioButtonMedley.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonFreestyle
-            // 
-            radioButtonFreestyle.AutoSize = true;
-            radioButtonFreestyle.Location = new Point(38, 103);
-            radioButtonFreestyle.Name = "radioButtonFreestyle";
-            radioButtonFreestyle.Size = new Size(118, 35);
-            radioButtonFreestyle.TabIndex = 2;
-            radioButtonFreestyle.TabStop = true;
-            radioButtonFreestyle.Text = "Freestyle";
-            radioButtonFreestyle.UseVisualStyleBackColor = true;
+            radioButtonSprint.AutoSize = true;
+            radioButtonSprint.Location = new Point(38, 173);
+            radioButtonSprint.Name = "radioButtonSprint";
+            radioButtonSprint.Size = new Size(96, 35);
+            radioButtonSprint.TabIndex = 4;
+            radioButtonSprint.TabStop = true;
+            radioButtonSprint.Text = "Sprint";
+            radioButtonSprint.UseVisualStyleBackColor = true;
             // 
             // radioButtonPace
             // 
@@ -200,16 +150,47 @@
             radioButtonPace.Text = "Pace";
             radioButtonPace.UseVisualStyleBackColor = true;
             // 
-            // radioButtonSprint
+            // radioButtonFreestyle
             // 
-            radioButtonSprint.AutoSize = true;
-            radioButtonSprint.Location = new Point(38, 173);
-            radioButtonSprint.Name = "radioButtonSprint";
-            radioButtonSprint.Size = new Size(96, 35);
-            radioButtonSprint.TabIndex = 4;
-            radioButtonSprint.TabStop = true;
-            radioButtonSprint.Text = "Sprint";
-            radioButtonSprint.UseVisualStyleBackColor = true;
+            radioButtonFreestyle.AutoSize = true;
+            radioButtonFreestyle.Location = new Point(38, 103);
+            radioButtonFreestyle.Name = "radioButtonFreestyle";
+            radioButtonFreestyle.Size = new Size(118, 35);
+            radioButtonFreestyle.TabIndex = 2;
+            radioButtonFreestyle.TabStop = true;
+            radioButtonFreestyle.Text = "Freestyle";
+            radioButtonFreestyle.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonMedley
+            // 
+            radioButtonMedley.AutoSize = true;
+            radioButtonMedley.Location = new Point(38, 68);
+            radioButtonMedley.Name = "radioButtonMedley";
+            radioButtonMedley.Size = new Size(102, 35);
+            radioButtonMedley.TabIndex = 1;
+            radioButtonMedley.TabStop = true;
+            radioButtonMedley.Text = "Medley";
+            radioButtonMedley.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonStroke
+            // 
+            radioButtonStroke.AutoSize = true;
+            radioButtonStroke.Location = new Point(38, 33);
+            radioButtonStroke.Name = "radioButtonStroke";
+            radioButtonStroke.Size = new Size(97, 35);
+            radioButtonStroke.TabIndex = 0;
+            radioButtonStroke.TabStop = true;
+            radioButtonStroke.Text = "Stroke";
+            radioButtonStroke.UseVisualStyleBackColor = true;
+            // 
+            // panelDifficulty
+            // 
+            panelDifficulty.BackColor = Color.DeepSkyBlue;
+            panelDifficulty.Controls.Add(groupBoxDifficulty);
+            panelDifficulty.Location = new Point(376, 106);
+            panelDifficulty.Name = "panelDifficulty";
+            panelDifficulty.Size = new Size(223, 258);
+            panelDifficulty.TabIndex = 3;
             // 
             // groupBoxDifficulty
             // 
@@ -227,38 +208,16 @@
             groupBoxDifficulty.TabStop = false;
             groupBoxDifficulty.Text = "Difficulty";
             // 
-            // radioButtonGarnet
+            // radioButtonSenior
             // 
-            radioButtonGarnet.AutoSize = true;
-            radioButtonGarnet.Location = new Point(47, 37);
-            radioButtonGarnet.Name = "radioButtonGarnet";
-            radioButtonGarnet.Size = new Size(102, 35);
-            radioButtonGarnet.TabIndex = 0;
-            radioButtonGarnet.TabStop = true;
-            radioButtonGarnet.Text = "Garnet";
-            radioButtonGarnet.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonBronze
-            // 
-            radioButtonBronze.AutoSize = true;
-            radioButtonBronze.Location = new Point(47, 72);
-            radioButtonBronze.Name = "radioButtonBronze";
-            radioButtonBronze.Size = new Size(101, 35);
-            radioButtonBronze.TabIndex = 1;
-            radioButtonBronze.TabStop = true;
-            radioButtonBronze.Text = "Bronze";
-            radioButtonBronze.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonSilver
-            // 
-            radioButtonSilver.AutoSize = true;
-            radioButtonSilver.Location = new Point(47, 107);
-            radioButtonSilver.Name = "radioButtonSilver";
-            radioButtonSilver.Size = new Size(88, 35);
-            radioButtonSilver.TabIndex = 2;
-            radioButtonSilver.TabStop = true;
-            radioButtonSilver.Text = "Silver";
-            radioButtonSilver.UseVisualStyleBackColor = true;
+            radioButtonSenior.AutoSize = true;
+            radioButtonSenior.Location = new Point(46, 177);
+            radioButtonSenior.Name = "radioButtonSenior";
+            radioButtonSenior.Size = new Size(95, 35);
+            radioButtonSenior.TabIndex = 4;
+            radioButtonSenior.TabStop = true;
+            radioButtonSenior.Text = "Senior";
+            radioButtonSenior.UseVisualStyleBackColor = true;
             // 
             // radioButtonGold
             // 
@@ -271,59 +230,47 @@
             radioButtonGold.Text = "Gold";
             radioButtonGold.UseVisualStyleBackColor = true;
             // 
-            // radioButtonSenior
+            // radioButtonSilver
             // 
-            radioButtonSenior.AutoSize = true;
-            radioButtonSenior.Location = new Point(46, 177);
-            radioButtonSenior.Name = "radioButtonSenior";
-            radioButtonSenior.Size = new Size(95, 35);
-            radioButtonSenior.TabIndex = 4;
-            radioButtonSenior.TabStop = true;
-            radioButtonSenior.Text = "Senior";
-            radioButtonSenior.UseVisualStyleBackColor = true;
+            radioButtonSilver.AutoSize = true;
+            radioButtonSilver.Location = new Point(47, 107);
+            radioButtonSilver.Name = "radioButtonSilver";
+            radioButtonSilver.Size = new Size(88, 35);
+            radioButtonSilver.TabIndex = 2;
+            radioButtonSilver.TabStop = true;
+            radioButtonSilver.Text = "Silver";
+            radioButtonSilver.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // radioButtonBronze
             // 
-            textBox1.Font = new Font("Segoe Print", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox1.Location = new Point(43, 65);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "75";
-            textBox1.Size = new Size(142, 39);
-            textBox1.TabIndex = 0;
+            radioButtonBronze.AutoSize = true;
+            radioButtonBronze.Location = new Point(47, 72);
+            radioButtonBronze.Name = "radioButtonBronze";
+            radioButtonBronze.Size = new Size(101, 35);
+            radioButtonBronze.TabIndex = 1;
+            radioButtonBronze.TabStop = true;
+            radioButtonBronze.Text = "Bronze";
+            radioButtonBronze.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // radioButtonGarnet
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe Print", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(178, 57);
-            label3.Name = "label3";
-            label3.Size = new Size(45, 31);
-            label3.TabIndex = 2;
-            label3.Text = "yds";
+            radioButtonGarnet.AutoSize = true;
+            radioButtonGarnet.Location = new Point(47, 37);
+            radioButtonGarnet.Name = "radioButtonGarnet";
+            radioButtonGarnet.Size = new Size(102, 35);
+            radioButtonGarnet.TabIndex = 0;
+            radioButtonGarnet.TabStop = true;
+            radioButtonGarnet.Text = "Garnet";
+            radioButtonGarnet.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // panelTime
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 8F, FontStyle.Italic, GraphicsUnit.Point);
-            label4.ForeColor = Color.WhiteSmoke;
-            label4.Location = new Point(38, 43);
-            label4.Name = "label4";
-            label4.Size = new Size(201, 21);
-            label4.TabIndex = 3;
-            label4.Text = "Enter in 25 yard increments";
-            // 
-            // groupBoxDistance
-            // 
-            groupBoxDistance.Controls.Add(label3);
-            groupBoxDistance.Font = new Font("Segoe Print", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBoxDistance.ForeColor = Color.White;
-            groupBoxDistance.Location = new Point(16, 7);
-            groupBoxDistance.Name = "groupBoxDistance";
-            groupBoxDistance.Size = new Size(245, 106);
-            groupBoxDistance.TabIndex = 4;
-            groupBoxDistance.TabStop = false;
-            groupBoxDistance.Text = "Distance";
+            panelTime.BackColor = Color.DeepSkyBlue;
+            panelTime.Controls.Add(groupBox1);
+            panelTime.Location = new Point(376, 388);
+            panelTime.Name = "panelTime";
+            panelTime.Size = new Size(277, 121);
+            panelTime.TabIndex = 4;
             // 
             // groupBox1
             // 
@@ -342,25 +289,29 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Time";
             // 
-            // label2
+            // textBox4
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 8F, FontStyle.Italic, GraphicsUnit.Point);
-            label2.Location = new Point(18, 36);
-            label2.Name = "label2";
-            label2.Size = new Size(51, 21);
-            label2.TabIndex = 0;
-            label2.Text = "Hours";
+            textBox4.Location = new Point(181, 57);
+            textBox4.Name = "textBox4";
+            textBox4.PlaceholderText = "00";
+            textBox4.Size = new Size(51, 39);
+            textBox4.TabIndex = 5;
             // 
-            // label5
+            // textBox3
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 8F, FontStyle.Italic, GraphicsUnit.Point);
-            label5.Location = new Point(89, 36);
-            label5.Name = "label5";
-            label5.Size = new Size(64, 21);
-            label5.TabIndex = 1;
-            label5.Text = "Minutes";
+            textBox3.Location = new Point(96, 57);
+            textBox3.Name = "textBox3";
+            textBox3.PlaceholderText = "00";
+            textBox3.Size = new Size(51, 39);
+            textBox3.TabIndex = 4;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(18, 57);
+            textBox2.Name = "textBox2";
+            textBox2.PlaceholderText = "00";
+            textBox2.Size = new Size(51, 39);
+            textBox2.TabIndex = 3;
             // 
             // label6
             // 
@@ -372,29 +323,79 @@
             label6.TabIndex = 2;
             label6.Text = "Seconds";
             // 
-            // textBox2
+            // label5
             // 
-            textBox2.Location = new Point(18, 57);
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = "00";
-            textBox2.Size = new Size(51, 39);
-            textBox2.TabIndex = 3;
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 8F, FontStyle.Italic, GraphicsUnit.Point);
+            label5.Location = new Point(89, 36);
+            label5.Name = "label5";
+            label5.Size = new Size(64, 21);
+            label5.TabIndex = 1;
+            label5.Text = "Minutes";
             // 
-            // textBox3
+            // label2
             // 
-            textBox3.Location = new Point(96, 57);
-            textBox3.Name = "textBox3";
-            textBox3.PlaceholderText = "00";
-            textBox3.Size = new Size(51, 39);
-            textBox3.TabIndex = 4;
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 8F, FontStyle.Italic, GraphicsUnit.Point);
+            label2.Location = new Point(18, 36);
+            label2.Name = "label2";
+            label2.Size = new Size(51, 21);
+            label2.TabIndex = 0;
+            label2.Text = "Hours";
             // 
-            // textBox4
+            // panelDistance
             // 
-            textBox4.Location = new Point(181, 57);
-            textBox4.Name = "textBox4";
-            textBox4.PlaceholderText = "00";
-            textBox4.Size = new Size(51, 39);
-            textBox4.TabIndex = 5;
+            panelDistance.BackColor = Color.DeepSkyBlue;
+            panelDistance.Controls.Add(label4);
+            panelDistance.Controls.Add(textBox1);
+            panelDistance.Controls.Add(groupBoxDistance);
+            panelDistance.Location = new Point(77, 388);
+            panelDistance.Name = "panelDistance";
+            panelDistance.Size = new Size(277, 121);
+            panelDistance.TabIndex = 5;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 8F, FontStyle.Italic, GraphicsUnit.Point);
+            label4.ForeColor = Color.WhiteSmoke;
+            label4.Location = new Point(38, 43);
+            label4.Name = "label4";
+            label4.Size = new Size(201, 21);
+            label4.TabIndex = 3;
+            label4.Text = "Enter in 25 yard increments";
+            // 
+            // textBox1
+            // 
+            textBox1.Font = new Font("Segoe Print", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            textBox1.Location = new Point(43, 65);
+            textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "75";
+            textBox1.Size = new Size(142, 39);
+            textBox1.TabIndex = 0;
+            // 
+            // groupBoxDistance
+            // 
+            groupBoxDistance.Controls.Add(label3);
+            groupBoxDistance.Font = new Font("Segoe Print", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBoxDistance.ForeColor = Color.White;
+            groupBoxDistance.Location = new Point(16, 7);
+            groupBoxDistance.Name = "groupBoxDistance";
+            groupBoxDistance.Size = new Size(245, 106);
+            groupBoxDistance.TabIndex = 4;
+            groupBoxDistance.TabStop = false;
+            groupBoxDistance.Text = "Distance";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe Print", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(178, 57);
+            label3.Name = "label3";
+            label3.Size = new Size(45, 31);
+            label3.TabIndex = 2;
+            label3.Text = "yds";
             // 
             // UC_Swim
             // 
@@ -412,18 +413,18 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panelCategory.ResumeLayout(false);
-            panelDifficulty.ResumeLayout(false);
-            panelTime.ResumeLayout(false);
-            panelDistance.ResumeLayout(false);
-            panelDistance.PerformLayout();
             groupBoxCategory.ResumeLayout(false);
             groupBoxCategory.PerformLayout();
+            panelDifficulty.ResumeLayout(false);
             groupBoxDifficulty.ResumeLayout(false);
             groupBoxDifficulty.PerformLayout();
-            groupBoxDistance.ResumeLayout(false);
-            groupBoxDistance.PerformLayout();
+            panelTime.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            panelDistance.ResumeLayout(false);
+            panelDistance.PerformLayout();
+            groupBoxDistance.ResumeLayout(false);
+            groupBoxDistance.PerformLayout();
             ResumeLayout(false);
         }
 

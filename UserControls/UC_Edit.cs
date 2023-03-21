@@ -16,6 +16,13 @@ namespace The_Big_Pool.UserControls
         {
             InitializeComponent();
         }
+        private void addUserControl(UserControl usercontrol)
+        {
+            usercontrol.Dock = DockStyle.Fill;
+            panelEdit.Controls.Clear();
+            panelEdit.Controls.Add(usercontrol);
+            usercontrol.BringToFront();
+        }
         private void label5_Click(object sender, EventArgs e)
         {
 
@@ -27,14 +34,14 @@ namespace The_Big_Pool.UserControls
 
         private void button2_Click(object sender, EventArgs e)
         {
-            panelEdit.Visible = false;
+            panelEdit.Controls.Clear();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             //need to add all the functions to the data is actually store
             //and everything changes on the swimmer profile card and database\
-            panelEdit.Visible = false;
+            panelEdit.Controls.Clear();
         }
     }
 }

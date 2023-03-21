@@ -21,5 +21,11 @@ namespace The_Big_Pool.UserControls
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //This will be the button that then displays the workout
+            //I need to know how that will be PDF? or what
+        }
     }
 }
