@@ -28,10 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< HEAD
-            SuspendLayout();
-            // 
-=======
             label1 = new Label();
             SuspendLayout();
             // 
@@ -44,22 +40,15 @@
             label1.TabIndex = 0;
             label1.Text = "Welcome Swim";
             // 
->>>>>>> bc294c9973078a78aa10d7ab3c65ac4f9f6625b1
             // UC_Swim
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-<<<<<<< HEAD
-            Name = "UC_Swim";
-            Size = new Size(731, 640);
-            ResumeLayout(false);
-=======
             Controls.Add(label1);
             Name = "UC_Swim";
             Size = new Size(731, 640);
             ResumeLayout(false);
             PerformLayout();
->>>>>>> bc294c9973078a78aa10d7ab3c65ac4f9f6625b1
         }
 
         #endregion
