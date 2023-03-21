@@ -26,8 +26,7 @@ namespace The_Big_Pool
         }
         private void buttonHome_Click(object sender, EventArgs e)
         {
-            UC_Home uc = new UC_Home();
-            addUserControl(uc);
+
         }
 
         private void buttonSwim_Click(object sender, EventArgs e)
