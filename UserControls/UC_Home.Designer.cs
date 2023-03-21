@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< HEAD
+            SuspendLayout();
+            // 
+=======
             label1 = new Label();
             SuspendLayout();
             // 
@@ -40,10 +44,19 @@
             label1.TabIndex = 0;
             label1.Text = "Welcome Home";
             // 
+>>>>>>> bc294c9973078a78aa10d7ab3c65ac4f9f6625b1
             // UC_Home
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+<<<<<<< HEAD
+            Name = "UC_Home";
+            Size = new Size(731, 640);
+            ResumeLayout(false);
+        }
+
+        #endregion
+=======
             Controls.Add(label1);
             Name = "UC_Home";
             Size = new Size(731, 640);
@@ -54,5 +67,6 @@
         #endregion
 
         private Label label1;
+>>>>>>> bc294c9973078a78aa10d7ab3c65ac4f9f6625b1
     }
 }
