@@ -49,5 +49,10 @@ namespace The_Big_Pool.UserControls
                 MessageBox.Show("Error Occured", "Error", MessageBoxButtons.OK);
             }
         }
+
+        private void UC_Settings_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -16,5 +16,10 @@ namespace The_Big_Pool.UserControls
         {
             InitializeComponent();
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
