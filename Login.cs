@@ -21,5 +21,12 @@ namespace The_Big_Pool
             registration.Show();
             Visible = false;
         }
+
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+            Dashboard dash = new Dashboard();
+            dash.Show();
+            Visible = false;
+        }
     }
 }

@@ -76,6 +76,7 @@
             buttonLogin.TabIndex = 6;
             buttonLogin.Text = "Login";
             buttonLogin.UseVisualStyleBackColor = true;
+            buttonLogin.Click += buttonLogin_Click;
             // 
             // label4
             // 
@@ -137,13 +138,13 @@
             label1.TabIndex = 0;
             label1.Text = "Welcome To The Big Pool!";
             // 
-            // Form1
+            // Login
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(613, 475);
             Controls.Add(panelLogin);
-            Name = "Form1";
+            Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             panelLogin.ResumeLayout(false);
