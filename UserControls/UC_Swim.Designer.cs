@@ -59,6 +59,9 @@
             textBox1 = new TextBox();
             groupBoxDistance = new GroupBox();
             label3 = new Label();
+            label7 = new Label();
+            dateTimePicker1 = new DateTimePicker();
+            label8 = new Label();
             panel1.SuspendLayout();
             panelCategory.SuspendLayout();
             groupBoxCategory.SuspendLayout();
@@ -74,7 +77,10 @@
             // 
             panel1.BackColor = Color.DeepSkyBlue;
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(label8);
+            panel1.Controls.Add(dateTimePicker1);
             panel1.Controls.Add(label1);
+            panel1.Controls.Add(button1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -95,7 +101,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(15, 573);
+            button1.Location = new Point(485, 9);
             button1.Name = "button1";
             button1.Size = new Size(221, 53);
             button1.TabIndex = 1;
@@ -397,16 +403,45 @@
             label3.TabIndex = 2;
             label3.Text = "yds";
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(179, 550);
+            label7.Name = "label7";
+            label7.Size = new Size(372, 25);
+            label7.TabIndex = 6;
+            label7.Text = "This is where we will have the workout appear";
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.CalendarMonthBackground = SystemColors.MenuBar;
+            dateTimePicker1.CustomFormat = "MM-dd-yyyy";
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.Location = new Point(306, 19);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(152, 31);
+            dateTimePicker1.TabIndex = 7;
+            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(183, 22);
+            label8.Name = "label8";
+            label8.Size = new Size(117, 25);
+            label8.TabIndex = 8;
+            label8.Text = "Today's Date:";
+            // 
             // UC_Swim
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            Controls.Add(label7);
             Controls.Add(panelDistance);
             Controls.Add(panelTime);
             Controls.Add(panelDifficulty);
             Controls.Add(panelCategory);
-            Controls.Add(button1);
             Controls.Add(panel1);
             Name = "UC_Swim";
             Size = new Size(731, 640);
@@ -426,6 +461,7 @@
             groupBoxDistance.ResumeLayout(false);
             groupBoxDistance.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -460,5 +496,8 @@
         private TextBox textBox1;
         private GroupBox groupBoxDistance;
         private Label label3;
+        private Label label7;
+        private DateTimePicker dateTimePicker1;
+        private Label label8;
     }
 }

@@ -27,5 +27,10 @@ namespace The_Big_Pool.UserControls
             //This will be the button that then displays the workout
             //I need to know how that will be PDF? or what
         }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
