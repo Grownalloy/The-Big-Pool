@@ -44,6 +44,8 @@
             label6 = new Label();
             textBox6 = new TextBox();
             label7 = new Label();
+            panelEdit = new Panel();
+            panelEdit.SuspendLayout();
             SuspendLayout();
             // 
             // button1
@@ -55,6 +57,7 @@
             button1.TabIndex = 0;
             button1.Text = "Save";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -65,6 +68,7 @@
             button2.TabIndex = 1;
             button2.Text = "Cancel";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // label1
             // 
@@ -73,7 +77,7 @@
             label1.BorderStyle = BorderStyle.FixedSingle;
             label1.Font = new Font("Segoe Print", 8F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(14, 11);
+            label1.Location = new Point(14, 3);
             label1.Name = "label1";
             label1.Size = new Size(193, 30);
             label1.TabIndex = 2;
@@ -85,7 +89,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 8F, FontStyle.Italic, GraphicsUnit.Point);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(17, 57);
+            label2.Location = new Point(17, 49);
             label2.Name = "label2";
             label2.Size = new Size(86, 21);
             label2.TabIndex = 3;
@@ -93,7 +97,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(17, 81);
+            textBox1.Location = new Point(17, 73);
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = "First Name";
             textBox1.Size = new Size(190, 31);
@@ -101,7 +105,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(17, 145);
+            textBox2.Location = new Point(17, 137);
             textBox2.Name = "textBox2";
             textBox2.PlaceholderText = "Last Name";
             textBox2.Size = new Size(190, 31);
@@ -113,7 +117,7 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 8F, FontStyle.Italic, GraphicsUnit.Point);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(17, 121);
+            label3.Location = new Point(17, 113);
             label3.Name = "label3";
             label3.Size = new Size(84, 21);
             label3.TabIndex = 5;
@@ -121,7 +125,7 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(17, 273);
+            textBox3.Location = new Point(17, 265);
             textBox3.Name = "textBox3";
             textBox3.PlaceholderText = "Username";
             textBox3.Size = new Size(190, 31);
@@ -133,7 +137,7 @@
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI", 8F, FontStyle.Italic, GraphicsUnit.Point);
             label4.ForeColor = Color.Black;
-            label4.Location = new Point(17, 249);
+            label4.Location = new Point(17, 241);
             label4.Name = "label4";
             label4.Size = new Size(81, 21);
             label4.TabIndex = 7;
@@ -141,7 +145,7 @@
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(14, 337);
+            textBox4.Location = new Point(14, 329);
             textBox4.Name = "textBox4";
             textBox4.PlaceholderText = "Password";
             textBox4.Size = new Size(190, 31);
@@ -154,7 +158,7 @@
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Segoe UI", 8F, FontStyle.Italic, GraphicsUnit.Point);
             label5.ForeColor = Color.Black;
-            label5.Location = new Point(14, 313);
+            label5.Location = new Point(14, 305);
             label5.Name = "label5";
             label5.Size = new Size(76, 21);
             label5.TabIndex = 9;
@@ -163,7 +167,7 @@
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(17, 209);
+            textBox5.Location = new Point(17, 201);
             textBox5.Name = "textBox5";
             textBox5.PlaceholderText = "Email";
             textBox5.Size = new Size(190, 31);
@@ -175,7 +179,7 @@
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Segoe UI", 8F, FontStyle.Italic, GraphicsUnit.Point);
             label6.ForeColor = Color.Black;
-            label6.Location = new Point(17, 185);
+            label6.Location = new Point(17, 177);
             label6.Name = "label6";
             label6.Size = new Size(49, 21);
             label6.TabIndex = 11;
@@ -183,7 +187,7 @@
             // 
             // textBox6
             // 
-            textBox6.Location = new Point(14, 401);
+            textBox6.Location = new Point(14, 393);
             textBox6.Name = "textBox6";
             textBox6.PlaceholderText = "Confirm Password";
             textBox6.Size = new Size(190, 31);
@@ -195,36 +199,47 @@
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Segoe UI", 8F, FontStyle.Italic, GraphicsUnit.Point);
             label7.ForeColor = Color.Black;
-            label7.Location = new Point(14, 377);
+            label7.Location = new Point(14, 369);
             label7.Name = "label7";
             label7.Size = new Size(137, 21);
             label7.TabIndex = 13;
             label7.Text = "Confirm Password";
+            // 
+            // panelEdit
+            // 
+            panelEdit.BackColor = Color.Transparent;
+            panelEdit.Controls.Add(textBox6);
+            panelEdit.Controls.Add(label7);
+            panelEdit.Controls.Add(textBox5);
+            panelEdit.Controls.Add(label6);
+            panelEdit.Controls.Add(textBox4);
+            panelEdit.Controls.Add(label5);
+            panelEdit.Controls.Add(textBox3);
+            panelEdit.Controls.Add(label4);
+            panelEdit.Controls.Add(textBox2);
+            panelEdit.Controls.Add(label3);
+            panelEdit.Controls.Add(textBox1);
+            panelEdit.Controls.Add(label2);
+            panelEdit.Controls.Add(label1);
+            panelEdit.Dock = DockStyle.Fill;
+            panelEdit.Location = new Point(0, 0);
+            panelEdit.Name = "panelEdit";
+            panelEdit.Size = new Size(221, 634);
+            panelEdit.TabIndex = 15;
             // 
             // UC_Edit
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            Controls.Add(textBox6);
-            Controls.Add(label7);
-            Controls.Add(textBox5);
-            Controls.Add(label6);
-            Controls.Add(textBox4);
-            Controls.Add(label5);
-            Controls.Add(textBox3);
-            Controls.Add(label4);
-            Controls.Add(textBox2);
-            Controls.Add(label3);
-            Controls.Add(textBox1);
-            Controls.Add(label2);
-            Controls.Add(label1);
             Controls.Add(button2);
             Controls.Add(button1);
+            Controls.Add(panelEdit);
             Name = "UC_Edit";
             Size = new Size(221, 634);
+            panelEdit.ResumeLayout(false);
+            panelEdit.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -244,5 +259,6 @@
         private Label label6;
         private TextBox textBox6;
         private Label label7;
+        private Panel panelEdit;
     }
 }
