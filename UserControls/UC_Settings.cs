@@ -16,5 +16,38 @@ namespace The_Big_Pool.UserControls
         {
             InitializeComponent();
         }
+        private void addUserControl(UserControl usercontrol)
+        {
+            usercontrol.Dock = DockStyle.Fill;
+            panelSide.Controls.Clear();
+            panelSide.Controls.Add(usercontrol);
+            usercontrol.BringToFront();
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            UC_Edit uc = new UC_Edit();
+            addUserControl(uc);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string imageLocation = "";
+            try
+            {
+                OpenFileDialog dialog = new OpenFileDialog();
+                dialog.Filter = "jpg files(*.jpg)|*.jpg|PNG files(*.png)|*.png| All Files (*.*)|*.*";
+
+                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    imageLocation = dialog.FileName;
+
+                    profilePicture.ImageLocation = imageLocation;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error Occured", "Error", MessageBoxButtons.OK);
+            }
+        }
     }
 }

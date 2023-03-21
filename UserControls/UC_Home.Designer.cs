@@ -28,31 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Home));
+            panel1 = new Panel();
             label1 = new Label();
+            panel1.SuspendLayout();
             SuspendLayout();
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.DeepSkyBlue;
+            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(label1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(731, 73);
+            panel1.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(324, 239);
+            label1.BorderStyle = BorderStyle.FixedSingle;
+            label1.FlatStyle = FlatStyle.Popup;
+            label1.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(19, 15);
             label1.Name = "label1";
-            label1.Size = new Size(139, 25);
+            label1.Size = new Size(90, 45);
             label1.TabIndex = 0;
-            label1.Text = "Welcome Home";
+            label1.Text = "Home";
             // 
             // UC_Home
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(label1);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            Controls.Add(panel1);
             Name = "UC_Home";
             Size = new Size(731, 640);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
+        private Panel panel1;
         private Label label1;
     }
 }
