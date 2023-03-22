@@ -16,5 +16,10 @@ namespace The_Big_Pool.UserControls
         {
             InitializeComponent();
         }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
