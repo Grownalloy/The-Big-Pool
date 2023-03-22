@@ -30,15 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Swim));
             panel1 = new Panel();
+            label8 = new Label();
+            dateTimePicker1 = new DateTimePicker();
             label1 = new Label();
             button1 = new Button();
             panelCategory = new Panel();
             groupBoxCategory = new GroupBox();
-            radioButtonSprint = new RadioButton();
-            radioButtonPace = new RadioButton();
-            radioButtonFreestyle = new RadioButton();
-            radioButtonMedley = new RadioButton();
-            radioButtonStroke = new RadioButton();
+            checkBoxSprint = new CheckBox();
+            checkBoxPace = new CheckBox();
+            checkBoxFreestyle = new CheckBox();
+            checkBoxMedley = new CheckBox();
+            checkBoxStroke = new CheckBox();
             panelDifficulty = new Panel();
             groupBoxDifficulty = new GroupBox();
             radioButtonSenior = new RadioButton();
@@ -60,8 +62,6 @@
             groupBoxDistance = new GroupBox();
             label3 = new Label();
             label7 = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            label8 = new Label();
             panel1.SuspendLayout();
             panelCategory.SuspendLayout();
             groupBoxCategory.SuspendLayout();
@@ -86,6 +86,26 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(731, 73);
             panel1.TabIndex = 0;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(183, 22);
+            label8.Name = "label8";
+            label8.Size = new Size(117, 25);
+            label8.TabIndex = 8;
+            label8.Text = "Today's Date:";
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.CalendarMonthBackground = SystemColors.MenuBar;
+            dateTimePicker1.CustomFormat = "MM-dd-yyyy";
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.Location = new Point(306, 19);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(152, 31);
+            dateTimePicker1.TabIndex = 7;
+            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // label1
             // 
@@ -120,11 +140,11 @@
             // 
             // groupBoxCategory
             // 
-            groupBoxCategory.Controls.Add(radioButtonSprint);
-            groupBoxCategory.Controls.Add(radioButtonPace);
-            groupBoxCategory.Controls.Add(radioButtonFreestyle);
-            groupBoxCategory.Controls.Add(radioButtonMedley);
-            groupBoxCategory.Controls.Add(radioButtonStroke);
+            groupBoxCategory.Controls.Add(checkBoxSprint);
+            groupBoxCategory.Controls.Add(checkBoxPace);
+            groupBoxCategory.Controls.Add(checkBoxFreestyle);
+            groupBoxCategory.Controls.Add(checkBoxMedley);
+            groupBoxCategory.Controls.Add(checkBoxStroke);
             groupBoxCategory.Font = new Font("Segoe Print", 9F, FontStyle.Bold, GraphicsUnit.Point);
             groupBoxCategory.ForeColor = Color.White;
             groupBoxCategory.Location = new Point(20, 16);
@@ -132,62 +152,63 @@
             groupBoxCategory.Size = new Size(183, 227);
             groupBoxCategory.TabIndex = 0;
             groupBoxCategory.TabStop = false;
-            groupBoxCategory.Text = "Category";
+            groupBoxCategory.Text = "Categories";
+            groupBoxCategory.Enter += groupBoxCategory_Enter;
             // 
-            // radioButtonSprint
+            // checkBoxSprint
             // 
-            radioButtonSprint.AutoSize = true;
-            radioButtonSprint.Location = new Point(38, 173);
-            radioButtonSprint.Name = "radioButtonSprint";
-            radioButtonSprint.Size = new Size(96, 35);
-            radioButtonSprint.TabIndex = 4;
-            radioButtonSprint.TabStop = true;
-            radioButtonSprint.Text = "Sprint";
-            radioButtonSprint.UseVisualStyleBackColor = true;
+            checkBoxSprint.AutoSize = true;
+            checkBoxSprint.Cursor = Cursors.No;
+            checkBoxSprint.Location = new Point(34, 181);
+            checkBoxSprint.Name = "checkBoxSprint";
+            checkBoxSprint.Size = new Size(97, 35);
+            checkBoxSprint.TabIndex = 9;
+            checkBoxSprint.Text = "Sprint";
+            checkBoxSprint.UseVisualStyleBackColor = true;
             // 
-            // radioButtonPace
+            // checkBoxPace
             // 
-            radioButtonPace.AutoSize = true;
-            radioButtonPace.Location = new Point(38, 138);
-            radioButtonPace.Name = "radioButtonPace";
-            radioButtonPace.Size = new Size(81, 35);
-            radioButtonPace.TabIndex = 3;
-            radioButtonPace.TabStop = true;
-            radioButtonPace.Text = "Pace";
-            radioButtonPace.UseVisualStyleBackColor = true;
+            checkBoxPace.AutoSize = true;
+            checkBoxPace.Cursor = Cursors.No;
+            checkBoxPace.Location = new Point(34, 146);
+            checkBoxPace.Name = "checkBoxPace";
+            checkBoxPace.Size = new Size(82, 35);
+            checkBoxPace.TabIndex = 8;
+            checkBoxPace.Text = "Pace";
+            checkBoxPace.UseVisualStyleBackColor = true;
             // 
-            // radioButtonFreestyle
+            // checkBoxFreestyle
             // 
-            radioButtonFreestyle.AutoSize = true;
-            radioButtonFreestyle.Location = new Point(38, 103);
-            radioButtonFreestyle.Name = "radioButtonFreestyle";
-            radioButtonFreestyle.Size = new Size(118, 35);
-            radioButtonFreestyle.TabIndex = 2;
-            radioButtonFreestyle.TabStop = true;
-            radioButtonFreestyle.Text = "Freestyle";
-            radioButtonFreestyle.UseVisualStyleBackColor = true;
+            checkBoxFreestyle.AutoSize = true;
+            checkBoxFreestyle.Cursor = Cursors.No;
+            checkBoxFreestyle.Location = new Point(34, 111);
+            checkBoxFreestyle.Name = "checkBoxFreestyle";
+            checkBoxFreestyle.Size = new Size(119, 35);
+            checkBoxFreestyle.TabIndex = 7;
+            checkBoxFreestyle.Text = "Freestyle";
+            checkBoxFreestyle.UseVisualStyleBackColor = true;
             // 
-            // radioButtonMedley
+            // checkBoxMedley
             // 
-            radioButtonMedley.AutoSize = true;
-            radioButtonMedley.Location = new Point(38, 68);
-            radioButtonMedley.Name = "radioButtonMedley";
-            radioButtonMedley.Size = new Size(102, 35);
-            radioButtonMedley.TabIndex = 1;
-            radioButtonMedley.TabStop = true;
-            radioButtonMedley.Text = "Medley";
-            radioButtonMedley.UseVisualStyleBackColor = true;
+            checkBoxMedley.AutoSize = true;
+            checkBoxMedley.Cursor = Cursors.No;
+            checkBoxMedley.Location = new Point(34, 76);
+            checkBoxMedley.Name = "checkBoxMedley";
+            checkBoxMedley.Size = new Size(103, 35);
+            checkBoxMedley.TabIndex = 6;
+            checkBoxMedley.Text = "Medley";
+            checkBoxMedley.UseVisualStyleBackColor = true;
             // 
-            // radioButtonStroke
+            // checkBoxStroke
             // 
-            radioButtonStroke.AutoSize = true;
-            radioButtonStroke.Location = new Point(38, 33);
-            radioButtonStroke.Name = "radioButtonStroke";
-            radioButtonStroke.Size = new Size(97, 35);
-            radioButtonStroke.TabIndex = 0;
-            radioButtonStroke.TabStop = true;
-            radioButtonStroke.Text = "Stroke";
-            radioButtonStroke.UseVisualStyleBackColor = true;
+            checkBoxStroke.AutoSize = true;
+            checkBoxStroke.Cursor = Cursors.No;
+            checkBoxStroke.Location = new Point(34, 38);
+            checkBoxStroke.Name = "checkBoxStroke";
+            checkBoxStroke.Size = new Size(98, 35);
+            checkBoxStroke.TabIndex = 5;
+            checkBoxStroke.Text = "Stroke";
+            checkBoxStroke.UseVisualStyleBackColor = true;
             // 
             // panelDifficulty
             // 
@@ -412,26 +433,6 @@
             label7.TabIndex = 6;
             label7.Text = "This is where we will have the workout appear";
             // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.CalendarMonthBackground = SystemColors.MenuBar;
-            dateTimePicker1.CustomFormat = "MM-dd-yyyy";
-            dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(306, 19);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(152, 31);
-            dateTimePicker1.TabIndex = 7;
-            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(183, 22);
-            label8.Name = "label8";
-            label8.Size = new Size(117, 25);
-            label8.TabIndex = 8;
-            label8.Text = "Today's Date:";
-            // 
             // UC_Swim
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -445,6 +446,7 @@
             Controls.Add(panel1);
             Name = "UC_Swim";
             Size = new Size(731, 640);
+            Load += UC_Swim_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panelCategory.ResumeLayout(false);
@@ -474,11 +476,6 @@
         private Panel panelTime;
         private Panel panelDistance;
         private GroupBox groupBoxCategory;
-        private RadioButton radioButtonSprint;
-        private RadioButton radioButtonPace;
-        private RadioButton radioButtonFreestyle;
-        private RadioButton radioButtonMedley;
-        private RadioButton radioButtonStroke;
         private GroupBox groupBoxDifficulty;
         private RadioButton radioButtonSenior;
         private RadioButton radioButtonGold;
@@ -499,5 +496,10 @@
         private Label label7;
         private DateTimePicker dateTimePicker1;
         private Label label8;
+        private CheckBox checkBoxSprint;
+        private CheckBox checkBoxPace;
+        private CheckBox checkBoxFreestyle;
+        private CheckBox checkBoxMedley;
+        private CheckBox checkBoxStroke;
     }
 }

@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Home));
             panel1 = new Panel();
             label1 = new Label();
+            label2 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -58,11 +59,22 @@
             label1.TabIndex = 0;
             label1.Text = "Home";
             // 
+            // label2
+            // 
+            label2.BackColor = Color.DeepSkyBlue;
+            label2.BorderStyle = BorderStyle.Fixed3D;
+            label2.Location = new Point(20, 90);
+            label2.Name = "label2";
+            label2.Size = new Size(388, 119);
+            label2.TabIndex = 1;
+            label2.Text = "Time to jump in the pool! Here at The Big Pool, you will be able to ceate a customized practice set, view your past workouts and track your progress. ";
+            // 
             // UC_Home
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            Controls.Add(label2);
             Controls.Add(panel1);
             Name = "UC_Home";
             Size = new Size(731, 640);
@@ -75,5 +87,6 @@
 
         private Panel panel1;
         private Label label1;
+        private Label label2;
     }
 }

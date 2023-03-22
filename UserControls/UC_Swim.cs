@@ -32,5 +32,15 @@ namespace The_Big_Pool.UserControls
         {
 
         }
+
+        private void UC_Swim_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBoxCategory_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
