@@ -39,12 +39,13 @@
             labelUsername = new Label();
             pictureBox1 = new PictureBox();
             panelDashboard = new Panel();
-            label1 = new Label();
+            pictureBox2 = new PictureBox();
             panelSide.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelDashboard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // panelSide
@@ -160,20 +161,23 @@
             // 
             panelDashboard.BackgroundImage = (Image)resources.GetObject("panelDashboard.BackgroundImage");
             panelDashboard.BorderStyle = BorderStyle.FixedSingle;
-            panelDashboard.Controls.Add(label1);
+            panelDashboard.Controls.Add(pictureBox2);
             panelDashboard.Dock = DockStyle.Right;
             panelDashboard.Location = new Point(210, 0);
             panelDashboard.Name = "panelDashboard";
             panelDashboard.Size = new Size(731, 640);
             panelDashboard.TabIndex = 1;
             // 
-            // label1
+            // pictureBox2
             // 
-            label1.Location = new Point(31, 26);
-            label1.Name = "label1";
-            label1.Size = new Size(687, 107);
-            label1.TabIndex = 0;
-            label1.Text = resources.GetString("label1.Text");
+            pictureBox2.Dock = DockStyle.Fill;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(0, 0);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(729, 638);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 0;
+            pictureBox2.TabStop = false;
             // 
             // Dashboard
             // 
@@ -190,6 +194,7 @@
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panelDashboard.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -205,6 +210,6 @@
         private Label labelUsername;
         private PictureBox pictureBox1;
         private Panel panelDashboard;
-        private Label label1;
+        private PictureBox pictureBox2;
     }
 }
