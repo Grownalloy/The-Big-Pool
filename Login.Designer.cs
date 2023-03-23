@@ -1,5 +1,6 @@
 ﻿namespace The_Big_Pool
 {
+    
     partial class Login
     {
         /// <summary>
