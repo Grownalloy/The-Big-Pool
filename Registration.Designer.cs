@@ -69,66 +69,75 @@
             panelRegistration.Controls.Add(buttonBacktoLogin);
             panelRegistration.Dock = DockStyle.Fill;
             panelRegistration.Location = new Point(0, 0);
+            panelRegistration.Margin = new Padding(2);
             panelRegistration.Name = "panelRegistration";
-            panelRegistration.Size = new Size(613, 475);
+            panelRegistration.Size = new Size(429, 285);
             panelRegistration.TabIndex = 16;
             // 
             // textBoxConPass
             // 
-            textBoxConPass.Location = new Point(262, 302);
+            textBoxConPass.Location = new Point(183, 181);
+            textBoxConPass.Margin = new Padding(2);
             textBoxConPass.Name = "textBoxConPass";
             textBoxConPass.PlaceholderText = "Confirm Password";
-            textBoxConPass.Size = new Size(252, 31);
+            textBoxConPass.Size = new Size(178, 23);
             textBoxConPass.TabIndex = 14;
             // 
             // textBoxPassword
             // 
             textBoxPassword.ForeColor = SystemColors.WindowText;
-            textBoxPassword.Location = new Point(262, 257);
+            textBoxPassword.Location = new Point(183, 154);
+            textBoxPassword.Margin = new Padding(2);
             textBoxPassword.Name = "textBoxPassword";
             textBoxPassword.PlaceholderText = "Password";
-            textBoxPassword.Size = new Size(252, 31);
+            textBoxPassword.Size = new Size(178, 23);
             textBoxPassword.TabIndex = 13;
             // 
             // textBoxUsername
             // 
-            textBoxUsername.Location = new Point(262, 212);
+            textBoxUsername.Location = new Point(183, 127);
+            textBoxUsername.Margin = new Padding(2);
             textBoxUsername.Name = "textBoxUsername";
             textBoxUsername.PlaceholderText = "Username";
-            textBoxUsername.Size = new Size(252, 31);
+            textBoxUsername.Size = new Size(178, 23);
             textBoxUsername.TabIndex = 12;
+            textBoxUsername.TextChanged += textBoxUsername_TextChanged;
             // 
             // textBoxEmail
             // 
-            textBoxEmail.Location = new Point(262, 167);
+            textBoxEmail.Location = new Point(183, 100);
+            textBoxEmail.Margin = new Padding(2);
             textBoxEmail.Name = "textBoxEmail";
             textBoxEmail.PlaceholderText = "Email";
-            textBoxEmail.Size = new Size(252, 31);
+            textBoxEmail.Size = new Size(178, 23);
             textBoxEmail.TabIndex = 11;
             // 
             // textBoxLastName
             // 
-            textBoxLastName.Location = new Point(262, 122);
+            textBoxLastName.Location = new Point(183, 73);
+            textBoxLastName.Margin = new Padding(2);
             textBoxLastName.Name = "textBoxLastName";
             textBoxLastName.PlaceholderText = "Last Name";
-            textBoxLastName.Size = new Size(252, 31);
+            textBoxLastName.Size = new Size(178, 23);
             textBoxLastName.TabIndex = 10;
             // 
             // textBoxFirstName
             // 
-            textBoxFirstName.Location = new Point(262, 77);
+            textBoxFirstName.Location = new Point(183, 46);
+            textBoxFirstName.Margin = new Padding(2);
             textBoxFirstName.Name = "textBoxFirstName";
             textBoxFirstName.PlaceholderText = "First Name";
-            textBoxFirstName.Size = new Size(252, 31);
+            textBoxFirstName.Size = new Size(178, 23);
             textBoxFirstName.TabIndex = 9;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.BackColor = Color.Transparent;
-            label7.Location = new Point(84, 308);
+            label7.Location = new Point(59, 185);
+            label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
-            label7.Size = new Size(156, 25);
+            label7.Size = new Size(104, 15);
             label7.TabIndex = 8;
             label7.Text = "Confirm Password";
             // 
@@ -136,9 +145,10 @@
             // 
             label6.AutoSize = true;
             label6.BackColor = Color.Transparent;
-            label6.Location = new Point(149, 218);
+            label6.Location = new Point(104, 131);
+            label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new Size(91, 25);
+            label6.Size = new Size(60, 15);
             label6.TabIndex = 7;
             label6.Text = "Username";
             // 
@@ -146,9 +156,10 @@
             // 
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
-            label5.Location = new Point(153, 263);
+            label5.Location = new Point(107, 158);
+            label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(87, 25);
+            label5.Size = new Size(57, 15);
             label5.TabIndex = 6;
             label5.Text = "Password";
             // 
@@ -156,9 +167,10 @@
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
-            label4.Location = new Point(186, 173);
+            label4.Location = new Point(130, 104);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(54, 25);
+            label4.Size = new Size(36, 15);
             label4.TabIndex = 5;
             label4.Text = "Email";
             // 
@@ -166,9 +178,10 @@
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
-            label3.Location = new Point(145, 128);
+            label3.Location = new Point(102, 77);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(95, 25);
+            label3.Size = new Size(63, 15);
             label3.TabIndex = 4;
             label3.Text = "Last Name";
             // 
@@ -176,9 +189,10 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
-            label2.Location = new Point(143, 83);
+            label2.Location = new Point(100, 50);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(97, 25);
+            label2.Size = new Size(64, 15);
             label2.TabIndex = 3;
             label2.Text = "First Name";
             // 
@@ -188,26 +202,30 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Snap ITC", 12F, FontStyle.Italic, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(186, 19);
+            label1.Location = new Point(130, 11);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(226, 31);
+            label1.Size = new Size(152, 22);
             label1.TabIndex = 2;
             label1.Text = "Create Account";
             // 
             // buttonRegister
             // 
-            buttonRegister.Location = new Point(302, 381);
+            buttonRegister.Location = new Point(211, 229);
+            buttonRegister.Margin = new Padding(2);
             buttonRegister.Name = "buttonRegister";
-            buttonRegister.Size = new Size(198, 42);
+            buttonRegister.Size = new Size(139, 25);
             buttonRegister.TabIndex = 1;
             buttonRegister.Text = "Register Account";
             buttonRegister.UseVisualStyleBackColor = true;
+            buttonRegister.Click += buttonRegister_Click;
             // 
             // buttonBacktoLogin
             // 
-            buttonBacktoLogin.Location = new Point(98, 381);
+            buttonBacktoLogin.Location = new Point(69, 229);
+            buttonBacktoLogin.Margin = new Padding(2);
             buttonBacktoLogin.Name = "buttonBacktoLogin";
-            buttonBacktoLogin.Size = new Size(198, 42);
+            buttonBacktoLogin.Size = new Size(139, 25);
             buttonBacktoLogin.TabIndex = 0;
             buttonBacktoLogin.Text = "Back to Login";
             buttonBacktoLogin.UseVisualStyleBackColor = true;
@@ -215,10 +233,11 @@
             // 
             // Registration
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(613, 475);
+            ClientSize = new Size(429, 285);
             Controls.Add(panelRegistration);
+            Margin = new Padding(2);
             Name = "Registration";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Registration";

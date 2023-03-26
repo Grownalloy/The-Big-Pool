@@ -54,8 +54,9 @@
             panelSide.Controls.Add(tableLayoutPanel1);
             panelSide.Dock = DockStyle.Left;
             panelSide.Location = new Point(0, 0);
+            panelSide.Margin = new Padding(2, 2, 2, 2);
             panelSide.Name = "panelSide";
-            panelSide.Size = new Size(204, 640);
+            panelSide.Size = new Size(143, 384);
             panelSide.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -69,6 +70,7 @@
             tableLayoutPanel1.Controls.Add(panel2, 0, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Margin = new Padding(2, 2, 2, 2);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 5;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
@@ -76,16 +78,17 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 18.75F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 18.75F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 18.75F));
-            tableLayoutPanel1.Size = new Size(202, 638);
+            tableLayoutPanel1.Size = new Size(141, 382);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // buttonHome
             // 
             buttonHome.BackColor = Color.DeepSkyBlue;
             buttonHome.Dock = DockStyle.Fill;
-            buttonHome.Location = new Point(3, 162);
+            buttonHome.Location = new Point(2, 97);
+            buttonHome.Margin = new Padding(2, 2, 2, 2);
             buttonHome.Name = "buttonHome";
-            buttonHome.Size = new Size(196, 113);
+            buttonHome.Size = new Size(137, 67);
             buttonHome.TabIndex = 0;
             buttonHome.Text = "Home";
             buttonHome.UseVisualStyleBackColor = false;
@@ -95,9 +98,10 @@
             // 
             buttonSwim.BackColor = Color.DeepSkyBlue;
             buttonSwim.Dock = DockStyle.Fill;
-            buttonSwim.Location = new Point(3, 281);
+            buttonSwim.Location = new Point(2, 168);
+            buttonSwim.Margin = new Padding(2, 2, 2, 2);
             buttonSwim.Name = "buttonSwim";
-            buttonSwim.Size = new Size(196, 113);
+            buttonSwim.Size = new Size(137, 67);
             buttonSwim.TabIndex = 1;
             buttonSwim.Text = "Swim";
             buttonSwim.UseVisualStyleBackColor = false;
@@ -107,9 +111,10 @@
             // 
             buttonHistory.BackColor = Color.DeepSkyBlue;
             buttonHistory.Dock = DockStyle.Fill;
-            buttonHistory.Location = new Point(3, 400);
+            buttonHistory.Location = new Point(2, 239);
+            buttonHistory.Margin = new Padding(2, 2, 2, 2);
             buttonHistory.Name = "buttonHistory";
-            buttonHistory.Size = new Size(196, 113);
+            buttonHistory.Size = new Size(137, 67);
             buttonHistory.TabIndex = 2;
             buttonHistory.Text = "History";
             buttonHistory.UseVisualStyleBackColor = false;
@@ -119,9 +124,10 @@
             // 
             buttonSettings.BackColor = Color.DeepSkyBlue;
             buttonSettings.Dock = DockStyle.Fill;
-            buttonSettings.Location = new Point(3, 519);
+            buttonSettings.Location = new Point(2, 310);
+            buttonSettings.Margin = new Padding(2, 2, 2, 2);
             buttonSettings.Name = "buttonSettings";
-            buttonSettings.Size = new Size(196, 116);
+            buttonSettings.Size = new Size(137, 70);
             buttonSettings.TabIndex = 3;
             buttonSettings.Text = "Settings";
             buttonSettings.UseVisualStyleBackColor = false;
@@ -133,26 +139,29 @@
             panel2.Controls.Add(labelUsername);
             panel2.Controls.Add(pictureBox1);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(3, 3);
+            panel2.Location = new Point(2, 2);
+            panel2.Margin = new Padding(2, 2, 2, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(196, 153);
+            panel2.Size = new Size(137, 91);
             panel2.TabIndex = 4;
             // 
             // labelUsername
             // 
             labelUsername.AutoSize = true;
-            labelUsername.Location = new Point(53, 114);
+            labelUsername.Location = new Point(37, 68);
+            labelUsername.Margin = new Padding(2, 0, 2, 0);
             labelUsername.Name = "labelUsername";
-            labelUsername.Size = new Size(91, 25);
+            labelUsername.Size = new Size(60, 15);
             labelUsername.TabIndex = 1;
             labelUsername.Text = "Username";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(45, 8);
+            pictureBox1.Location = new Point(32, 5);
+            pictureBox1.Margin = new Padding(2, 2, 2, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(107, 95);
+            pictureBox1.Size = new Size(75, 57);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -163,9 +172,10 @@
             panelDashboard.BorderStyle = BorderStyle.FixedSingle;
             panelDashboard.Controls.Add(pictureBox2);
             panelDashboard.Dock = DockStyle.Right;
-            panelDashboard.Location = new Point(210, 0);
+            panelDashboard.Location = new Point(147, 0);
+            panelDashboard.Margin = new Padding(2, 2, 2, 2);
             panelDashboard.Name = "panelDashboard";
-            panelDashboard.Size = new Size(731, 640);
+            panelDashboard.Size = new Size(512, 384);
             panelDashboard.TabIndex = 1;
             // 
             // pictureBox2
@@ -173,21 +183,23 @@
             pictureBox2.Dock = DockStyle.Fill;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(0, 0);
+            pictureBox2.Margin = new Padding(2, 2, 2, 2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(729, 638);
+            pictureBox2.Size = new Size(510, 382);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 0;
             pictureBox2.TabStop = false;
             // 
             // Dashboard
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(941, 640);
+            ClientSize = new Size(659, 384);
             Controls.Add(panelDashboard);
             Controls.Add(panelSide);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "Dashboard";
-            Text = "Dashboard";
+            Text = "w";
             panelSide.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             panel2.ResumeLayout(false);

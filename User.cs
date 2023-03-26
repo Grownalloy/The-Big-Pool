@@ -10,6 +10,9 @@ namespace The_Big_Pool
     {
         private string Password;
         private string UserName;
+        private string Fname="John";
+        private string Lname="Fortnite";
+        private string Email="John@fortnite.com";
         private string skill = "Garnet";
         private string duration = "01:00:00";
         private int Distance = 1500;
