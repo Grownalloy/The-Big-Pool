@@ -45,6 +45,12 @@ namespace The_Big_Pool
             TU = TU.ToLower();
             if (TU == textBoxUsername.Text.ToLower())
                 failcause += "Username is already taken \n";
+            if (textBoxFirstName.Text == "")
+                failcause += "First Name is empty \n";
+            if (textBoxLastName.Text == "")
+                failcause += "Last Name is empty \n";
+            if (textBoxEmail.Text == "")
+                failcause += "Email is empty \n";
            User Act= new User(textBoxUsername.Text,textBoxPassword.Text);
             failcause += Act.failurecause();
             if (textBoxPassword.Text != textBoxConPass.Text)
@@ -59,6 +65,9 @@ namespace The_Big_Pool
                     {"Username", textBoxUsername.Text.ToLower() },
                     {"Password", hashpass },
                     { "Settings", new BsonDocument {
+                        {"Name", textBoxFirstName.Text },
+                        {"Surname",textBoxLastName.Text },
+                        {"Email",textBoxEmail.Text},
                         { "Skill level", Act.get_skill() },
                         { "Preffered Distance", Act.get_Distance() },
                         { "Duration of work-out", Act.get_duration() }

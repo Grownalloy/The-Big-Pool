@@ -21,6 +21,12 @@ namespace The_Big_Pool
             UserName = u;
             Password = p;
         }
+        public string get_Fname()
+        { return Fname; }
+        public string get_Lname()
+        { return Lname; }
+        public string get_Email()
+        { return Email; }
         public string get_skill()
         { return skill; }
         public string get_duration()
@@ -33,6 +39,9 @@ namespace The_Big_Pool
         { duration = s; }
         public void set_distance(int i)
         { Distance = i; }
+        public void set_Fname(string f) { Fname = f; }
+        public void set_Lname(string l) { Lname = l; }
+        public void set_Email(string s) {  Email = s; }
         public string failurecause()
         {
             string f = "";
