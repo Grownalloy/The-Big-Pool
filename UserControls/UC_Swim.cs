@@ -26,7 +26,7 @@ namespace The_Big_Pool.UserControls
 
         private void button1_Click(object sender, EventArgs e)
         {
-      
+
             string htmlString = "<!DOCTYPE html>\r\n<html>\r\n " +
                 " <head>\r\n    " +
                 "<meta charset=\"UTF-8\">\r\n    " +
