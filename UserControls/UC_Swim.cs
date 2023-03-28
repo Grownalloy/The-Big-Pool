@@ -1,5 +1,8 @@
 ﻿using IronPdf;
 using IronPdf.PrintDoc;
+using MongoDB.Driver;
+using MongoDB.Bson;
+using MongoDB.Driver.GridFS;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Extensions.Configuration;
 
 namespace The_Big_Pool.UserControls
 {
@@ -77,16 +81,34 @@ namespace The_Big_Pool.UserControls
             try
             {
                 HtmlToPdf practice = new HtmlToPdf();
-                PdfDocument pdf = practice.RenderHtmlAsPdf(htmlString);
-                pdf.SaveAs("practice.pdf");
-                MessageBox.Show("Generated practice");
+                using (PdfDocument pdf = practice.RenderHtmlAsPdf(htmlString))
+                {
+                    var pdfStream = pdf.Stream;
 
+                    //Connect to MongoDB
+                    IConfiguration config = new ConfigurationBuilder()
+                        .AddJsonFile("appsettings.json", true, true)
+                        .Build();
+                    string connectionString = config.GetConnectionString("MongoDB");
+
+                    var settings = MongoClientSettings.FromConnectionString(connectionString);
+                    settings.ServerApi = new ServerApi(ServerApiVersion.V1);
+                    var client = new MongoClient(settings);
+                    IMongoDatabase database = client.GetDatabase("TheBigPool");
+                    var users = database.GetCollection<BsonDocument>("user");
+                    var gridFsBucket = new GridFSBucket(database);
+
+                    var fileId = gridFsBucket.UploadFromStream("practice_uploaded.pdf", pdfStream);
+
+                    MessageBox.Show("Generated practice");
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("failed to create practice");
+                MessageBox.Show("Failed to create practice or upload to MongoDB");
                 // Handle exception
             }
+
 
 
 

@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson;
+﻿using Microsoft.Extensions.Configuration;
+using MongoDB.Bson;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,12 @@ namespace The_Big_Pool
 
         private void buttonRegister_Click(object sender, EventArgs e)
         {
-            var settings = MongoClientSettings.FromConnectionString("mongodb+srv://Aparra:YEBZBMZIK24wWW9P@cluster0.yrrbhan.mongodb.net/?retryWrites=true&w=majority");
+            IConfiguration config = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json", true, true)
+                .Build();
+            string connectionString = config.GetConnectionString("MongoDB");
+
+            var settings = MongoClientSettings.FromConnectionString(connectionString);
             settings.ServerApi = new ServerApi(ServerApiVersion.V1);
             var client = new MongoClient(settings);
             IMongoDatabase database = client.GetDatabase("TheBigPool");
