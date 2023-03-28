@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Swim));
             panel1 = new Panel();
             label8 = new Label();
             dateTimePicker1 = new DateTimePicker();
@@ -419,7 +420,6 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.BackColor = Color.White;
             label7.Location = new Point(179, 550);
             label7.Name = "label7";
             label7.Size = new Size(372, 25);
@@ -430,7 +430,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Black;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             Controls.Add(label7);
             Controls.Add(panelDistance);
             Controls.Add(panelTime);
