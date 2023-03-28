@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Settings));
             tableLayoutPanel1 = new TableLayoutPanel();
             panel1 = new Panel();
+            labelSwimmerProfileCard = new Label();
             label8 = new Label();
             label7 = new Label();
             label6 = new Label();
@@ -44,7 +45,6 @@
             button1 = new Button();
             panel2 = new Panel();
             label2 = new Label();
-            labelSwimmerProfileCard = new Label();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)profilePicture).BeginInit();
@@ -69,6 +69,7 @@
             // panel1
             // 
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
+            panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(labelSwimmerProfileCard);
             panel1.Controls.Add(label8);
             panel1.Controls.Add(label7);
@@ -83,6 +84,17 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(498, 562);
             panel1.TabIndex = 0;
+            // 
+            // labelSwimmerProfileCard
+            // 
+            labelSwimmerProfileCard.AutoSize = true;
+            labelSwimmerProfileCard.BackColor = Color.Transparent;
+            labelSwimmerProfileCard.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            labelSwimmerProfileCard.Location = new Point(104, 25);
+            labelSwimmerProfileCard.Name = "labelSwimmerProfileCard";
+            labelSwimmerProfileCard.Size = new Size(291, 43);
+            labelSwimmerProfileCard.TabIndex = 8;
+            labelSwimmerProfileCard.Text = "Swimmer Profile Card";
             // 
             // label8
             // 
@@ -181,7 +193,7 @@
             // 
             // panelSide
             // 
-            panelSide.BackgroundImage = (Image)resources.GetObject("panelSide.BackgroundImage");
+            panelSide.BackColor = Color.Black;
             panelSide.Dock = DockStyle.Fill;
             panelSide.Location = new Point(507, 3);
             panelSide.Name = "panelSide";
@@ -224,6 +236,7 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
             label2.BorderStyle = BorderStyle.FixedSingle;
             label2.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.Black;
@@ -232,17 +245,6 @@
             label2.Size = new Size(226, 45);
             label2.TabIndex = 0;
             label2.Text = "Account Settings";
-            // 
-            // labelSwimmerProfileCard
-            // 
-            labelSwimmerProfileCard.AutoSize = true;
-            labelSwimmerProfileCard.BackColor = Color.Transparent;
-            labelSwimmerProfileCard.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            labelSwimmerProfileCard.Location = new Point(104, 25);
-            labelSwimmerProfileCard.Name = "labelSwimmerProfileCard";
-            labelSwimmerProfileCard.Size = new Size(291, 43);
-            labelSwimmerProfileCard.TabIndex = 8;
-            labelSwimmerProfileCard.Text = "Swimmer Profile Card";
             // 
             // UC_Settings
             // 
