@@ -1,6 +1,9 @@
 
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using MongoDB.Bson;
 using MongoDB.Driver;
+using System.Net.Http;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace The_Big_Pool
@@ -26,7 +29,13 @@ namespace The_Big_Pool
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            var settings = MongoClientSettings.FromConnectionString("mongodb+srv://Aparra:YEBZBMZIK24wWW9P@cluster0.yrrbhan.mongodb.net/?retryWrites=true&w=majority");
+            
+            IConfiguration config = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json", true, true)
+                .Build();
+            string connectionString = config.GetConnectionString("MongoDB");
+
+            var settings = MongoClientSettings.FromConnectionString(connectionString);
             settings.ServerApi = new ServerApi(ServerApiVersion.V1);
             var client = new MongoClient(settings);
             IMongoDatabase database = client.GetDatabase("TheBigPool");
@@ -46,6 +55,9 @@ namespace The_Big_Pool
 
             if (t)
             {
+                // Store the user's credentials in the UserSession object
+                UserSession.Instance.Username = TU;
+                UserSession.Instance.Password = TS;
 
                 Dashboard dashboard = new Dashboard();
                 dashboard.Show();
@@ -57,5 +69,24 @@ namespace The_Big_Pool
             }
             
         }
+        public class UserSession
+        {
+            private static UserSession? _instance;
+            public static UserSession Instance
+            {
+                get
+                {
+                    if (_instance == null)
+                    {
+                        _instance = new UserSession();
+                    }
+                    return _instance;
+                }
+            }
+
+            public string? Username { get; set; }
+            public string? Password { get; set; }
+        }
+
     }
 }

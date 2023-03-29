@@ -13,6 +13,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Extensions.Configuration;
+using static The_Big_Pool.Login;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using Microsoft.AspNetCore.Http;
 
 namespace The_Big_Pool.UserControls
 {
@@ -28,7 +31,7 @@ namespace The_Big_Pool.UserControls
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
 
             string htmlString = "<!DOCTYPE html>\r\n<html>\r\n " +
@@ -77,7 +80,6 @@ namespace The_Big_Pool.UserControls
                 .Replace("{DURATION}", duration)
                 .Replace("{NAME}", name);
 
-            // Render HTML string as PDF
             try
             {
                 HtmlToPdf practice = new HtmlToPdf();
@@ -91,27 +93,44 @@ namespace The_Big_Pool.UserControls
                         .Build();
                     string connectionString = config.GetConnectionString("MongoDB");
 
-                    var settings = MongoClientSettings.FromConnectionString(connectionString);
-                    settings.ServerApi = new ServerApi(ServerApiVersion.V1);
-                    var client = new MongoClient(settings);
-                    IMongoDatabase database = client.GetDatabase("TheBigPool");
+                    var client = new MongoClient(connectionString);
+                    var database = client.GetDatabase("TheBigPool");
+
                     var users = database.GetCollection<BsonDocument>("user");
                     var gridFsBucket = new GridFSBucket(database);
 
-                    var fileId = gridFsBucket.UploadFromStream("practice_uploaded.pdf", pdfStream);
+                    string username = UserSession.Instance.Username;
+                    string password = UserSession.Instance.Password;
 
-                    MessageBox.Show("Generated practice");
+                    // Query MongoDB to find the user document that matches the given username and password
+                    var filter = Builders<BsonDocument>.Filter.And(Builders<BsonDocument>.Filter.Eq("username", username),
+                        Builders<BsonDocument>.Filter.Eq("password", password));
+                    var userDocument = await users.Find(filter).FirstOrDefaultAsync();
+
+                    if (userDocument != null)
+                    {
+                        // Retrieve the documentId from the user document
+                        string documentId = userDocument.GetValue("documentId").AsString;
+
+                        // Use the documentId to store the PDF in the correct document
+                        var fileId = gridFsBucket.UploadFromStream("practice_uploaded.pdf", pdfStream, new GridFSUploadOptions
+                        {
+                            Metadata = new BsonDocument
+                                    {
+                                        { "documentId", documentId },
+                                        { "type", "practice" }
+                                    }
+                        }
+                          );
+                    }
                 }
+                MessageBox.Show("Generated practice");
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Failed to create practice or upload to MongoDB");
                 // Handle exception
             }
-
-
-
-
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
