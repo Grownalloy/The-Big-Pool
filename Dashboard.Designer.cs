@@ -186,8 +186,10 @@
             ClientSize = new Size(941, 640);
             Controls.Add(panelDashboard);
             Controls.Add(panelSide);
+            MaximizeBox = false;
             Name = "Dashboard";
-            Text = "w";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Dashboard";
             panelSide.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
