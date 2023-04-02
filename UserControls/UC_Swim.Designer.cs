@@ -61,7 +61,6 @@
             textBox1 = new TextBox();
             groupBoxDistance = new GroupBox();
             label3 = new Label();
-            label7 = new Label();
             panel1.SuspendLayout();
             panelCategory.SuspendLayout();
             groupBoxCategory.SuspendLayout();
@@ -417,21 +416,11 @@
             label3.TabIndex = 2;
             label3.Text = "yds";
             // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(179, 550);
-            label7.Name = "label7";
-            label7.Size = new Size(372, 25);
-            label7.TabIndex = 6;
-            label7.Text = "This is where we will have the workout appear";
-            // 
             // UC_Swim
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            Controls.Add(label7);
             Controls.Add(panelDistance);
             Controls.Add(panelTime);
             Controls.Add(panelDifficulty);
@@ -455,7 +444,6 @@
             groupBoxDistance.ResumeLayout(false);
             groupBoxDistance.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -485,7 +473,6 @@
         private TextBox textBox1;
         private GroupBox groupBoxDistance;
         private Label label3;
-        private Label label7;
         private DateTimePicker dateTimePicker1;
         private Label label8;
         private CheckBox checkBoxSprint;
