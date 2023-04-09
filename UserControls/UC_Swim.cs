@@ -30,9 +30,103 @@ namespace The_Big_Pool.UserControls
         {
 
         }
-
+        public bool IsDigitsOnly(string str)
+        {
+            foreach (char c in str)
+            {
+                if (c < '0' || c > '9')
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
         private async void button1_Click(object sender, EventArgs e)
         {
+
+            string category = "";
+            string Skill = "";
+            string Time = "";
+
+            if (IsDigitsOnly(textBox2.Text) && textBox2.Text != "")
+            {
+                Time = textBox2.Text + ":";
+
+                if (IsDigitsOnly(textBox3.Text) && textBox3.Text != "")
+                {
+                    if (int.TryParse(textBox3.Text, out int minutes) && minutes < 60 && minutes >= 0)
+                    {
+                        Time += textBox3.Text + ":";
+                        if (int.TryParse(textBox4.Text, out int seconds) && seconds < 60 && seconds >= 0)
+                        {
+                            Time += textBox4.Text;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please enter a valid number of seconds (0-59).", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            textBox2.Text = "";
+                            textBox3.Text = "";
+                            textBox4.Text = "";
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please enter a valid number of minutes (0-59).", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        textBox2.Text = "";
+                        textBox3.Text = "";
+                        textBox4.Text = "";
+                        return;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a valid number of minutes.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    textBox2.Text = "";
+                    textBox3.Text = "";
+                    textBox4.Text = "";
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid time.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBox2.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
+                return;
+            }
+
+
+
+            if (radioButtonGarnet.Checked) { Skill = "Garnet"; }
+            if (radioButtonBronze.Checked) { Skill = "Bronze"; }
+            if (radioButtonSilver.Checked) { Skill = "Silver"; }
+            if (radioButtonGold.Checked) { Skill = "Gold"; }
+            if (radioButtonSenior.Checked) { Skill = "Senior"; }
+            if (Skill == "")
+            {
+                MessageBox.Show("Please select a skill level.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+            if (checkBoxFreestyle.Checked)
+            { category += "Freestyle,"; }
+            if (checkBoxMedley.Checked)
+                category += "Medley,";
+            if (checkBoxPace.Checked)
+                category += "Pace,";
+            if (checkBoxSprint.Checked)
+                category += "Sprint,";
+            if (checkBoxStroke.Checked)
+                category += "Stroke";
+            if (category == "")
+            {
+                MessageBox.Show("Please select at least one category.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            Practicespecs practice = new Practicespecs(int.Parse(textBox1.Text), Skill, category, Time);
 
             string htmlString = "<!DOCTYPE html>\r\n<html>\r\n " +
                 " <head>\r\n    " +
@@ -82,8 +176,8 @@ namespace The_Big_Pool.UserControls
 
             try
             {
-                HtmlToPdf practice = new HtmlToPdf();
-                using (PdfDocument pdf = practice.RenderHtmlAsPdf(htmlString))
+                HtmlToPdf practic = new HtmlToPdf();
+                using (PdfDocument pdf = practic.RenderHtmlAsPdf(htmlString))
                 {
                     var pdfStream = pdf.Stream;
 
@@ -132,6 +226,7 @@ namespace The_Big_Pool.UserControls
                 // Handle exception
             }
         }
+
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
