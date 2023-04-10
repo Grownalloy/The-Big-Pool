@@ -23,6 +23,7 @@ using System.Globalization;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using Microsoft.VisualBasic;
+using System.Collections.ObjectModel;
 
 namespace The_Big_Pool.UserControls
 {
@@ -135,11 +136,10 @@ namespace The_Big_Pool.UserControls
                 category += "Sprint,";
             if (checkBoxStroke.Checked)
                 category += "Stroke";
-            if (category == "")
+            if (!checkBoxFreestyle.Checked && !checkBoxMedley.Checked && !checkBoxPace.Checked && !checkBoxSprint.Checked && !checkBoxStroke.Checked)
             {
                 MessageBox.Show("Please select at least one category.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-
             }
             Practicespecs practice = new Practicespecs(int.Parse(textBox1.Text), Skill, category, timeString);
 
@@ -180,7 +180,7 @@ namespace The_Big_Pool.UserControls
                 BsonValue x = set.GetValue("Distance");
                 BsonValue y = set.GetValue("Reps");
                 var z= x.ToInt32()*y.ToInt32();
-                if (z > (remainingWU - totalDistance))
+                if ((z+totalDistance) > (remainingWU+(remainingWU/8)))
                 {
                     warmupSets.RemoveAt(index);
 
@@ -205,17 +205,14 @@ namespace The_Big_Pool.UserControls
                     }
                 }
             }
-
-            // do something with the selected sets (e.g. add them to the PDF)
-            // create the PDF document and writer
             var doc = new Document();
             var output = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "SelectedSets.pdf");
             var writer = PdfWriter.GetInstance(doc, new FileStream(output, FileMode.Create));
 
-            // open the document
+
             doc.Open();
 
-            // add each selected set to the document
+
             foreach (var set in selectedSets)
             {
                 var description = set.GetValue("Set Description").ToString();
@@ -223,52 +220,68 @@ namespace The_Big_Pool.UserControls
                 var distance = set.GetValue("Distance").ToString();
                 var interval = set.GetValue("interval").ToString();
 
-                // replace the comma in the distance with an x
+
                 distance = distance.Replace(",", "x");
 
-                // create a paragraph with the set description, reps, and distance
-                var paragraph = new Paragraph($" {reps}     x      {distance}              {interval}\t                    \t{description}");
 
-                // add the paragraph to the document
+                var paragraph = new Paragraph($" {reps}     x      {distance} ");
+                var tab = new Paragraph("\t");
+
+
                 doc.Add(paragraph);
             }
 
-            // show a message box indicating that the PDF was created
+   
             MessageBox.Show("PDF file created on your desktop.");
             
             int remainingMS = practice.mainset();
 
             var filterBuilder = Builders<BsonDocument>.Filter;
+            var checkedItems = new List<string>();
             var filters = new List<FilterDefinition<BsonDocument>>();
 
+     
             if (checkBoxFreestyle.Checked)
             {
-                filters.Add(filterBuilder.Regex("Category", new BsonRegularExpression("Freestyle")));
+                filters.Add(Builders<BsonDocument>.Filter.Regex("Category", new BsonRegularExpression("Freestyle", "i")));
             }
 
             if (checkBoxMedley.Checked)
             {
-                filters.Add(filterBuilder.Regex("Category", new BsonRegularExpression("Medley")));
+                filters.Add(Builders<BsonDocument>.Filter.Regex("Category", new BsonRegularExpression("Medley", "i")));
             }
 
             if (checkBoxPace.Checked)
             {
-                filters.Add(filterBuilder.Regex("Category", new BsonRegularExpression("Pace")));
+                filters.Add(Builders<BsonDocument>.Filter.Regex("Category", new BsonRegularExpression("Pace", "i")));
             }
 
             if (checkBoxSprint.Checked)
             {
-                filters.Add(filterBuilder.Regex("Category", new BsonRegularExpression("Sprint")));
+                filters.Add(Builders<BsonDocument>.Filter.Regex("Category", new BsonRegularExpression("Sprint", "i")));
             }
 
             if (checkBoxStroke.Checked)
             {
-                filters.Add(filterBuilder.Regex("Category", new BsonRegularExpression("Stroke")));
+                filters.Add(Builders<BsonDocument>.Filter.Regex("Category", new BsonRegularExpression("Stroke", "i")));
             }
 
-            filter = filterBuilder.And(skillFilter, filterBuilder.Or(filters));
-            // get the warmup sets
+
+           filter = Builders<BsonDocument>.Filter.Or(filters);
+
+
+        
+
+
+
+            filter = Builders<BsonDocument>.Filter.And(filter,skillFilter);
             var MainSets = sets.Find(filter).ToList();
+            string bsonFiles = "";
+            foreach (var set in MainSets)
+            {
+                bsonFiles += set.ToBson() + "\n\n";
+            }
+            MessageBox.Show(bsonFiles);
 
             // create variables to keep track of the selected sets and the total distance
             selectedSets = new List<BsonDocument>();
@@ -330,13 +343,13 @@ namespace The_Big_Pool.UserControls
             }
 
 
-          /*  int remainingWD = practice.warmdown();
+          int remainingWD = practice.warmdown();
 
-            categoryFilter = Builders<BsonDocument>.Filter.Regex("Category", new BsonRegularExpression("warmdown", "i"));
-            filter = Builders<BsonDocument>.Filter.And(categoryFilter, skillFilter);
+             categoryFilter = Builders<BsonDocument>.Filter.Regex("Category", new BsonRegularExpression("warmup", "i")); //When added change warmup to warmdown
+             filter = Builders<BsonDocument>.Filter.And(categoryFilter, skillFilter);
 
 
-            
+
             var warmdownSets = sets.Find(filter).ToList();
              selectedSets = new List<BsonDocument>();
              totalDistance = 0;
@@ -350,8 +363,9 @@ namespace The_Big_Pool.UserControls
 
                 // add the set to the selected sets and update the total distance
                 selectedSets.Add(set);
-                BsonValue x = set.GetValue("Distance");
-                if (x > (remainingWD - totalDistance))
+                int x = set.GetValue("Distance").ToInt32();
+                x = x * set.GetValue("Reps").ToInt32();
+                if (x+totalDistance > (remainingWD+(remainingWD/8)))
                 {
                     warmdownSets.RemoveAt(index);
 
@@ -363,7 +377,7 @@ namespace The_Big_Pool.UserControls
                 }
                 else
                 {
-                    totalDistance += x.ToInt32();
+                    totalDistance += x;
 
                     // remove the set from the warmup sets to prevent duplicates
                     warmdownSets.RemoveAt(index);
@@ -380,6 +394,7 @@ namespace The_Big_Pool.UserControls
                 var description = setD.GetValue("Set Description").ToString();
                 var reps = setD.GetValue("Reps").ToString();
                 var distance = setD.GetValue("Distance").ToString();
+                var interval = setD.GetValue("interval").ToString();
 
                 // replace the comma in the distance with an x
                 distance = distance.Replace(",", "x");
@@ -389,7 +404,7 @@ namespace The_Big_Pool.UserControls
 
                 // add the paragraph to the document
                 doc.Add(paragraph);
-            }*/
+            }
             doc.Close();
 
 
