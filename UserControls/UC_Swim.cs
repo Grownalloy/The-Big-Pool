@@ -152,12 +152,12 @@ namespace The_Big_Pool.UserControls
             var database = client.GetDatabase("TheBigPool");
             var sets = database.GetCollection<BsonDocument>("sets");
 
-   
+
 
             var remainingWU = practice.warmup();
             var categoryFilter = Builders<BsonDocument>.Filter.Regex("Category", new BsonRegularExpression("warmup", "i"));
-            var skillFilter = Builders<BsonDocument>.Filter.Eq("Skill", new BsonRegularExpression(Skill,"i"));
-            var filter = Builders<BsonDocument>.Filter.And(categoryFilter,skillFilter);
+            var skillFilter = Builders<BsonDocument>.Filter.Eq("Skill", new BsonRegularExpression(Skill, "i"));
+            var filter = Builders<BsonDocument>.Filter.And(categoryFilter, skillFilter);
 
 
             // get the warmup sets
@@ -176,11 +176,11 @@ namespace The_Big_Pool.UserControls
                 var set = warmupSets[index];
 
                 // add the set to the selected sets and update the total distance
-               
+
                 BsonValue x = set.GetValue("Distance");
                 BsonValue y = set.GetValue("Reps");
-                var z= x.ToInt32()*y.ToInt32();
-                if ((z+totalDistance) > (remainingWU+(remainingWU/8)))
+                var z = x.ToInt32() * y.ToInt32();
+                if ((z + totalDistance) > (remainingWU + (remainingWU / 8)))
                 {
                     warmupSets.RemoveAt(index);
 
@@ -231,16 +231,16 @@ namespace The_Big_Pool.UserControls
                 doc.Add(paragraph);
             }
 
-   
+
             MessageBox.Show("PDF file created on your desktop.");
-            
+
             int remainingMS = practice.mainset();
 
             var filterBuilder = Builders<BsonDocument>.Filter;
             var checkedItems = new List<string>();
             var filters = new List<FilterDefinition<BsonDocument>>();
 
-     
+
             if (checkBoxFreestyle.Checked)
             {
                 filters.Add(Builders<BsonDocument>.Filter.Regex("Category", new BsonRegularExpression("Freestyle", "i")));
@@ -267,14 +267,14 @@ namespace The_Big_Pool.UserControls
             }
 
 
-           filter = Builders<BsonDocument>.Filter.Or(filters);
-
-
-        
+            filter = Builders<BsonDocument>.Filter.Or(filters);
 
 
 
-            filter = Builders<BsonDocument>.Filter.And(filter,skillFilter);
+
+
+
+            filter = Builders<BsonDocument>.Filter.And(filter, skillFilter);
             var MainSets = sets.Find(filter).ToList();
             string bsonFiles = "";
             foreach (var set in MainSets)
@@ -296,14 +296,14 @@ namespace The_Big_Pool.UserControls
 
                 // add the set to the selected sets and update the total distance
                 selectedSets.Add(set);
-    
-                
+
+
                 BsonValue x = set.GetValue("Distance");
                 BsonValue y = set.GetValue("Reps");
                 var z = x.ToInt32() * y.ToInt32();
                 if (z > (remainingMS - totalDistance))
                 {
-                   MainSets.RemoveAt(index);
+                    MainSets.RemoveAt(index);
 
                     // if all warmup sets have been selected, break out of the loop
                     if (MainSets.Count == 0)
@@ -324,7 +324,7 @@ namespace The_Big_Pool.UserControls
                         break;
                     }
                 }
-                foreach ( var setb in selectedSets)
+                foreach (var setb in selectedSets)
                 {
                     var description = setb.GetValue("Set Description").ToString();
                     var reps = setb.GetValue("Reps").ToString();
@@ -343,16 +343,16 @@ namespace The_Big_Pool.UserControls
             }
 
 
-          int remainingWD = practice.warmdown();
+            int remainingWD = practice.warmdown();
 
-             categoryFilter = Builders<BsonDocument>.Filter.Regex("Category", new BsonRegularExpression("warmup", "i")); //When added change warmup to warmdown
-             filter = Builders<BsonDocument>.Filter.And(categoryFilter, skillFilter);
+            categoryFilter = Builders<BsonDocument>.Filter.Regex("Category", new BsonRegularExpression("warmup", "i")); //When added change warmup to warmdown
+            filter = Builders<BsonDocument>.Filter.And(categoryFilter, skillFilter);
 
 
 
             var warmdownSets = sets.Find(filter).ToList();
-             selectedSets = new List<BsonDocument>();
-             totalDistance = 0;
+            selectedSets = new List<BsonDocument>();
+            totalDistance = 0;
 
             // keep selecting sets until the total distance is greater than or equal to the target distance
             while (totalDistance < remainingWD)
@@ -365,7 +365,7 @@ namespace The_Big_Pool.UserControls
                 selectedSets.Add(set);
                 int x = set.GetValue("Distance").ToInt32();
                 x = x * set.GetValue("Reps").ToInt32();
-                if (x+totalDistance > (remainingWD+(remainingWD/8)))
+                if (x + totalDistance > (remainingWD + (remainingWD / 8)))
                 {
                     warmdownSets.RemoveAt(index);
 
@@ -412,43 +412,61 @@ namespace The_Big_Pool.UserControls
 
             try
             {
-               
-               /* var users = database.GetCollection<BsonDocument>("user");
-                 var gridFsBucket = new GridFSBucket(database);
+                var collection = database.GetCollection<BsonDocument>("user");
+                string username = UserSession.Instance.Username;
+                // Create the PDF metadata
+                var metadata = new BsonDocument
+                    {
+                        { "practices", "SelectedSets" },
+                        { "date", DateTime.Now }
+                    };
 
-                 string username = UserSession.Instance.Username;
-                 string password = UserSession.Instance.Password;
+                // Insert the metadata into the MongoDB collection
+                var filter_user = Builders<BsonDocument>.Filter.Eq("Username", username);
+                var update = Builders<BsonDocument>.Update.Push("metadata", metadata);
+                var options = new FindOneAndUpdateOptions<BsonDocument>
+                {
+                    ReturnDocument = ReturnDocument.After,
+                    IsUpsert = true // insert new document if it doesn't exist
+                };
+                var updatedDocument = collection.FindOneAndUpdate(filter_user, update, options);
 
-                 // Query MongoDB to find the user document that matches the given username and password
-                 var filteract = Builders<BsonDocument>.Filter.And(Builders<BsonDocument>.Filter.Eq("username", username),
-                     Builders<BsonDocument>.Filter.Eq("password", password));
-                 var userDocument = await users.Find(filteract).FirstOrDefaultAsync();
+                /* var users = database.GetCollection<BsonDocument>("user");
+                  var gridFsBucket = new GridFSBucket(database);
 
-                 if (userDocument != null)
-                 {
-                     // Retrieve the documentId from the user document
-                     string documentId = userDocument.GetValue("documentId").AsString;
+                  string username = UserSession.Instance.Username;
+                  string password = UserSession.Instance.Password;
 
-                     // Use the documentId to store the PDF in the correct document
-                     var fileId = gridFsBucket.UploadFromStream("practice_uploaded.pdf", pdfStream, new GridFSUploadOptions
-                     {
-                         Metadata = new BsonDocument
-                                 {
-                                     { "documentId", documentId },
-                                     { "type", "practice" }
-                                 }
-                     }
-                       );
-                 }
+                  // Query MongoDB to find the user document that matches the given username and password
+                  var filteract = Builders<BsonDocument>.Filter.And(Builders<BsonDocument>.Filter.Eq("username", username),
+                      Builders<BsonDocument>.Filter.Eq("password", password));
+                  var userDocument = await users.Find(filteract).FirstOrDefaultAsync();
 
-        */
-            MessageBox.Show("Generated practice");
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show("Failed to create practice or upload to MongoDB\n" + ex);
-            // Handle exception
-        }
+                  if (userDocument != null)
+                  {
+                      // Retrieve the documentId from the user document
+                      string documentId = userDocument.GetValue("documentId").AsString;
+
+                      // Use the documentId to store the PDF in the correct document
+                      var fileId = gridFsBucket.UploadFromStream("practice_uploaded.pdf", pdfStream, new GridFSUploadOptions
+                      {
+                          Metadata = new BsonDocument
+                                  {
+                                      { "documentId", documentId },
+                                      { "type", "practice" }
+                                  }
+                      }
+                        );
+                  }
+
+         */
+                MessageBox.Show("Pushed PDF to database successfully");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to create practice or upload to MongoDB\n" + ex);
+                // Handle exception
+            }
         }
 
 
