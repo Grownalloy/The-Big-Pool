@@ -51,6 +51,7 @@
             // button1
             // 
             button1.Dock = DockStyle.Bottom;
+            button1.ForeColor = Color.DeepSkyBlue;
             button1.Location = new Point(0, 581);
             button1.Name = "button1";
             button1.Size = new Size(221, 53);
@@ -62,6 +63,7 @@
             // button2
             // 
             button2.Dock = DockStyle.Bottom;
+            button2.ForeColor = Color.DeepSkyBlue;
             button2.Location = new Point(0, 528);
             button2.Name = "button2";
             button2.Size = new Size(221, 53);
@@ -76,7 +78,7 @@
             label1.BackColor = Color.Transparent;
             label1.BorderStyle = BorderStyle.FixedSingle;
             label1.Font = new Font("Segoe Print", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.Black;
+            label1.ForeColor = Color.WhiteSmoke;
             label1.Location = new Point(14, 3);
             label1.Name = "label1";
             label1.Size = new Size(193, 30);
@@ -88,7 +90,7 @@
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 8F, FontStyle.Italic, GraphicsUnit.Point);
-            label2.ForeColor = Color.Black;
+            label2.ForeColor = Color.WhiteSmoke;
             label2.Location = new Point(17, 49);
             label2.Name = "label2";
             label2.Size = new Size(86, 21);
@@ -116,7 +118,7 @@
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 8F, FontStyle.Italic, GraphicsUnit.Point);
-            label3.ForeColor = Color.Black;
+            label3.ForeColor = Color.WhiteSmoke;
             label3.Location = new Point(17, 113);
             label3.Name = "label3";
             label3.Size = new Size(84, 21);
@@ -136,7 +138,7 @@
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI", 8F, FontStyle.Italic, GraphicsUnit.Point);
-            label4.ForeColor = Color.Black;
+            label4.ForeColor = Color.WhiteSmoke;
             label4.Location = new Point(17, 241);
             label4.Name = "label4";
             label4.Size = new Size(81, 21);
@@ -157,7 +159,7 @@
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Segoe UI", 8F, FontStyle.Italic, GraphicsUnit.Point);
-            label5.ForeColor = Color.Black;
+            label5.ForeColor = Color.WhiteSmoke;
             label5.Location = new Point(14, 305);
             label5.Name = "label5";
             label5.Size = new Size(76, 21);
@@ -178,7 +180,7 @@
             label6.AutoSize = true;
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Segoe UI", 8F, FontStyle.Italic, GraphicsUnit.Point);
-            label6.ForeColor = Color.Black;
+            label6.ForeColor = Color.WhiteSmoke;
             label6.Location = new Point(17, 177);
             label6.Name = "label6";
             label6.Size = new Size(49, 21);
@@ -198,7 +200,7 @@
             label7.AutoSize = true;
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Segoe UI", 8F, FontStyle.Italic, GraphicsUnit.Point);
-            label7.ForeColor = Color.Black;
+            label7.ForeColor = Color.WhiteSmoke;
             label7.Location = new Point(14, 369);
             label7.Name = "label7";
             label7.Size = new Size(137, 21);
