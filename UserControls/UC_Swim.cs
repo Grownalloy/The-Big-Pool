@@ -22,6 +22,8 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 using System.Globalization;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using Microsoft.VisualBasic;
+using System.Collections.ObjectModel;
 
 namespace The_Big_Pool.UserControls
 {
@@ -56,7 +58,7 @@ namespace The_Big_Pool.UserControls
 
             if (IsDigitsOnly(textBox2.Text) && textBox2.Text != "")
             {
-              timeString = textBox2.Text + ":";
+                timeString = textBox2.Text + ":";
 
                 if (IsDigitsOnly(textBox3.Text) && textBox3.Text != "")
                 {
@@ -71,7 +73,7 @@ namespace The_Big_Pool.UserControls
                             timeString += seconds.ToString("D2");
 
                             // Parse the time string into a TimeSpan object
-                            
+
                         }
                         else
                         {
@@ -134,11 +136,10 @@ namespace The_Big_Pool.UserControls
                 category += "Sprint,";
             if (checkBoxStroke.Checked)
                 category += "Stroke";
-            if (category == "")
+            if (!checkBoxFreestyle.Checked && !checkBoxMedley.Checked && !checkBoxPace.Checked && !checkBoxSprint.Checked && !checkBoxStroke.Checked)
             {
                 MessageBox.Show("Please select at least one category.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-                
             }
             Practicespecs practice = new Practicespecs(int.Parse(textBox1.Text), Skill, category, timeString);
 
@@ -150,11 +151,14 @@ namespace The_Big_Pool.UserControls
             var client = new MongoClient(connectionString);
             var database = client.GetDatabase("TheBigPool");
             var sets = database.GetCollection<BsonDocument>("sets");
-            
-            var totalWUDistance = int.Parse(practice.finaldist());
-          
+
+   
+
             var remainingWU = practice.warmup();
-            var filter = Builders<BsonDocument>.Filter.Regex("Category", new BsonRegularExpression("warmup", "i"));
+            var categoryFilter = Builders<BsonDocument>.Filter.Regex("Category", new BsonRegularExpression("warmup", "i"));
+            var skillFilter = Builders<BsonDocument>.Filter.Eq("Skill", new BsonRegularExpression(Skill,"i"));
+            var filter = Builders<BsonDocument>.Filter.And(categoryFilter,skillFilter);
+
 
             // get the warmup sets
             var warmupSets = sets.Find(filter).ToList();
@@ -172,103 +176,239 @@ namespace The_Big_Pool.UserControls
                 var set = warmupSets[index];
 
                 // add the set to the selected sets and update the total distance
-                selectedSets.Add(set);
+               
                 BsonValue x = set.GetValue("Distance");
-                totalDistance += x.ToInt32();
-
-                // remove the set from the warmup sets to prevent duplicates
-                warmupSets.RemoveAt(index);
-
-                // if all warmup sets have been selected, break out of the loop
-                if (warmupSets.Count == 0)
+                BsonValue y = set.GetValue("Reps");
+                var z= x.ToInt32()*y.ToInt32();
+                if ((z+totalDistance) > (remainingWU+(remainingWU/8)))
                 {
-                    break;
+                    warmupSets.RemoveAt(index);
+
+                    // if all warmup sets have been selected, break out of the loop
+                    if (warmupSets.Count == 0)
+                    {
+                        break;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(index.ToString());
+                    totalDistance += z;
+                    selectedSets.Add(set);
+                    // remove the set from the warmup sets to prevent duplicates
+                    warmupSets.RemoveAt(index);
+
+                    // if all warmup sets have been selected, break out of the loop
+                    if (warmupSets.Count == 0)
+                    {
+                        break;
+                    }
                 }
             }
-
-            // do something with the selected sets (e.g. add them to the PDF)
-            // create the PDF document and writer
             var doc = new Document();
             var output = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "SelectedSets.pdf");
             var writer = PdfWriter.GetInstance(doc, new FileStream(output, FileMode.Create));
 
-            // open the document
+
             doc.Open();
 
-            // add each selected set to the document
+
             foreach (var set in selectedSets)
             {
                 var description = set.GetValue("Set Description").ToString();
                 var reps = set.GetValue("Reps").ToString();
                 var distance = set.GetValue("Distance").ToString();
+                var interval = set.GetValue("interval").ToString();
+
+
+                distance = distance.Replace(",", "x");
+
+
+                var paragraph = new Paragraph($" {reps}     x      {distance} ");
+                var tab = new Paragraph("\t");
+
+
+                doc.Add(paragraph);
+            }
+
+   
+            MessageBox.Show("PDF file created on your desktop.");
+            
+            int remainingMS = practice.mainset();
+
+            var filterBuilder = Builders<BsonDocument>.Filter;
+            var checkedItems = new List<string>();
+            var filters = new List<FilterDefinition<BsonDocument>>();
+
+     
+            if (checkBoxFreestyle.Checked)
+            {
+                filters.Add(Builders<BsonDocument>.Filter.Regex("Category", new BsonRegularExpression("Freestyle", "i")));
+            }
+
+            if (checkBoxMedley.Checked)
+            {
+                filters.Add(Builders<BsonDocument>.Filter.Regex("Category", new BsonRegularExpression("Medley", "i")));
+            }
+
+            if (checkBoxPace.Checked)
+            {
+                filters.Add(Builders<BsonDocument>.Filter.Regex("Category", new BsonRegularExpression("Pace", "i")));
+            }
+
+            if (checkBoxSprint.Checked)
+            {
+                filters.Add(Builders<BsonDocument>.Filter.Regex("Category", new BsonRegularExpression("Sprint", "i")));
+            }
+
+            if (checkBoxStroke.Checked)
+            {
+                filters.Add(Builders<BsonDocument>.Filter.Regex("Category", new BsonRegularExpression("Stroke", "i")));
+            }
+
+
+           filter = Builders<BsonDocument>.Filter.Or(filters);
+
+
+        
+
+
+
+            filter = Builders<BsonDocument>.Filter.And(filter,skillFilter);
+            var MainSets = sets.Find(filter).ToList();
+            string bsonFiles = "";
+            foreach (var set in MainSets)
+            {
+                bsonFiles += set.ToBson() + "\n\n";
+            }
+            MessageBox.Show(bsonFiles);
+
+            // create variables to keep track of the selected sets and the total distance
+            selectedSets = new List<BsonDocument>();
+            totalDistance = 0;
+
+            // keep selecting sets until the total distance is greater than or equal to the target distance
+            while (totalDistance < remainingMS)
+            {
+                // randomly select a set from the warmup sets
+                var index = rng.Next(MainSets.Count);
+                var set = MainSets[index];
+
+                // add the set to the selected sets and update the total distance
+                selectedSets.Add(set);
+    
+                
+                BsonValue x = set.GetValue("Distance");
+                BsonValue y = set.GetValue("Reps");
+                var z = x.ToInt32() * y.ToInt32();
+                if (z > (remainingMS - totalDistance))
+                {
+                   MainSets.RemoveAt(index);
+
+                    // if all warmup sets have been selected, break out of the loop
+                    if (MainSets.Count == 0)
+                    {
+                        break;
+                    }
+                }
+                else
+                {
+                    totalDistance += z;
+                    selectedSets.Add(set);
+                    // remove the set from the warmup sets to prevent duplicates
+                    MainSets.RemoveAt(index);
+
+                    // if all warmup sets have been selected, break out of the loop
+                    if (MainSets.Count == 0)
+                    {
+                        break;
+                    }
+                }
+                foreach ( var setb in selectedSets)
+                {
+                    var description = setb.GetValue("Set Description").ToString();
+                    var reps = setb.GetValue("Reps").ToString();
+                    var distance = setb.GetValue("Distance").ToString();
+                    var interval = setb.GetValue("interval").ToString();
+
+                    // replace the comma in the distance with an x
+                    distance = distance.Replace(",", "x");
+
+                    // create a paragraph with the set description, reps, and distance
+                    var paragraph = new Paragraph($" {reps}     x      {distance}              {interval}\t                    \t{description}");
+
+                    // add the paragraph to the document
+                    doc.Add(paragraph);
+                }
+            }
+
+
+          int remainingWD = practice.warmdown();
+
+             categoryFilter = Builders<BsonDocument>.Filter.Regex("Category", new BsonRegularExpression("warmup", "i")); //When added change warmup to warmdown
+             filter = Builders<BsonDocument>.Filter.And(categoryFilter, skillFilter);
+
+
+
+            var warmdownSets = sets.Find(filter).ToList();
+             selectedSets = new List<BsonDocument>();
+             totalDistance = 0;
+
+            // keep selecting sets until the total distance is greater than or equal to the target distance
+            while (totalDistance < remainingWD)
+            {
+                // randomly select a set from the warmup sets
+                var index = rng.Next(warmdownSets.Count);
+                var set = warmdownSets[index];
+
+                // add the set to the selected sets and update the total distance
+                selectedSets.Add(set);
+                int x = set.GetValue("Distance").ToInt32();
+                x = x * set.GetValue("Reps").ToInt32();
+                if (x+totalDistance > (remainingWD+(remainingWD/8)))
+                {
+                    warmdownSets.RemoveAt(index);
+
+                    // if all warmup sets have been selected, break out of the loop
+                    if (warmdownSets.Count == 0)
+                    {
+                        break;
+                    }
+                }
+                else
+                {
+                    totalDistance += x;
+
+                    // remove the set from the warmup sets to prevent duplicates
+                    warmdownSets.RemoveAt(index);
+
+                    // if all warmup sets have been selected, break out of the loop
+                    if (warmdownSets.Count == 0)
+                    {
+                        break;
+                    }
+                }
+            }
+            foreach (var setD in selectedSets)
+            {
+                var description = setD.GetValue("Set Description").ToString();
+                var reps = setD.GetValue("Reps").ToString();
+                var distance = setD.GetValue("Distance").ToString();
+                var interval = setD.GetValue("interval").ToString();
 
                 // replace the comma in the distance with an x
                 distance = distance.Replace(",", "x");
 
                 // create a paragraph with the set description, reps, and distance
-                var paragraph = new Paragraph($" {reps} x {distance}                            {description}");
+                var paragraph = new Paragraph($" {reps}     x      {distance}                                                                                                {description}");
 
                 // add the paragraph to the document
                 doc.Add(paragraph);
             }
-
-            // close the document
             doc.Close();
 
-            // show a message box indicating that the PDF was created
-            MessageBox.Show("PDF file created on your desktop.");
 
-            int remainingMS = practice.mainset();
-            int remainingWD = practice.warmdown();
-
-           
-
-            
-                string htmlString =
-                    ("<!DOCTYPE html>\r\n<html>\r\n " +
-                    " <head>\r\n    " +
-                    "<meta charset=\"UTF-8\">\r\n    " +
-                    "<title>PDF Header</title>\r\n    " +
-                    "<style>\r\n      " +
-                    ".header {\r\n        " +
-                    "display: flex;\r\n" +
-                    "        justify-content: space-between;\r\n" +
-                    "        align-items: center;\r\n" +
-                    "        padding: 10px;\r\n" +
-                    "        background-color: #f2f2f2;\r\n" +
-                    "        border-bottom: 1px solid #ccc;\r\n" +
-                    "      }\r\n\r\n" +
-                    "      .header__date {\r\n" +
-                    "        font-size: 20px;\r\n" +
-                    "        font-weight: bold;\r\n" +
-                    "      }\r\n\r\n" +
-                    "      .header__title {\r\n" +
-                    "        font-size: 24px;\r\n" +
-                    "        font-weight: bold;\r\n" +
-                    "      }\r\n\r\n" +
-                    "      .header__name {\r\n" +
-                    "        font-size: 20px;\r\n" +
-                    "        font-weight: bold;\r\n" +
-                    "      }\r\n " +
-                    "   </style>\r\n " +
-                    " </head>\r\n  " +
-                    "<body>\r\n " +
-                    "   <div class=\"header\">\r\n" +
-                    "      <div class=\"header__date\">{DATE}</div>\r\n" +
-                    "      <div class=\"header__title\">Distance: {DISTANCE} | Duration: {DURATION}</div>\r\n " +
-                    "     <div class=\"header__name\">{NAME}</div>\r\n " +
-                    "   </div>\r\n" +
-                    "  </body>\r\n" +
-                    "</html>\r\n");
-            
-            // Replace placeholders with actual values
             string date = DateTime.Now.ToString("yyyy-MM-dd");
-      
-            htmlString = htmlString
-                .Replace("{DATE}", date)
-                .Replace("{DISTANCE}", practice.finaldist())
-                .Replace("{DURATION}", timeString)
-                .Replace("{NAME}", UserSession.Instance.Username);
 
             try
             {
