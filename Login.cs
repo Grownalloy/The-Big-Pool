@@ -58,7 +58,8 @@ namespace The_Big_Pool
                 // Store the user's credentials in the UserSession object
                 UserSession.Instance.Username = TU;
                 UserSession.Instance.Password = TS;
-
+                
+                
                 Dashboard dashboard = new Dashboard();
                 dashboard.Show();
                 Visible = false;

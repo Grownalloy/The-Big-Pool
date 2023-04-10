@@ -46,16 +46,24 @@ namespace The_Big_Pool.UserControls
         public int warmup()
         {
             int warmup = ((distance/5) + 24) / 25 * 25;
-            distance= distance-warmup;
+            
             return warmup;
         }
         public int mainset()
         {
-            double m = distance * .85;
+            double m = (distance-warmup()) * .85;
             int mainset = ((int)m + 24) / 25 * 25;
-            distance = distance - mainset;
+      
             return mainset;
         }
-
+        public int warmdown()
+        {
+            return (distance-warmup()-mainset());
+        }
+      public  string finaldist()
+        {
+            int dist = warmup() + mainset() + warmdown();
+            return dist.ToString();
+        }
     }
 }
