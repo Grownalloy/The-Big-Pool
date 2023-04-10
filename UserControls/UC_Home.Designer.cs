@@ -41,7 +41,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.WhiteSmoke;
+            panel1.BackColor = Color.DeepSkyBlue;
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
@@ -53,13 +53,13 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
+            label1.BorderStyle = BorderStyle.FixedSingle;
             label1.FlatStyle = FlatStyle.Popup;
-            label1.Font = new Font("Segoe Print", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.DeepSkyBlue;
-            label1.Location = new Point(19, 4);
+            label1.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(19, 13);
             label1.Name = "label1";
-            label1.Size = new Size(131, 64);
+            label1.Size = new Size(90, 45);
             label1.TabIndex = 0;
             label1.Text = "Home";
             // 
@@ -67,7 +67,6 @@
             // 
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.ForeColor = Color.WhiteSmoke;
             label2.Location = new Point(35, 270);
             label2.Name = "label2";
             label2.Size = new Size(388, 106);
@@ -79,7 +78,6 @@
             // 
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Britannic Bold", 22F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = Color.WhiteSmoke;
             label3.Location = new Point(35, 157);
             label3.Name = "label3";
             label3.Size = new Size(287, 104);
@@ -89,22 +87,18 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.WhiteSmoke;
-            button1.BackgroundImageLayout = ImageLayout.None;
-            button1.ForeColor = Color.DeepSkyBlue;
             button1.Location = new Point(35, 368);
             button1.Name = "button1";
             button1.Size = new Size(312, 71);
             button1.TabIndex = 3;
             button1.Text = "Generate Automatic Practice Swim";
-            button1.UseVisualStyleBackColor = false;
+            button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
             // label4
             // 
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.ForeColor = Color.WhiteSmoke;
             label4.Location = new Point(35, 457);
             label4.Name = "label4";
             label4.Size = new Size(351, 72);
@@ -126,7 +120,6 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Black;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             Controls.Add(panel2);
             Controls.Add(label4);
