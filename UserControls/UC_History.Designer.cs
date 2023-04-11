@@ -178,11 +178,11 @@
             // 
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(0, 28);
+            label3.Location = new Point(7, 28);
             label3.Name = "label3";
-            label3.Size = new Size(240, 53);
+            label3.Size = new Size(216, 53);
             label3.TabIndex = 5;
-            label3.Text = "Weekly Performance";
+            label3.Text = "Daily Performance";
             label3.Click += label3_Click;
             // 
             // progressBar1

@@ -46,22 +46,22 @@ namespace The_Big_Pool
             string failcause = "";
             if (document != null)
             {
-               TU=document["Username"].AsString;
+                TU = document["Username"].AsString;
             }
             TU = TU.ToLower();
             if (TU == textBoxUsername.Text.ToLower())
                 failcause += "Username is already taken \n";
-            if (textBoxFirstName.Text == "")
-                failcause += "First Name is empty \n";
-            if (textBoxLastName.Text == "")
-                failcause += "Last Name is empty \n";
-            if (textBoxEmail.Text == "")
-                failcause += "Email is empty \n";
-           User Act= new User(textBoxUsername.Text,textBoxPassword.Text);
+            if (comboBox1.SelectedIndex < -1)
+                failcause += "Category needs to be selected \n";
+            if (comboBox2.SelectedIndex < -1)
+                failcause += "Difficculty level needs to be selected \n";
+            if (comboBox3.SelectedIndex <-1)
+                failcause += "Distance needs to be selected \n";
+            User Act = new User(textBoxUsername.Text, textBoxPassword.Text);
             failcause += Act.failurecause();
             if (textBoxPassword.Text != textBoxConPass.Text)
                 failcause += "Passwords do not match";
-            if (failcause=="")
+            if (failcause == "")
             {
                 string hashpass = BCrypt.Net.BCrypt.HashPassword(textBoxPassword.Text);
 
@@ -71,9 +71,9 @@ namespace The_Big_Pool
                     {"Username", textBoxUsername.Text.ToLower() },
                     {"Password", hashpass },
                     { "Settings", new BsonDocument {
-                        {"Name", textBoxFirstName.Text },
-                        {"Surname",textBoxLastName.Text },
-                        {"Email",textBoxEmail.Text},
+                        {"Category", comboBox1.Text },
+                        {"Difficulty Level",comboBox2.Text },
+                        {"Distance",comboBox3.Text},
                         { "Skill level", Act.get_skill() },
                         { "Preffered Distance", Act.get_Distance() },
                         { "Duration of work-out", Act.get_duration() }
@@ -88,7 +88,7 @@ namespace The_Big_Pool
                 MessageBox.Show(failcause);
             }
 
-                
+
         }
 
         private void textBoxUsername_TextChanged(object sender, EventArgs e)
