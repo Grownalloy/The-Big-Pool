@@ -24,6 +24,7 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 using Microsoft.VisualBasic;
 using System.Collections.ObjectModel;
+using System.Reflection.Metadata.Ecma335;
 
 namespace The_Big_Pool.UserControls
 {
@@ -406,7 +407,7 @@ namespace The_Big_Pool.UserControls
                 }
                 doc.Close();
                 try
-            {
+                {
                 var collection = database.GetCollection<BsonDocument>("user");
                 string username = UserSession.Instance.Username;
                 // Generate a unique ID for each document
@@ -415,8 +416,12 @@ namespace The_Big_Pool.UserControls
                 var metadata = new BsonDocument
                     {
                         { "practices", documentId},
-                        { "date", DateTime.Now }
+                        { "date", TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow,
+                        TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time")).ToString("MM/dd/yyyy HH:mm:ss") }
                     };
+                //byte[] metadataBytes = metadata.ToBson();
+                //int metadataSize = metadataBytes.Length;
+                //metadata.Add("size", metadataSize);
 
                 // Insert the metadata into the MongoDB collection
                 var filter_user = Builders<BsonDocument>.Filter.Eq("Username", username);
@@ -424,9 +429,10 @@ namespace The_Big_Pool.UserControls
                 var options = new FindOneAndUpdateOptions<BsonDocument>
                 {
                     ReturnDocument = ReturnDocument.After,
-                    IsUpsert = true // insert new document if it doesn't exist
+                    IsUpsert = true //This inserts a new document if one doesnt exist
                 };
                 var updatedDocument = collection.FindOneAndUpdate(filter_user, update, options);
+
                 // Check if the metadata was inserted successfully to the db
                 if (updatedDocument != null)
                 {
