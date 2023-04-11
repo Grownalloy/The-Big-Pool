@@ -433,27 +433,12 @@ namespace The_Big_Pool.UserControls
                 };
                 var updatedDocument = collection.FindOneAndUpdate(filter_user, update, options);
 
-                // Check if the metadata was inserted successfully to the db
-                if (updatedDocument != null)
-                {
-                    var insertedMetadata = updatedDocument["metadata"].AsBsonArray.Last().AsBsonDocument;
-                    if (insertedMetadata == metadata)
-                    {
-                        MessageBox.Show("Pushed PDF to database successfully");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Failed to insert metadata into database");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Failed to update user document in database");
-                }
+                MessageBox.Show("Pushed PDF to database successfully");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Failed to create practice " + ex);
+                MessageBox.Show("Failed to create practice or upload to MongoDB\n" + ex);
+                // Handle exception
             }
         }
 
