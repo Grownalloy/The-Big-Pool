@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Settings));
             tableLayoutPanel1 = new TableLayoutPanel();
             panel1 = new Panel();
+            labelSwimmerProfileCard = new Label();
             label8 = new Label();
             label7 = new Label();
             label6 = new Label();
@@ -44,10 +45,11 @@
             button1 = new Button();
             panel2 = new Panel();
             label2 = new Label();
-            labelSwimmerProfileCard = new Label();
+            label9 = new Label();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)profilePicture).BeginInit();
+            panelSide.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
@@ -84,17 +86,28 @@
             panel1.Size = new Size(498, 562);
             panel1.TabIndex = 0;
             // 
+            // labelSwimmerProfileCard
+            // 
+            labelSwimmerProfileCard.AutoSize = true;
+            labelSwimmerProfileCard.BackColor = Color.Transparent;
+            labelSwimmerProfileCard.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            labelSwimmerProfileCard.Location = new Point(104, 25);
+            labelSwimmerProfileCard.Name = "labelSwimmerProfileCard";
+            labelSwimmerProfileCard.Size = new Size(291, 43);
+            labelSwimmerProfileCard.TabIndex = 8;
+            labelSwimmerProfileCard.Text = "Swimmer Profile Card";
+            // 
             // label8
             // 
             label8.AutoSize = true;
             label8.BackColor = Color.Transparent;
             label8.Font = new Font("Segoe Print", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label8.ForeColor = Color.Black;
-            label8.Location = new Point(259, 480);
+            label8.Location = new Point(249, 483);
             label8.Name = "label8";
-            label8.Size = new Size(66, 31);
+            label8.Size = new Size(90, 31);
             label8.TabIndex = 7;
-            label8.Text = "Email";
+            label8.Text = "Distance";
             // 
             // label7
             // 
@@ -102,11 +115,11 @@
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Segoe Print", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label7.ForeColor = Color.Black;
-            label7.Location = new Point(259, 442);
+            label7.Location = new Point(249, 445);
             label7.Name = "label7";
-            label7.Size = new Size(113, 31);
+            label7.Size = new Size(103, 31);
             label7.TabIndex = 6;
-            label7.Text = "Last Name";
+            label7.Text = "Skill Level";
             // 
             // label6
             // 
@@ -114,11 +127,11 @@
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Segoe Print", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label6.ForeColor = Color.Black;
-            label6.Location = new Point(257, 404);
+            label6.Location = new Point(249, 407);
             label6.Name = "label6";
-            label6.Size = new Size(116, 31);
+            label6.Size = new Size(95, 31);
             label6.TabIndex = 5;
-            label6.Text = "First Name";
+            label6.Text = "Category";
             // 
             // label5
             // 
@@ -126,11 +139,11 @@
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = Color.Black;
-            label5.Location = new Point(168, 486);
+            label5.Location = new Point(155, 486);
             label5.Name = "label5";
-            label5.Size = new Size(54, 25);
+            label5.Size = new Size(79, 25);
             label5.TabIndex = 4;
-            label5.Text = "Email";
+            label5.Text = "Distance";
             // 
             // label4
             // 
@@ -138,11 +151,11 @@
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.Black;
-            label4.Location = new Point(127, 448);
+            label4.Location = new Point(147, 448);
             label4.Name = "label4";
-            label4.Size = new Size(95, 25);
+            label4.Size = new Size(87, 25);
             label4.TabIndex = 3;
-            label4.Text = "Last Name";
+            label4.Text = "Skill Level";
             // 
             // label3
             // 
@@ -150,11 +163,11 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(125, 410);
+            label3.Location = new Point(150, 410);
             label3.Name = "label3";
-            label3.Size = new Size(97, 25);
+            label3.Size = new Size(84, 25);
             label3.TabIndex = 2;
-            label3.Text = "First Name";
+            label3.Text = "Category";
             // 
             // label1
             // 
@@ -182,6 +195,7 @@
             // panelSide
             // 
             panelSide.BackgroundImage = (Image)resources.GetObject("panelSide.BackgroundImage");
+            panelSide.Controls.Add(label9);
             panelSide.Dock = DockStyle.Fill;
             panelSide.Location = new Point(507, 3);
             panelSide.Name = "panelSide";
@@ -233,16 +247,16 @@
             label2.TabIndex = 0;
             label2.Text = "Account Settings";
             // 
-            // labelSwimmerProfileCard
+            // label9
             // 
-            labelSwimmerProfileCard.AutoSize = true;
-            labelSwimmerProfileCard.BackColor = Color.Transparent;
-            labelSwimmerProfileCard.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            labelSwimmerProfileCard.Location = new Point(104, 25);
-            labelSwimmerProfileCard.Name = "labelSwimmerProfileCard";
-            labelSwimmerProfileCard.Size = new Size(291, 43);
-            labelSwimmerProfileCard.TabIndex = 8;
-            labelSwimmerProfileCard.Text = "Swimmer Profile Card";
+            label9.BackColor = Color.Transparent;
+            label9.Dock = DockStyle.Top;
+            label9.Location = new Point(0, 0);
+            label9.Name = "label9";
+            label9.Size = new Size(221, 297);
+            label9.TabIndex = 0;
+            label9.Text = resources.GetString("label9.Text");
+            label9.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // UC_Settings
             // 
@@ -257,6 +271,7 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)profilePicture).EndInit();
+            panelSide.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);
@@ -280,5 +295,6 @@
         private Label label4;
         private Label label3;
         private Label labelSwimmerProfileCard;
+        private Label label9;
     }
 }

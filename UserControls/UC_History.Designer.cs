@@ -33,7 +33,6 @@
             label1 = new Label();
             panel2 = new Panel();
             panel4 = new Panel();
-            label10 = new Label();
             label8 = new Label();
             label9 = new Label();
             label6 = new Label();
@@ -41,7 +40,6 @@
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
-            progressBar1 = new ProgressBar();
             panel3 = new Panel();
             button1 = new Button();
             label2 = new Label();
@@ -89,7 +87,6 @@
             // panel4
             // 
             panel4.BackColor = Color.Transparent;
-            panel4.Controls.Add(label10);
             panel4.Controls.Add(label8);
             panel4.Controls.Add(label9);
             panel4.Controls.Add(label6);
@@ -97,28 +94,17 @@
             panel4.Controls.Add(label5);
             panel4.Controls.Add(label4);
             panel4.Controls.Add(label3);
-            panel4.Controls.Add(progressBar1);
             panel4.Location = new Point(500, 0);
             panel4.Name = "panel4";
             panel4.Size = new Size(231, 567);
             panel4.TabIndex = 6;
             panel4.Paint += panel4_Paint;
             // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI Light", 8F, FontStyle.Italic, GraphicsUnit.Point);
-            label10.Location = new Point(15, 137);
-            label10.Name = "label10";
-            label10.Size = new Size(96, 21);
-            label10.TabIndex = 12;
-            label10.Text = "Habit Tracker";
-            // 
             // label8
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 20F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label8.Location = new Point(15, 332);
+            label8.Location = new Point(16, 250);
             label8.Name = "label8";
             label8.Size = new Size(103, 54);
             label8.TabIndex = 11;
@@ -128,7 +114,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI Light", 8F, FontStyle.Italic, GraphicsUnit.Point);
-            label9.Location = new Point(15, 383);
+            label9.Location = new Point(16, 301);
             label9.Name = "label9";
             label9.Size = new Size(68, 21);
             label9.TabIndex = 10;
@@ -138,7 +124,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 20F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label6.Location = new Point(15, 460);
+            label6.Location = new Point(16, 378);
             label6.Name = "label6";
             label6.Size = new Size(46, 54);
             label6.TabIndex = 9;
@@ -148,7 +134,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Light", 8F, FontStyle.Italic, GraphicsUnit.Point);
-            label7.Location = new Point(15, 506);
+            label7.Location = new Point(16, 424);
             label7.Name = "label7";
             label7.Size = new Size(145, 21);
             label7.TabIndex = 8;
@@ -158,7 +144,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 20F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label5.Location = new Point(15, 204);
+            label5.Location = new Point(16, 122);
             label5.Name = "label5";
             label5.Size = new Size(103, 54);
             label5.TabIndex = 7;
@@ -168,7 +154,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Light", 8F, FontStyle.Italic, GraphicsUnit.Point);
-            label4.Location = new Point(15, 260);
+            label4.Location = new Point(16, 178);
             label4.Name = "label4";
             label4.Size = new Size(66, 21);
             label4.TabIndex = 6;
@@ -184,17 +170,6 @@
             label3.TabIndex = 5;
             label3.Text = "Daily Performance";
             label3.Click += label3_Click;
-            // 
-            // progressBar1
-            // 
-            progressBar1.BackColor = Color.White;
-            progressBar1.ForeColor = Color.SteelBlue;
-            progressBar1.Location = new Point(15, 95);
-            progressBar1.Name = "progressBar1";
-            progressBar1.Size = new Size(201, 35);
-            progressBar1.Step = 7;
-            progressBar1.TabIndex = 4;
-            progressBar1.Value = 20;
             // 
             // panel3
             // 
@@ -272,13 +247,11 @@
         private Panel panel2;
         private DateTimePicker dateTimePicker1;
         private DataGridView dataGridView1;
-        private ProgressBar progressBar1;
         private Panel panel3;
         private Button button1;
         private Label label2;
         private Label label3;
         private Panel panel4;
-        private Label label10;
         private Label label8;
         private Label label9;
         private Label label6;
