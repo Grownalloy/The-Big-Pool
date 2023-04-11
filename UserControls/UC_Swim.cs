@@ -414,10 +414,12 @@ namespace The_Big_Pool.UserControls
             {
                 var collection = database.GetCollection<BsonDocument>("user");
                 string username = UserSession.Instance.Username;
+                // Generate a unique ID for each document
+                string documentId = "SelectedSets_" + Guid.NewGuid().ToString();
                 // Create the PDF metadata
                 var metadata = new BsonDocument
                     {
-                        { "practices", "SelectedSets" },
+                        { "practices", documentId},
                         { "date", DateTime.Now }
                     };
 
@@ -431,35 +433,6 @@ namespace The_Big_Pool.UserControls
                 };
                 var updatedDocument = collection.FindOneAndUpdate(filter_user, update, options);
 
-                /* var users = database.GetCollection<BsonDocument>("user");
-                  var gridFsBucket = new GridFSBucket(database);
-
-                  string username = UserSession.Instance.Username;
-                  string password = UserSession.Instance.Password;
-
-                  // Query MongoDB to find the user document that matches the given username and password
-                  var filteract = Builders<BsonDocument>.Filter.And(Builders<BsonDocument>.Filter.Eq("username", username),
-                      Builders<BsonDocument>.Filter.Eq("password", password));
-                  var userDocument = await users.Find(filteract).FirstOrDefaultAsync();
-
-                  if (userDocument != null)
-                  {
-                      // Retrieve the documentId from the user document
-                      string documentId = userDocument.GetValue("documentId").AsString;
-
-                      // Use the documentId to store the PDF in the correct document
-                      var fileId = gridFsBucket.UploadFromStream("practice_uploaded.pdf", pdfStream, new GridFSUploadOptions
-                      {
-                          Metadata = new BsonDocument
-                                  {
-                                      { "documentId", documentId },
-                                      { "type", "practice" }
-                                  }
-                      }
-                        );
-                  }
-
-         */
                 MessageBox.Show("Pushed PDF to database successfully");
             }
             catch (Exception ex)
