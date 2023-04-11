@@ -427,36 +427,23 @@ namespace The_Big_Pool.UserControls
                     IsUpsert = true // insert new document if it doesn't exist
                 };
                 var updatedDocument = collection.FindOneAndUpdate(filter_user, update, options);
-                /* var users = database.GetCollection<BsonDocument>("user");
-                  var gridFsBucket = new GridFSBucket(database);
-
-                  string username = UserSession.Instance.Username;
-                  string password = UserSession.Instance.Password;
-
-                  // Query MongoDB to find the user document that matches the given username and password
-                  var filteract = Builders<BsonDocument>.Filter.And(Builders<BsonDocument>.Filter.Eq("username", username),
-                      Builders<BsonDocument>.Filter.Eq("password", password));
-                  var userDocument = await users.Find(filteract).FirstOrDefaultAsync();
-
-                  if (userDocument != null)
-                  {
-                      // Retrieve the documentId from the user document
-                      string documentId = userDocument.GetValue("documentId").AsString;
-
-                      // Use the documentId to store the PDF in the correct document
-                      var fileId = gridFsBucket.UploadFromStream("practice_uploaded.pdf", pdfStream, new GridFSUploadOptions
-                      {
-                          Metadata = new BsonDocument
-                                  {
-                                      { "documentId", documentId },
-                                      { "type", "practice" }
-                                  }
-                      }
-                        );
-                  }
-
-         */
-                MessageBox.Show("Pushed PDF to database successfully");
+                // Check if the metadata was inserted successfully to the db
+                if (updatedDocument != null)
+                {
+                    var insertedMetadata = updatedDocument["metadata"].AsBsonArray.Last().AsBsonDocument;
+                    if (insertedMetadata == metadata)
+                    {
+                        MessageBox.Show("Pushed PDF to database successfully");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to insert metadata into database");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Failed to update user document in database");
+                }
             }
             catch (Exception ex)
             {
