@@ -39,12 +39,12 @@
             textBox6 = new TextBox();
             label7 = new Label();
             panelEdit = new Panel();
-            comboBox3 = new ComboBox();
             comboBox2 = new ComboBox();
             comboBox1 = new ComboBox();
             label6 = new Label();
             label3 = new Label();
             label2 = new Label();
+            textBox1 = new TextBox();
             panelEdit.SuspendLayout();
             SuspendLayout();
             // 
@@ -110,7 +110,7 @@
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(17, 135);
+            textBox4.Location = new Point(17, 136);
             textBox4.Name = "textBox4";
             textBox4.PlaceholderText = "Password";
             textBox4.Size = new Size(190, 31);
@@ -132,7 +132,7 @@
             // 
             // textBox6
             // 
-            textBox6.Location = new Point(17, 199);
+            textBox6.Location = new Point(17, 201);
             textBox6.Name = "textBox6";
             textBox6.PlaceholderText = "Confirm Password";
             textBox6.Size = new Size(190, 31);
@@ -153,7 +153,7 @@
             // panelEdit
             // 
             panelEdit.BackColor = Color.Transparent;
-            panelEdit.Controls.Add(comboBox3);
+            panelEdit.Controls.Add(textBox1);
             panelEdit.Controls.Add(comboBox2);
             panelEdit.Controls.Add(comboBox1);
             panelEdit.Controls.Add(label6);
@@ -172,20 +172,11 @@
             panelEdit.Size = new Size(221, 634);
             panelEdit.TabIndex = 15;
             // 
-            // comboBox3
-            // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Items.AddRange(new object[] { "50 yards", "100 yards", "200 yards", "400 yards" });
-            comboBox3.Location = new Point(17, 395);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(190, 33);
-            comboBox3.TabIndex = 20;
-            // 
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
             comboBox2.Items.AddRange(new object[] { "Garnet", "Bronze", "Silver", "Gold", "Senior" });
-            comboBox2.Location = new Point(17, 329);
+            comboBox2.Location = new Point(17, 333);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(190, 33);
             comboBox2.TabIndex = 19;
@@ -194,7 +185,7 @@
             // 
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Stroke", "Medley", "Freestyle", "Pace", "Sprint" });
-            comboBox1.Location = new Point(17, 263);
+            comboBox1.Location = new Point(17, 266);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(190, 33);
             comboBox1.TabIndex = 18;
@@ -235,6 +226,14 @@
             label2.TabIndex = 15;
             label2.Text = "Category";
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(17, 400);
+            textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "100 yds";
+            textBox1.Size = new Size(190, 31);
+            textBox1.TabIndex = 20;
+            // 
             // UC_Edit
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -262,11 +261,11 @@
         private TextBox textBox6;
         private Label label7;
         private Panel panelEdit;
-        private ComboBox comboBox3;
         private ComboBox comboBox2;
         private ComboBox comboBox1;
         private Label label6;
         private Label label3;
         private Label label2;
+        private TextBox textBox1;
     }
 }

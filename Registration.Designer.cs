@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registration));
             panelRegistration = new Panel();
             label8 = new Label();
-            comboBox3 = new ComboBox();
             comboBox2 = new ComboBox();
             comboBox1 = new ComboBox();
             textBoxConPass = new TextBox();
@@ -46,6 +45,7 @@
             label1 = new Label();
             buttonRegister = new Button();
             buttonBacktoLogin = new Button();
+            textBox1 = new TextBox();
             panelRegistration.SuspendLayout();
             SuspendLayout();
             // 
@@ -53,8 +53,8 @@
             // 
             panelRegistration.BackColor = Color.Transparent;
             panelRegistration.BackgroundImage = (Image)resources.GetObject("panelRegistration.BackgroundImage");
+            panelRegistration.Controls.Add(textBox1);
             panelRegistration.Controls.Add(label8);
-            panelRegistration.Controls.Add(comboBox3);
             panelRegistration.Controls.Add(comboBox2);
             panelRegistration.Controls.Add(comboBox1);
             panelRegistration.Controls.Add(textBoxConPass);
@@ -84,15 +84,6 @@
             label8.TabIndex = 18;
             label8.Text = "Below please select a category, level of difficulty, and a typical distance that suits you skill level appropriately.";
             label8.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // comboBox3
-            // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Items.AddRange(new object[] { "50", "100", "200", "400" });
-            comboBox3.Location = new Point(271, 353);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(253, 33);
-            comboBox3.TabIndex = 17;
             // 
             // comboBox2
             // 
@@ -234,6 +225,14 @@
             buttonBacktoLogin.UseVisualStyleBackColor = false;
             buttonBacktoLogin.Click += buttonBacktoLogin_Click;
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(271, 359);
+            textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "100 yds";
+            textBox1.Size = new Size(253, 31);
+            textBox1.TabIndex = 19;
+            // 
             // Registration
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -265,7 +264,7 @@
         private Button buttonBacktoLogin;
         private ComboBox comboBox1;
         private Label label8;
-        private ComboBox comboBox3;
         private ComboBox comboBox2;
+        private TextBox textBox1;
     }
 }
