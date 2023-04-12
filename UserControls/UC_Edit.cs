@@ -36,7 +36,6 @@ namespace The_Big_Pool.UserControls
         private void button2_Click(object sender, EventArgs e)
         {
             panelEdit.Hide();
-            panelSide.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
