@@ -33,10 +33,16 @@ namespace The_Big_Pool.UserControls
         {
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            panelEdit.Hide();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             //need to add all the functions to the data is actually store
             //and everything changes on the swimmer profile card and database\
+            panelEdit.Controls.Clear();
         }
     }
 }

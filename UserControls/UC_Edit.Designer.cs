@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Edit));
             button1 = new Button();
+            button2 = new Button();
             label1 = new Label();
             textBox3 = new TextBox();
             label4 = new Label();
@@ -60,6 +61,20 @@
             button1.Text = "Save";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.Gold;
+            button2.Dock = DockStyle.Bottom;
+            button2.FlatStyle = FlatStyle.Popup;
+            button2.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            button2.Location = new Point(0, 528);
+            button2.Name = "button2";
+            button2.Size = new Size(221, 53);
+            button2.TabIndex = 1;
+            button2.Text = "Cancel";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // label1
             // 
@@ -225,6 +240,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(panelEdit);
             Name = "UC_Edit";
@@ -237,6 +253,7 @@
         #endregion
 
         private Button button1;
+        private Button button2;
         private Label label1;
         private TextBox textBox3;
         private Label label4;

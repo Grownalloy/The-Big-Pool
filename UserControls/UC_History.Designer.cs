@@ -33,8 +33,6 @@
             label1 = new Label();
             panel2 = new Panel();
             panel4 = new Panel();
-            label10 = new Label();
-            label11 = new Label();
             label8 = new Label();
             label9 = new Label();
             label6 = new Label();
@@ -46,6 +44,7 @@
             monthCalendar1 = new MonthCalendar();
             button1 = new Button();
             label2 = new Label();
+            label10 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
@@ -88,7 +87,6 @@
             // 
             panel4.BackColor = Color.Transparent;
             panel4.Controls.Add(label10);
-            panel4.Controls.Add(label11);
             panel4.Controls.Add(label8);
             panel4.Controls.Add(label9);
             panel4.Controls.Add(label6);
@@ -101,22 +99,6 @@
             panel4.Size = new Size(231, 567);
             panel4.TabIndex = 6;
             panel4.Paint += panel4_Paint;
-            // 
-            // label10
-            // 
-            label10.Location = new Point(0, 100);
-            label10.Name = "label10";
-            label10.Size = new Size(227, 24);
-            label10.TabIndex = 12;
-            label10.Text = "-------------------------------";
-            // 
-            // label11
-            // 
-            label11.Location = new Point(0, 0);
-            label11.Name = "label11";
-            label11.Size = new Size(20, 567);
-            label11.TabIndex = 13;
-            label11.Text = "-------------------------";
             // 
             // label8
             // 
@@ -133,7 +115,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI Light", 8F, FontStyle.Italic, GraphicsUnit.Point);
             label9.ForeColor = Color.Gold;
-            label9.Location = new Point(16, 302);
+            label9.Location = new Point(16, 301);
             label9.Name = "label9";
             label9.Size = new Size(68, 21);
             label9.TabIndex = 10;
@@ -154,7 +136,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Light", 8F, FontStyle.Italic, GraphicsUnit.Point);
             label7.ForeColor = Color.Gold;
-            label7.Location = new Point(16, 428);
+            label7.Location = new Point(16, 424);
             label7.Name = "label7";
             label7.Size = new Size(145, 21);
             label7.TabIndex = 8;
@@ -234,6 +216,14 @@
             label2.Text = resources.GetString("label2.Text");
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // label10
+            // 
+            label10.Location = new Point(7, 108);
+            label10.Name = "label10";
+            label10.Size = new Size(221, 24);
+            label10.TabIndex = 12;
+            label10.Text = "-------------------------------";
+            // 
             // UC_History
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -269,6 +259,5 @@
         private Label label4;
         private MonthCalendar monthCalendar1;
         private Label label10;
-        private Label label11;
     }
 }
