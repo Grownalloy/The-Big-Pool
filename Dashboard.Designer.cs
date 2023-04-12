@@ -170,7 +170,8 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.BackColor = Color.Black;
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(46, 8);
             pictureBox1.Name = "pictureBox1";
