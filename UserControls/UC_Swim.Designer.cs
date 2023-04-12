@@ -109,17 +109,17 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Font = new Font("Segoe UI Black", 16F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
             label1.Location = new Point(30, 13);
             label1.Name = "label1";
-            label1.Size = new Size(86, 43);
+            label1.Size = new Size(105, 45);
             label1.TabIndex = 0;
             label1.Text = "Swim";
             // 
             // button1
             // 
-            button1.BackColor = Color.DeepSkyBlue;
+            button1.BackColor = Color.Gold;
             button1.BackgroundImageLayout = ImageLayout.None;
             button1.FlatStyle = FlatStyle.Popup;
             button1.Location = new Point(486, 8);
@@ -132,7 +132,7 @@
             // 
             // panelCategory
             // 
-            panelCategory.BackColor = Color.DeepSkyBlue;
+            panelCategory.BackColor = Color.Black;
             panelCategory.Controls.Add(groupBoxCategory);
             panelCategory.Location = new Point(131, 107);
             panelCategory.Name = "panelCategory";
@@ -141,13 +141,14 @@
             // 
             // groupBoxCategory
             // 
+            groupBoxCategory.BackColor = Color.Black;
             groupBoxCategory.Controls.Add(checkBoxSprint);
             groupBoxCategory.Controls.Add(checkBoxPace);
             groupBoxCategory.Controls.Add(checkBoxFreestyle);
             groupBoxCategory.Controls.Add(checkBoxMedley);
             groupBoxCategory.Controls.Add(checkBoxStroke);
             groupBoxCategory.Font = new Font("Segoe Print", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBoxCategory.ForeColor = Color.Black;
+            groupBoxCategory.ForeColor = Color.Gold;
             groupBoxCategory.Location = new Point(20, 17);
             groupBoxCategory.Name = "groupBoxCategory";
             groupBoxCategory.Size = new Size(183, 227);
@@ -207,7 +208,7 @@
             // 
             // panelDifficulty
             // 
-            panelDifficulty.BackColor = Color.DeepSkyBlue;
+            panelDifficulty.BackColor = Color.Black;
             panelDifficulty.Controls.Add(groupBoxDifficulty);
             panelDifficulty.Location = new Point(376, 107);
             panelDifficulty.Name = "panelDifficulty";
@@ -222,7 +223,7 @@
             groupBoxDifficulty.Controls.Add(radioButtonBronze);
             groupBoxDifficulty.Controls.Add(radioButtonGarnet);
             groupBoxDifficulty.Font = new Font("Segoe Print", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBoxDifficulty.ForeColor = Color.Black;
+            groupBoxDifficulty.ForeColor = Color.Gold;
             groupBoxDifficulty.Location = new Point(14, 20);
             groupBoxDifficulty.Name = "groupBoxDifficulty";
             groupBoxDifficulty.Size = new Size(194, 218);
@@ -287,7 +288,7 @@
             // 
             // panelTime
             // 
-            panelTime.BackColor = Color.DeepSkyBlue;
+            panelTime.BackColor = Color.Black;
             panelTime.Controls.Add(groupBox1);
             panelTime.Location = new Point(376, 388);
             panelTime.Name = "panelTime";
@@ -303,7 +304,7 @@
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label2);
             groupBox1.Font = new Font("Segoe Print", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBox1.ForeColor = Color.Black;
+            groupBox1.ForeColor = Color.Gold;
             groupBox1.Location = new Point(14, 7);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(246, 107);
@@ -367,7 +368,7 @@
             // 
             // panelDistance
             // 
-            panelDistance.BackColor = Color.DeepSkyBlue;
+            panelDistance.BackColor = Color.Black;
             panelDistance.Controls.Add(label4);
             panelDistance.Controls.Add(textBox1);
             panelDistance.Controls.Add(groupBoxDistance);
@@ -380,7 +381,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 8F, FontStyle.Italic, GraphicsUnit.Point);
-            label4.ForeColor = Color.Black;
+            label4.ForeColor = Color.Gold;
             label4.Location = new Point(39, 43);
             label4.Name = "label4";
             label4.Size = new Size(201, 21);
@@ -401,7 +402,7 @@
             // 
             groupBoxDistance.Controls.Add(label3);
             groupBoxDistance.Font = new Font("Segoe Print", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBoxDistance.ForeColor = Color.Black;
+            groupBoxDistance.ForeColor = Color.Gold;
             groupBoxDistance.Location = new Point(16, 7);
             groupBoxDistance.Name = "groupBoxDistance";
             groupBoxDistance.Size = new Size(246, 107);
@@ -413,7 +414,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe Print", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.ForeColor = Color.Black;
+            label3.ForeColor = Color.Gold;
             label3.Location = new Point(179, 57);
             label3.Name = "label3";
             label3.Size = new Size(45, 31);
