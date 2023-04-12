@@ -39,21 +39,22 @@
             textBox6 = new TextBox();
             label7 = new Label();
             panelEdit = new Panel();
+            textBox1 = new TextBox();
             comboBox2 = new ComboBox();
             comboBox1 = new ComboBox();
             label6 = new Label();
             label3 = new Label();
             label2 = new Label();
-            textBox1 = new TextBox();
             panelEdit.SuspendLayout();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.BackColor = Color.Gold;
+            button1.BackColor = Color.MidnightBlue;
             button1.Dock = DockStyle.Bottom;
             button1.FlatStyle = FlatStyle.Popup;
             button1.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.ForeColor = Color.White;
             button1.Location = new Point(0, 581);
             button1.Name = "button1";
             button1.Size = new Size(221, 53);
@@ -64,10 +65,11 @@
             // 
             // button2
             // 
-            button2.BackColor = Color.Gold;
+            button2.BackColor = Color.MidnightBlue;
             button2.Dock = DockStyle.Bottom;
             button2.FlatStyle = FlatStyle.Popup;
             button2.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            button2.ForeColor = Color.White;
             button2.Location = new Point(0, 528);
             button2.Name = "button2";
             button2.Size = new Size(221, 53);
@@ -81,7 +83,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI Semibold", 8F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.Gold;
+            label1.ForeColor = Color.MidnightBlue;
             label1.Location = new Point(27, 14);
             label1.Name = "label1";
             label1.Size = new Size(167, 21);
@@ -172,6 +174,14 @@
             panelEdit.Size = new Size(221, 634);
             panelEdit.TabIndex = 15;
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(17, 400);
+            textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "100 yds";
+            textBox1.Size = new Size(190, 31);
+            textBox1.TabIndex = 20;
+            // 
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
@@ -225,14 +235,6 @@
             label2.Size = new Size(74, 21);
             label2.TabIndex = 15;
             label2.Text = "Category";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(17, 400);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "100 yds";
-            textBox1.Size = new Size(190, 31);
-            textBox1.TabIndex = 20;
             // 
             // UC_Edit
             // 

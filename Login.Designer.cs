@@ -61,8 +61,9 @@
             // 
             // buttonCreateAccount
             // 
-            buttonCreateAccount.BackColor = Color.Gold;
+            buttonCreateAccount.BackColor = Color.MidnightBlue;
             buttonCreateAccount.FlatStyle = FlatStyle.Popup;
+            buttonCreateAccount.ForeColor = Color.White;
             buttonCreateAccount.Location = new Point(91, 362);
             buttonCreateAccount.Name = "buttonCreateAccount";
             buttonCreateAccount.Size = new Size(198, 42);
@@ -73,8 +74,9 @@
             // 
             // buttonLogin
             // 
-            buttonLogin.BackColor = Color.Gold;
+            buttonLogin.BackColor = Color.MidnightBlue;
             buttonLogin.FlatStyle = FlatStyle.Popup;
+            buttonLogin.ForeColor = Color.White;
             buttonLogin.Location = new Point(323, 362);
             buttonLogin.Name = "buttonLogin";
             buttonLogin.Size = new Size(198, 42);
@@ -136,7 +138,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Snap ITC", 12F, FontStyle.Italic, GraphicsUnit.Point);
-            label1.ForeColor = Color.Gold;
+            label1.ForeColor = Color.MidnightBlue;
             label1.Location = new Point(123, 45);
             label1.Name = "label1";
             label1.Size = new Size(366, 31);

@@ -41,7 +41,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.Black;
+            panel1.BackColor = Color.MidnightBlue;
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
@@ -66,6 +66,7 @@
             // 
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.MidnightBlue;
             label2.Location = new Point(35, 271);
             label2.Name = "label2";
             label2.Size = new Size(388, 98);
@@ -77,6 +78,7 @@
             // 
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 22F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label3.ForeColor = Color.WhiteSmoke;
             label3.Location = new Point(35, 130);
             label3.Name = "label3";
             label3.Size = new Size(312, 127);
@@ -86,9 +88,10 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.Gold;
+            button1.BackColor = Color.MidnightBlue;
             button1.FlatStyle = FlatStyle.Popup;
             button1.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.ForeColor = Color.White;
             button1.Location = new Point(35, 379);
             button1.Name = "button1";
             button1.Size = new Size(278, 59);
@@ -101,6 +104,7 @@
             // 
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = Color.MidnightBlue;
             label4.Location = new Point(35, 456);
             label4.Name = "label4";
             label4.Size = new Size(351, 54);

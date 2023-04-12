@@ -32,6 +32,7 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             panel1 = new Panel();
             labelSwimmerProfileCard = new Label();
+            button2 = new Button();
             label8 = new Label();
             label7 = new Label();
             label6 = new Label();
@@ -41,9 +42,8 @@
             label1 = new Label();
             profilePicture = new PictureBox();
             panelSide = new Panel();
-            label9 = new Label();
-            button2 = new Button();
             button1 = new Button();
+            label9 = new Label();
             panel2 = new Panel();
             label2 = new Label();
             tableLayoutPanel1.SuspendLayout();
@@ -92,19 +92,32 @@
             labelSwimmerProfileCard.AutoSize = true;
             labelSwimmerProfileCard.BackColor = Color.Transparent;
             labelSwimmerProfileCard.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            labelSwimmerProfileCard.ForeColor = Color.Gold;
+            labelSwimmerProfileCard.ForeColor = Color.White;
             labelSwimmerProfileCard.Location = new Point(118, 25);
             labelSwimmerProfileCard.Name = "labelSwimmerProfileCard";
             labelSwimmerProfileCard.Size = new Size(263, 32);
             labelSwimmerProfileCard.TabIndex = 8;
             labelSwimmerProfileCard.Text = "Swimmer Profile Card";
             // 
+            // button2
+            // 
+            button2.BackColor = Color.MidnightBlue;
+            button2.FlatStyle = FlatStyle.Popup;
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(156, 513);
+            button2.Name = "button2";
+            button2.Size = new Size(216, 37);
+            button2.TabIndex = 1;
+            button2.Text = "Upload Profile Picture";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
             // label8
             // 
             label8.AutoSize = true;
             label8.BackColor = Color.Transparent;
             label8.Font = new Font("Segoe UI Semilight", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.ForeColor = Color.Black;
+            label8.ForeColor = Color.White;
             label8.Location = new Point(258, 470);
             label8.Name = "label8";
             label8.Size = new Size(77, 25);
@@ -116,7 +129,7 @@
             label7.AutoSize = true;
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Segoe UI Semilight", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.ForeColor = Color.Black;
+            label7.ForeColor = Color.White;
             label7.Location = new Point(258, 440);
             label7.Name = "label7";
             label7.Size = new Size(84, 25);
@@ -128,7 +141,7 @@
             label6.AutoSize = true;
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Segoe UI Semilight", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.ForeColor = Color.Black;
+            label6.ForeColor = Color.White;
             label6.Location = new Point(258, 410);
             label6.Name = "label6";
             label6.Size = new Size(82, 25);
@@ -140,7 +153,7 @@
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.ForeColor = Color.Black;
+            label5.ForeColor = Color.White;
             label5.Location = new Point(164, 470);
             label5.Name = "label5";
             label5.Size = new Size(79, 25);
@@ -152,7 +165,7 @@
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.ForeColor = Color.Black;
+            label4.ForeColor = Color.White;
             label4.Location = new Point(156, 440);
             label4.Name = "label4";
             label4.Size = new Size(87, 25);
@@ -164,7 +177,7 @@
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = Color.Black;
+            label3.ForeColor = Color.White;
             label3.Location = new Point(159, 410);
             label3.Name = "label3";
             label3.Size = new Size(84, 25);
@@ -176,7 +189,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.Black;
+            label1.ForeColor = Color.MidnightBlue;
             label1.Location = new Point(204, 375);
             label1.Name = "label1";
             label1.Size = new Size(96, 25);
@@ -206,44 +219,33 @@
             panelSide.Size = new Size(221, 562);
             panelSide.TabIndex = 1;
             // 
+            // button1
+            // 
+            button1.BackColor = Color.MidnightBlue;
+            button1.FlatStyle = FlatStyle.Popup;
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(27, 513);
+            button1.Name = "button1";
+            button1.Size = new Size(163, 37);
+            button1.TabIndex = 0;
+            button1.Text = "Edit";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // label9
             // 
             label9.BackColor = Color.Transparent;
-            label9.Dock = DockStyle.Top;
-            label9.Location = new Point(0, 0);
+            label9.ForeColor = Color.White;
+            label9.Location = new Point(0, 75);
             label9.Name = "label9";
             label9.Size = new Size(221, 297);
             label9.TabIndex = 0;
             label9.Text = resources.GetString("label9.Text");
             label9.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // button2
-            // 
-            button2.BackColor = Color.Gold;
-            button2.FlatStyle = FlatStyle.Popup;
-            button2.Location = new Point(156, 513);
-            button2.Name = "button2";
-            button2.Size = new Size(216, 37);
-            button2.TabIndex = 1;
-            button2.Text = "Upload Profile Picture";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.Gold;
-            button1.FlatStyle = FlatStyle.Popup;
-            button1.Location = new Point(32, 314);
-            button1.Name = "button1";
-            button1.Size = new Size(163, 53);
-            button1.TabIndex = 0;
-            button1.Text = "Edit";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
-            // 
             // panel2
             // 
-            panel2.BackColor = Color.Black;
+            panel2.BackColor = Color.MidnightBlue;
             panel2.Controls.Add(label2);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
