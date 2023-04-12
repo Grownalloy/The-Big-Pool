@@ -43,13 +43,11 @@
             panel3 = new Panel();
             button1 = new Button();
             label2 = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            dataGridView1 = new DataGridView();
+            monthCalendar1 = new MonthCalendar();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -65,11 +63,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.BorderStyle = BorderStyle.FixedSingle;
             label1.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(23, 14);
             label1.Name = "label1";
-            label1.Size = new Size(108, 45);
+            label1.Size = new Size(106, 43);
             label1.TabIndex = 0;
             label1.Text = "History";
             // 
@@ -164,62 +161,49 @@
             // 
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(7, 28);
+            label3.Location = new Point(38, 28);
             label3.Name = "label3";
-            label3.Size = new Size(216, 53);
+            label3.Size = new Size(154, 82);
             label3.TabIndex = 5;
             label3.Text = "Daily Performance";
+            label3.TextAlign = ContentAlignment.TopCenter;
             label3.Click += label3_Click;
             // 
             // panel3
             // 
             panel3.BackColor = Color.Transparent;
+            panel3.Controls.Add(monthCalendar1);
             panel3.Controls.Add(button1);
             panel3.Controls.Add(label2);
-            panel3.Controls.Add(dateTimePicker1);
-            panel3.Controls.Add(dataGridView1);
-            panel3.Location = new Point(7, 10);
+            panel3.Dock = DockStyle.Left;
+            panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(492, 548);
+            panel3.Size = new Size(501, 567);
             panel3.TabIndex = 3;
             // 
             // button1
             // 
-            button1.Location = new Point(343, 24);
+            button1.Location = new Point(177, 489);
             button1.Name = "button1";
-            button1.Size = new Size(122, 32);
+            button1.Size = new Size(141, 49);
             button1.TabIndex = 3;
             button1.Text = "Search";
             button1.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(29, 28);
+            label2.Location = new Point(15, 28);
             label2.Name = "label2";
-            label2.Size = new Size(110, 25);
+            label2.Size = new Size(471, 157);
             label2.TabIndex = 2;
-            label2.Text = "Select a day:";
+            label2.Text = resources.GetString("label2.Text");
+            label2.TextAlign = ContentAlignment.TopRight;
             // 
-            // dateTimePicker1
+            // monthCalendar1
             // 
-            dateTimePicker1.CustomFormat = "MM/dd/yyyy";
-            dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(164, 25);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(154, 31);
-            dateTimePicker1.TabIndex = 1;
-            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(29, 60);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.RowTemplate.Height = 33;
-            dataGridView1.Size = new Size(436, 467);
-            dataGridView1.TabIndex = 0;
+            monthCalendar1.Location = new Point(89, 205);
+            monthCalendar1.Name = "monthCalendar1";
+            monthCalendar1.TabIndex = 4;
             // 
             // UC_History
             // 
@@ -235,8 +219,6 @@
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             panel3.ResumeLayout(false);
-            panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -245,8 +227,6 @@
         private Panel panel1;
         private Label label1;
         private Panel panel2;
-        private DateTimePicker dateTimePicker1;
-        private DataGridView dataGridView1;
         private Panel panel3;
         private Button button1;
         private Label label2;
@@ -258,5 +238,6 @@
         private Label label7;
         private Label label5;
         private Label label4;
+        private MonthCalendar monthCalendar1;
     }
 }

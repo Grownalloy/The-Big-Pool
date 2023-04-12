@@ -1638,4 +1638,7 @@
         /sTAf8+kN8lPel8lPepaKP8AWTM/+fzD+xMB/wA+kQ+SnvR5Ce9TUUf6yZn/AM/mH9iYD/n0j//Z
 </value>
   </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>To view previous workouts stats select a day from the calendar below. Once the day is selected hit the "Search" button and your daily performance for that day will be shown. Displayed to the right you will see the total distance swam, the total time spent swimming, and the number of workouts you had completed for that day.</value>
+  </data>
 </root>

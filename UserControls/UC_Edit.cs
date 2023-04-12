@@ -12,6 +12,7 @@ namespace The_Big_Pool.UserControls
 {
     public partial class UC_Edit : UserControl
     {
+        UC_Settings panelSide;
         public UC_Edit()
         {
             InitializeComponent();
@@ -34,7 +35,8 @@ namespace The_Big_Pool.UserControls
 
         private void button2_Click(object sender, EventArgs e)
         {
-            panelEdit.Controls.Clear();
+            panelEdit.Hide();
+            panelSide.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)

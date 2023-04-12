@@ -53,13 +53,12 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.BorderStyle = BorderStyle.FixedSingle;
             label1.FlatStyle = FlatStyle.Popup;
             label1.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.Black;
             label1.Location = new Point(19, 13);
             label1.Name = "label1";
-            label1.Size = new Size(90, 45);
+            label1.Size = new Size(88, 43);
             label1.TabIndex = 0;
             label1.Text = "Home";
             // 
