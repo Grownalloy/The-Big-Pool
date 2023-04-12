@@ -55,8 +55,8 @@ namespace The_Big_Pool
                 failcause += "Category needs to be selected \n";
             if (comboBox2.SelectedIndex < -1)
                 failcause += "Difficculty level needs to be selected \n";
-            if (comboBox3.SelectedIndex < -1)
-                failcause += "Distance needs to be selected \n";
+            if (textBox1.Text == "")
+                failcause += "Distance needs to be entered \n";
             User Act = new User(textBoxUsername.Text, textBoxPassword.Text);
             failcause += Act.failurecause();
             if (textBoxPassword.Text != textBoxConPass.Text)
@@ -73,7 +73,7 @@ namespace The_Big_Pool
                     { "Settings", new BsonDocument {
                         {"Category", comboBox1.Text },
                         {"Difficulty Level",comboBox2.Text },
-                        {"Distance",comboBox3.Text},
+                        {"Distance",textBox1.Text},
                         { "Skill level", Act.get_skill() },
                         { "Preffered Distance", Act.get_Distance() },
                         { "Duration of work-out", Act.get_duration() }
