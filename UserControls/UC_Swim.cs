@@ -230,7 +230,8 @@ namespace The_Big_Pool.UserControls
 
                 doc.Add(paragraph);
             }
-
+            var p = new Paragraph($"{totalDistance}");
+            doc.Add(p);
 
             MessageBox.Show("PDF file created on your desktop.");
 
@@ -324,24 +325,26 @@ namespace The_Big_Pool.UserControls
                         break;
                     }
                 }
-                foreach (var setb in selectedSets)
-                {
-                    var description = setb.GetValue("Set Description").ToString();
-                    var reps = setb.GetValue("Reps").ToString();
-                    var distance = setb.GetValue("Distance").ToString();
-                    var interval = setb.GetValue("interval").ToString();
-
-                    // replace the comma in the distance with an x
-                    distance = distance.Replace(",", "x");
-
-                    // create a paragraph with the set description, reps, and distance
-                    var paragraph = new Paragraph($" {reps}     x      {distance}              {interval}\t                    \t{description}");
-
-                    // add the paragraph to the document
-                    doc.Add(paragraph);
-                }
+                
             }
+            foreach (var setb in selectedSets)
+            {
+                var description = setb.GetValue("Set Description").ToString();
+                var reps = setb.GetValue("Reps").ToString();
+                var distance = setb.GetValue("Distance").ToString();
+                var interval = setb.GetValue("interval").ToString();
 
+                // replace the comma in the distance with an x
+                distance = distance.Replace(",", "x");
+
+                // create a paragraph with the set description, reps, and distance
+                var paragraph = new Paragraph($" {reps}     x      {distance}              {interval}\t                    \t{description}");
+
+                // add the paragraph to the document
+                doc.Add(paragraph);
+            }
+            p = new Paragraph($"{totalDistance}");
+            doc.Add(p);
 
             int remainingWD = practice.warmdown();
 
@@ -362,11 +365,12 @@ namespace The_Big_Pool.UserControls
                 var set = warmdownSets[index];
 
                 // add the set to the selected sets and update the total distance
-                selectedSets.Add(set);
+                
                 int x = set.GetValue("Distance").ToInt32();
                 x = x * set.GetValue("Reps").ToInt32();
                 if (x + totalDistance > (remainingWD + (remainingWD / 8)))
                 {
+
                     warmdownSets.RemoveAt(index);
 
                     // if all warmup sets have been selected, break out of the loop
@@ -377,6 +381,7 @@ namespace The_Big_Pool.UserControls
                 }
                 else
                 {
+                    selectedSets.Add(set);
                     totalDistance += x;
 
                     // remove the set from the warmup sets to prevent duplicates
@@ -405,6 +410,8 @@ namespace The_Big_Pool.UserControls
                 // add the paragraph to the document
                 doc.Add(paragraph);
             }
+            p = new Paragraph($"{totalDistance}");
+            doc.Add(p);
             doc.Close();
             try
             {
