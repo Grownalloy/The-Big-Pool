@@ -29,7 +29,7 @@ namespace The_Big_Pool
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            
+
             IConfiguration config = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json", true, true)
                 .Build();
@@ -58,8 +58,8 @@ namespace The_Big_Pool
                 // Store the user's credentials in the UserSession object
                 UserSession.Instance.Username = TU;
                 UserSession.Instance.Password = TS;
-                
-                
+
+
                 Dashboard dashboard = new Dashboard();
                 dashboard.Show();
                 Visible = false;
@@ -68,7 +68,7 @@ namespace The_Big_Pool
             {
                 MessageBox.Show("Invalid Login");
             }
-            
+
         }
         public class UserSession
         {

@@ -81,59 +81,75 @@
             // 
             // buttonHome
             // 
-            buttonHome.BackColor = Color.Gold;
+            buttonHome.BackColor = Color.DeepSkyBlue;
+            buttonHome.BackgroundImage = (Image)resources.GetObject("buttonHome.BackgroundImage");
+            buttonHome.BackgroundImageLayout = ImageLayout.Zoom;
             buttonHome.Dock = DockStyle.Fill;
             buttonHome.FlatStyle = FlatStyle.Popup;
+            buttonHome.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonHome.ForeColor = Color.DeepSkyBlue;
             buttonHome.Location = new Point(3, 162);
             buttonHome.Name = "buttonHome";
             buttonHome.Size = new Size(195, 113);
             buttonHome.TabIndex = 0;
-            buttonHome.Text = "Home";
+            buttonHome.TextAlign = ContentAlignment.TopLeft;
             buttonHome.UseVisualStyleBackColor = false;
             buttonHome.Click += buttonHome_Click;
             // 
             // buttonSwim
             // 
-            buttonSwim.BackColor = Color.Gold;
+            buttonSwim.BackColor = Color.DeepSkyBlue;
+            buttonSwim.BackgroundImage = (Image)resources.GetObject("buttonSwim.BackgroundImage");
+            buttonSwim.BackgroundImageLayout = ImageLayout.Zoom;
             buttonSwim.Dock = DockStyle.Fill;
             buttonSwim.FlatStyle = FlatStyle.Popup;
+            buttonSwim.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonSwim.ForeColor = Color.DeepSkyBlue;
             buttonSwim.Location = new Point(3, 281);
             buttonSwim.Name = "buttonSwim";
             buttonSwim.Size = new Size(195, 113);
             buttonSwim.TabIndex = 1;
-            buttonSwim.Text = "Swim";
+            buttonSwim.TextAlign = ContentAlignment.TopLeft;
             buttonSwim.UseVisualStyleBackColor = false;
             buttonSwim.Click += buttonSwim_Click;
             // 
             // buttonHistory
             // 
-            buttonHistory.BackColor = Color.Gold;
+            buttonHistory.BackColor = Color.DeepSkyBlue;
+            buttonHistory.BackgroundImage = (Image)resources.GetObject("buttonHistory.BackgroundImage");
+            buttonHistory.BackgroundImageLayout = ImageLayout.Zoom;
             buttonHistory.Dock = DockStyle.Fill;
             buttonHistory.FlatStyle = FlatStyle.Popup;
+            buttonHistory.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonHistory.ForeColor = Color.DeepSkyBlue;
             buttonHistory.Location = new Point(3, 400);
             buttonHistory.Name = "buttonHistory";
             buttonHistory.Size = new Size(195, 113);
             buttonHistory.TabIndex = 2;
-            buttonHistory.Text = "History";
+            buttonHistory.TextAlign = ContentAlignment.TopLeft;
             buttonHistory.UseVisualStyleBackColor = false;
             buttonHistory.Click += buttonHistory_Click;
             // 
             // buttonSettings
             // 
-            buttonSettings.BackColor = Color.Gold;
+            buttonSettings.BackColor = Color.DeepSkyBlue;
+            buttonSettings.BackgroundImage = (Image)resources.GetObject("buttonSettings.BackgroundImage");
+            buttonSettings.BackgroundImageLayout = ImageLayout.Zoom;
             buttonSettings.Dock = DockStyle.Fill;
             buttonSettings.FlatStyle = FlatStyle.Popup;
+            buttonSettings.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonSettings.ForeColor = Color.DeepSkyBlue;
             buttonSettings.Location = new Point(3, 519);
             buttonSettings.Name = "buttonSettings";
             buttonSettings.Size = new Size(195, 116);
             buttonSettings.TabIndex = 3;
-            buttonSettings.Text = "Settings";
+            buttonSettings.TextAlign = ContentAlignment.TopLeft;
             buttonSettings.UseVisualStyleBackColor = false;
             buttonSettings.Click += buttonSettings_Click;
             // 
             // panel2
             // 
-            panel2.BackColor = Color.Black;
+            panel2.BackColor = Color.DeepSkyBlue;
             panel2.Controls.Add(labelUsername);
             panel2.Controls.Add(pictureBox1);
             panel2.Dock = DockStyle.Fill;
@@ -145,7 +161,7 @@
             // labelUsername
             // 
             labelUsername.AutoSize = true;
-            labelUsername.ForeColor = Color.Gold;
+            labelUsername.ForeColor = Color.Black;
             labelUsername.Location = new Point(53, 113);
             labelUsername.Name = "labelUsername";
             labelUsername.Size = new Size(91, 25);
@@ -154,7 +170,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.BackColor = Color.White;
+            pictureBox1.BackColor = Color.Black;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(46, 8);
             pictureBox1.Name = "pictureBox1";

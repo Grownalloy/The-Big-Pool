@@ -1,6 +1,6 @@
 ﻿namespace The_Big_Pool
 {
-    
+
     partial class Login
     {
         /// <summary>
@@ -61,22 +61,26 @@
             // 
             // buttonCreateAccount
             // 
+            buttonCreateAccount.BackColor = Color.Gold;
+            buttonCreateAccount.FlatStyle = FlatStyle.Popup;
             buttonCreateAccount.Location = new Point(91, 362);
             buttonCreateAccount.Name = "buttonCreateAccount";
             buttonCreateAccount.Size = new Size(198, 42);
             buttonCreateAccount.TabIndex = 7;
             buttonCreateAccount.Text = "Create Account";
-            buttonCreateAccount.UseVisualStyleBackColor = true;
+            buttonCreateAccount.UseVisualStyleBackColor = false;
             buttonCreateAccount.Click += buttonCreateAccount_Click;
             // 
             // buttonLogin
             // 
+            buttonLogin.BackColor = Color.Gold;
+            buttonLogin.FlatStyle = FlatStyle.Popup;
             buttonLogin.Location = new Point(323, 362);
             buttonLogin.Name = "buttonLogin";
             buttonLogin.Size = new Size(198, 42);
             buttonLogin.TabIndex = 6;
             buttonLogin.Text = "Login";
-            buttonLogin.UseVisualStyleBackColor = true;
+            buttonLogin.UseVisualStyleBackColor = false;
             buttonLogin.Click += buttonLogin_Click;
             // 
             // label4
@@ -132,7 +136,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Snap ITC", 12F, FontStyle.Italic, GraphicsUnit.Point);
-            label1.ForeColor = Color.Transparent;
+            label1.ForeColor = Color.Gold;
             label1.Location = new Point(123, 45);
             label1.Name = "label1";
             label1.Size = new Size(366, 31);

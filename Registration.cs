@@ -55,7 +55,7 @@ namespace The_Big_Pool
                 failcause += "Category needs to be selected \n";
             if (comboBox2.SelectedIndex < -1)
                 failcause += "Difficculty level needs to be selected \n";
-            if (comboBox3.SelectedIndex <-1)
+            if (comboBox3.SelectedIndex < -1)
                 failcause += "Distance needs to be selected \n";
             User Act = new User(textBoxUsername.Text, textBoxPassword.Text);
             failcause += Act.failurecause();

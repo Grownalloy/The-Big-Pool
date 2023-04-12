@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registration));
             panelRegistration = new Panel();
+            label8 = new Label();
+            comboBox3 = new ComboBox();
+            comboBox2 = new ComboBox();
+            comboBox1 = new ComboBox();
             textBoxConPass = new TextBox();
             textBoxPassword = new TextBox();
             textBoxUsername = new TextBox();
@@ -42,10 +46,6 @@
             label1 = new Label();
             buttonRegister = new Button();
             buttonBacktoLogin = new Button();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
-            comboBox3 = new ComboBox();
-            label8 = new Label();
             panelRegistration.SuspendLayout();
             SuspendLayout();
             // 
@@ -74,6 +74,43 @@
             panelRegistration.Name = "panelRegistration";
             panelRegistration.Size = new Size(613, 475);
             panelRegistration.TabIndex = 16;
+            // 
+            // label8
+            // 
+            label8.Font = new Font("Segoe UI Light", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Location = new Point(30, 202);
+            label8.Name = "label8";
+            label8.Size = new Size(552, 47);
+            label8.TabIndex = 18;
+            label8.Text = "Below please select a category, level of difficulty, and a typical distance that suits you skill level appropriately.";
+            label8.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // comboBox3
+            // 
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Items.AddRange(new object[] { "50", "100", "200", "400" });
+            comboBox3.Location = new Point(271, 353);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(253, 33);
+            comboBox3.TabIndex = 17;
+            // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "Garnet", "Bronze", "Silver", "Gold", "Senior" });
+            comboBox2.Location = new Point(271, 311);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(253, 33);
+            comboBox2.TabIndex = 16;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Stroke", "Medley", "Freestyle", "Pace", "Sprint" });
+            comboBox1.Location = new Point(271, 266);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(253, 33);
+            comboBox1.TabIndex = 15;
             // 
             // textBoxConPass
             // 
@@ -166,7 +203,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Snap ITC", 12F, FontStyle.Italic, GraphicsUnit.Point);
-            label1.ForeColor = Color.White;
+            label1.ForeColor = Color.Gold;
             label1.Location = new Point(193, 18);
             label1.Name = "label1";
             label1.Size = new Size(226, 31);
@@ -175,60 +212,27 @@
             // 
             // buttonRegister
             // 
+            buttonRegister.BackColor = Color.Gold;
+            buttonRegister.FlatStyle = FlatStyle.Popup;
             buttonRegister.Location = new Point(308, 408);
             buttonRegister.Name = "buttonRegister";
             buttonRegister.Size = new Size(199, 42);
             buttonRegister.TabIndex = 1;
             buttonRegister.Text = "Register Account";
-            buttonRegister.UseVisualStyleBackColor = true;
+            buttonRegister.UseVisualStyleBackColor = false;
             buttonRegister.Click += buttonRegister_Click;
             // 
             // buttonBacktoLogin
             // 
+            buttonBacktoLogin.BackColor = Color.Gold;
+            buttonBacktoLogin.FlatStyle = FlatStyle.Popup;
             buttonBacktoLogin.Location = new Point(106, 408);
             buttonBacktoLogin.Name = "buttonBacktoLogin";
             buttonBacktoLogin.Size = new Size(199, 42);
             buttonBacktoLogin.TabIndex = 0;
             buttonBacktoLogin.Text = "Back to Login";
-            buttonBacktoLogin.UseVisualStyleBackColor = true;
+            buttonBacktoLogin.UseVisualStyleBackColor = false;
             buttonBacktoLogin.Click += buttonBacktoLogin_Click;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Stroke", "Medley", "Freestyle", "Pace", "Sprint" });
-            comboBox1.Location = new Point(271, 266);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(253, 33);
-            comboBox1.TabIndex = 15;
-            // 
-            // comboBox2
-            // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "Garnet", "Bronze", "Silver", "Gold", "Senior" });
-            comboBox2.Location = new Point(271, 311);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(253, 33);
-            comboBox2.TabIndex = 16;
-            // 
-            // comboBox3
-            // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Items.AddRange(new object[] { "50", "100", "200", "400" });
-            comboBox3.Location = new Point(271, 353);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(253, 33);
-            comboBox3.TabIndex = 17;
-            // 
-            // label8
-            // 
-            label8.Font = new Font("Segoe UI Light", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(30, 202);
-            label8.Name = "label8";
-            label8.Size = new Size(552, 47);
-            label8.TabIndex = 18;
-            label8.Text = "Below please select a category, level of difficulty, and a typical distance that suits you skill level appropriately.";
-            label8.TextAlign = ContentAlignment.TopCenter;
             // 
             // Registration
             // 
