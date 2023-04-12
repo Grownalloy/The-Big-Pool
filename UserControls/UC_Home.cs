@@ -142,6 +142,8 @@ namespace The_Big_Pool.UserControls
 
                 doc.Add(paragraph);
             }
+            var p = new Paragraph($"{totalDistance}");
+            doc.Add(p);
 
 
             MessageBox.Show("PDF file created on your desktop.");
@@ -218,25 +220,27 @@ namespace The_Big_Pool.UserControls
                         break;
                     }
                 }
-                foreach (var setb in selectedSets)
-                {
-                    var description = setb.GetValue("Set Description").ToString();
-                    var reps = setb.GetValue("Reps").ToString();
-                    var distance = setb.GetValue("Distance").ToString();
-                    var interval = setb.GetValue("interval").ToString();
+                
+            }
+            foreach (var setb in selectedSets)
+            {
+                var description = setb.GetValue("Set Description").ToString();
+                var reps = setb.GetValue("Reps").ToString();
+                var distance = setb.GetValue("Distance").ToString();
+                var interval = setb.GetValue("interval").ToString();
 
-                    // replace the comma in the distance with an x
-                    distance = distance.Replace(",", "x");
+                // replace the comma in the distance with an x
+                distance = distance.Replace(",", "x");
 
-                    // create a paragraph with the set description, reps, and distance
-                    var paragraph = new Paragraph($" {reps}     x      {distance}              {interval}\t                    \t{description}");
+                // create a paragraph with the set description, reps, and distance
+                var paragraph = new Paragraph($" {reps}     x      {distance}              {interval}\t                    \t{description}");
 
-                    // add the paragraph to the document
-                    doc.Add(paragraph);
-                }
+                // add the paragraph to the document
+                doc.Add(paragraph);
             }
 
-
+            p = new Paragraph($"{totalDistance}");
+            doc.Add(p);
             int remainingWD = practice.warmdown();
 
             categoryFilter = Builders<BsonDocument>.Filter.Regex("Category", new BsonRegularExpression("warmup", "i")); //When added change warmup to warmdown
@@ -301,6 +305,8 @@ namespace The_Big_Pool.UserControls
                 // add the paragraph to the document
                 doc.Add(paragraph);
             }
+            p = new Paragraph($"{totalDistance}");
+            doc.Add(p);
             doc.Close();
             try
             {
