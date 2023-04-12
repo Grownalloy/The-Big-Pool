@@ -89,10 +89,11 @@
             // label8
             // 
             label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label8.ForeColor = Color.White;
             label8.Location = new Point(183, 22);
             label8.Name = "label8";
-            label8.Size = new Size(117, 25);
+            label8.Size = new Size(120, 25);
             label8.TabIndex = 8;
             label8.Text = "Today's Date:";
             // 
@@ -147,7 +148,7 @@
             groupBoxCategory.Controls.Add(checkBoxFreestyle);
             groupBoxCategory.Controls.Add(checkBoxMedley);
             groupBoxCategory.Controls.Add(checkBoxStroke);
-            groupBoxCategory.Font = new Font("Segoe Print", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBoxCategory.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             groupBoxCategory.ForeColor = Color.Gold;
             groupBoxCategory.Location = new Point(20, 17);
             groupBoxCategory.Name = "groupBoxCategory";
@@ -161,7 +162,7 @@
             checkBoxSprint.AutoSize = true;
             checkBoxSprint.Location = new Point(34, 182);
             checkBoxSprint.Name = "checkBoxSprint";
-            checkBoxSprint.Size = new Size(97, 35);
+            checkBoxSprint.Size = new Size(89, 29);
             checkBoxSprint.TabIndex = 9;
             checkBoxSprint.Text = "Sprint";
             checkBoxSprint.UseVisualStyleBackColor = true;
@@ -171,7 +172,7 @@
             checkBoxPace.AutoSize = true;
             checkBoxPace.Location = new Point(34, 147);
             checkBoxPace.Name = "checkBoxPace";
-            checkBoxPace.Size = new Size(82, 35);
+            checkBoxPace.Size = new Size(75, 29);
             checkBoxPace.TabIndex = 8;
             checkBoxPace.Text = "Pace";
             checkBoxPace.UseVisualStyleBackColor = true;
@@ -181,7 +182,7 @@
             checkBoxFreestyle.AutoSize = true;
             checkBoxFreestyle.Location = new Point(34, 112);
             checkBoxFreestyle.Name = "checkBoxFreestyle";
-            checkBoxFreestyle.Size = new Size(119, 35);
+            checkBoxFreestyle.Size = new Size(113, 29);
             checkBoxFreestyle.TabIndex = 7;
             checkBoxFreestyle.Text = "Freestyle";
             checkBoxFreestyle.UseVisualStyleBackColor = true;
@@ -191,7 +192,7 @@
             checkBoxMedley.AutoSize = true;
             checkBoxMedley.Location = new Point(34, 77);
             checkBoxMedley.Name = "checkBoxMedley";
-            checkBoxMedley.Size = new Size(103, 35);
+            checkBoxMedley.Size = new Size(100, 29);
             checkBoxMedley.TabIndex = 6;
             checkBoxMedley.Text = "Medley";
             checkBoxMedley.UseVisualStyleBackColor = true;
@@ -201,7 +202,7 @@
             checkBoxStroke.AutoSize = true;
             checkBoxStroke.Location = new Point(34, 38);
             checkBoxStroke.Name = "checkBoxStroke";
-            checkBoxStroke.Size = new Size(98, 35);
+            checkBoxStroke.Size = new Size(91, 29);
             checkBoxStroke.TabIndex = 5;
             checkBoxStroke.Text = "Stroke";
             checkBoxStroke.UseVisualStyleBackColor = true;
@@ -222,7 +223,7 @@
             groupBoxDifficulty.Controls.Add(radioButtonSilver);
             groupBoxDifficulty.Controls.Add(radioButtonBronze);
             groupBoxDifficulty.Controls.Add(radioButtonGarnet);
-            groupBoxDifficulty.Font = new Font("Segoe Print", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBoxDifficulty.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             groupBoxDifficulty.ForeColor = Color.Gold;
             groupBoxDifficulty.Location = new Point(14, 20);
             groupBoxDifficulty.Name = "groupBoxDifficulty";
@@ -236,7 +237,7 @@
             radioButtonSenior.AutoSize = true;
             radioButtonSenior.Location = new Point(46, 177);
             radioButtonSenior.Name = "radioButtonSenior";
-            radioButtonSenior.Size = new Size(95, 35);
+            radioButtonSenior.Size = new Size(91, 29);
             radioButtonSenior.TabIndex = 4;
             radioButtonSenior.TabStop = true;
             radioButtonSenior.Text = "Senior";
@@ -247,7 +248,7 @@
             radioButtonGold.AutoSize = true;
             radioButtonGold.Location = new Point(46, 142);
             radioButtonGold.Name = "radioButtonGold";
-            radioButtonGold.Size = new Size(80, 35);
+            radioButtonGold.Size = new Size(77, 29);
             radioButtonGold.TabIndex = 3;
             radioButtonGold.TabStop = true;
             radioButtonGold.Text = "Gold";
@@ -258,7 +259,7 @@
             radioButtonSilver.AutoSize = true;
             radioButtonSilver.Location = new Point(47, 107);
             radioButtonSilver.Name = "radioButtonSilver";
-            radioButtonSilver.Size = new Size(88, 35);
+            radioButtonSilver.Size = new Size(83, 29);
             radioButtonSilver.TabIndex = 2;
             radioButtonSilver.TabStop = true;
             radioButtonSilver.Text = "Silver";
@@ -269,7 +270,7 @@
             radioButtonBronze.AutoSize = true;
             radioButtonBronze.Location = new Point(47, 72);
             radioButtonBronze.Name = "radioButtonBronze";
-            radioButtonBronze.Size = new Size(101, 35);
+            radioButtonBronze.Size = new Size(95, 29);
             radioButtonBronze.TabIndex = 1;
             radioButtonBronze.TabStop = true;
             radioButtonBronze.Text = "Bronze";
@@ -280,7 +281,7 @@
             radioButtonGarnet.AutoSize = true;
             radioButtonGarnet.Location = new Point(47, 37);
             radioButtonGarnet.Name = "radioButtonGarnet";
-            radioButtonGarnet.Size = new Size(102, 35);
+            radioButtonGarnet.Size = new Size(94, 29);
             radioButtonGarnet.TabIndex = 0;
             radioButtonGarnet.TabStop = true;
             radioButtonGarnet.Text = "Garnet";
@@ -303,7 +304,7 @@
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label2);
-            groupBox1.Font = new Font("Segoe Print", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             groupBox1.ForeColor = Color.Gold;
             groupBox1.Location = new Point(14, 7);
             groupBox1.Name = "groupBox1";
@@ -317,7 +318,7 @@
             textBox4.Location = new Point(181, 57);
             textBox4.MaxLength = 2;
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(51, 39);
+            textBox4.Size = new Size(51, 31);
             textBox4.TabIndex = 5;
             // 
             // textBox3
@@ -325,7 +326,7 @@
             textBox3.Location = new Point(96, 57);
             textBox3.MaxLength = 2;
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(51, 39);
+            textBox3.Size = new Size(51, 31);
             textBox3.TabIndex = 4;
             // 
             // textBox2
@@ -333,7 +334,7 @@
             textBox2.Location = new Point(19, 57);
             textBox2.MaxLength = 1;
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(51, 39);
+            textBox2.Size = new Size(51, 31);
             textBox2.TabIndex = 3;
             // 
             // label6
@@ -401,7 +402,7 @@
             // groupBoxDistance
             // 
             groupBoxDistance.Controls.Add(label3);
-            groupBoxDistance.Font = new Font("Segoe Print", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBoxDistance.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             groupBoxDistance.ForeColor = Color.Gold;
             groupBoxDistance.Location = new Point(16, 7);
             groupBoxDistance.Name = "groupBoxDistance";
@@ -413,11 +414,11 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe Print", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.Gold;
             label3.Location = new Point(179, 57);
             label3.Name = "label3";
-            label3.Size = new Size(45, 31);
+            label3.Size = new Size(40, 25);
             label3.TabIndex = 2;
             label3.Text = "yds";
             // 
