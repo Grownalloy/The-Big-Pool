@@ -33,6 +33,7 @@
             label1 = new Label();
             panel2 = new Panel();
             panel4 = new Panel();
+            label10 = new Label();
             label8 = new Label();
             label9 = new Label();
             label6 = new Label();
@@ -44,7 +45,6 @@
             monthCalendar1 = new MonthCalendar();
             button1 = new Button();
             label2 = new Label();
-            label10 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
@@ -53,7 +53,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.Black;
+            panel1.BackColor = Color.MidnightBlue;
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
@@ -100,10 +100,20 @@
             panel4.TabIndex = 6;
             panel4.Paint += panel4_Paint;
             // 
+            // label10
+            // 
+            label10.ForeColor = Color.White;
+            label10.Location = new Point(7, 108);
+            label10.Name = "label10";
+            label10.Size = new Size(221, 24);
+            label10.TabIndex = 12;
+            label10.Text = "-------------------------------";
+            // 
             // label8
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 20F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label8.ForeColor = Color.White;
             label8.Location = new Point(16, 250);
             label8.Name = "label8";
             label8.Size = new Size(103, 54);
@@ -114,7 +124,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI Light", 8F, FontStyle.Italic, GraphicsUnit.Point);
-            label9.ForeColor = Color.Gold;
+            label9.ForeColor = Color.MidnightBlue;
             label9.Location = new Point(16, 301);
             label9.Name = "label9";
             label9.Size = new Size(68, 21);
@@ -125,6 +135,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 20F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label6.ForeColor = Color.White;
             label6.Location = new Point(16, 378);
             label6.Name = "label6";
             label6.Size = new Size(46, 54);
@@ -135,7 +146,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Light", 8F, FontStyle.Italic, GraphicsUnit.Point);
-            label7.ForeColor = Color.Gold;
+            label7.ForeColor = Color.MidnightBlue;
             label7.Location = new Point(16, 424);
             label7.Name = "label7";
             label7.Size = new Size(145, 21);
@@ -146,6 +157,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 20F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label5.ForeColor = Color.White;
             label5.Location = new Point(16, 122);
             label5.Name = "label5";
             label5.Size = new Size(103, 54);
@@ -156,7 +168,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Light", 8F, FontStyle.Italic, GraphicsUnit.Point);
-            label4.ForeColor = Color.Gold;
+            label4.ForeColor = Color.MidnightBlue;
             label4.Location = new Point(16, 178);
             label4.Name = "label4";
             label4.Size = new Size(66, 21);
@@ -167,7 +179,7 @@
             // 
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 16F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label3.ForeColor = Color.Gold;
+            label3.ForeColor = Color.MidnightBlue;
             label3.Location = new Point(7, 11);
             label3.Name = "label3";
             label3.Size = new Size(221, 111);
@@ -197,9 +209,10 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.Gold;
+            button1.BackColor = Color.MidnightBlue;
             button1.FlatStyle = FlatStyle.Popup;
             button1.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.ForeColor = Color.White;
             button1.Location = new Point(177, 489);
             button1.Name = "button1";
             button1.Size = new Size(141, 49);
@@ -209,20 +222,13 @@
             // 
             // label2
             // 
+            label2.ForeColor = Color.MidnightBlue;
             label2.Location = new Point(15, 28);
             label2.Name = "label2";
             label2.Size = new Size(471, 157);
             label2.TabIndex = 2;
             label2.Text = resources.GetString("label2.Text");
             label2.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label10
-            // 
-            label10.Location = new Point(7, 108);
-            label10.Name = "label10";
-            label10.Size = new Size(221, 24);
-            label10.TabIndex = 12;
-            label10.Text = "-------------------------------";
             // 
             // UC_History
             // 

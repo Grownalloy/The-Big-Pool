@@ -81,7 +81,7 @@
             // 
             // buttonHome
             // 
-            buttonHome.BackColor = Color.DeepSkyBlue;
+            buttonHome.BackColor = Color.White;
             buttonHome.BackgroundImage = (Image)resources.GetObject("buttonHome.BackgroundImage");
             buttonHome.BackgroundImageLayout = ImageLayout.Zoom;
             buttonHome.Dock = DockStyle.Fill;
@@ -98,7 +98,7 @@
             // 
             // buttonSwim
             // 
-            buttonSwim.BackColor = Color.DeepSkyBlue;
+            buttonSwim.BackColor = Color.White;
             buttonSwim.BackgroundImage = (Image)resources.GetObject("buttonSwim.BackgroundImage");
             buttonSwim.BackgroundImageLayout = ImageLayout.Zoom;
             buttonSwim.Dock = DockStyle.Fill;
@@ -115,7 +115,7 @@
             // 
             // buttonHistory
             // 
-            buttonHistory.BackColor = Color.DeepSkyBlue;
+            buttonHistory.BackColor = Color.White;
             buttonHistory.BackgroundImage = (Image)resources.GetObject("buttonHistory.BackgroundImage");
             buttonHistory.BackgroundImageLayout = ImageLayout.Zoom;
             buttonHistory.Dock = DockStyle.Fill;
@@ -132,7 +132,7 @@
             // 
             // buttonSettings
             // 
-            buttonSettings.BackColor = Color.DeepSkyBlue;
+            buttonSettings.BackColor = Color.White;
             buttonSettings.BackgroundImage = (Image)resources.GetObject("buttonSettings.BackgroundImage");
             buttonSettings.BackgroundImageLayout = ImageLayout.Zoom;
             buttonSettings.Dock = DockStyle.Fill;
@@ -170,7 +170,8 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.BackColor = Color.Black;
+            pictureBox1.BackColor = Color.White;
+            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(46, 8);
             pictureBox1.Name = "pictureBox1";

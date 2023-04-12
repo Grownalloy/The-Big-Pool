@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registration));
             panelRegistration = new Panel();
+            textBox1 = new TextBox();
             label8 = new Label();
-            comboBox3 = new ComboBox();
             comboBox2 = new ComboBox();
             comboBox1 = new ComboBox();
             textBoxConPass = new TextBox();
@@ -53,8 +53,8 @@
             // 
             panelRegistration.BackColor = Color.Transparent;
             panelRegistration.BackgroundImage = (Image)resources.GetObject("panelRegistration.BackgroundImage");
+            panelRegistration.Controls.Add(textBox1);
             panelRegistration.Controls.Add(label8);
-            panelRegistration.Controls.Add(comboBox3);
             panelRegistration.Controls.Add(comboBox2);
             panelRegistration.Controls.Add(comboBox1);
             panelRegistration.Controls.Add(textBoxConPass);
@@ -75,24 +75,24 @@
             panelRegistration.Size = new Size(613, 475);
             panelRegistration.TabIndex = 16;
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(271, 359);
+            textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "100 yds";
+            textBox1.Size = new Size(253, 31);
+            textBox1.TabIndex = 19;
+            // 
             // label8
             // 
             label8.Font = new Font("Segoe UI Light", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.ForeColor = Color.White;
             label8.Location = new Point(30, 202);
             label8.Name = "label8";
             label8.Size = new Size(552, 47);
             label8.TabIndex = 18;
             label8.Text = "Below please select a category, level of difficulty, and a typical distance that suits you skill level appropriately.";
             label8.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // comboBox3
-            // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Items.AddRange(new object[] { "50", "100", "200", "400" });
-            comboBox3.Location = new Point(271, 353);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(253, 33);
-            comboBox3.TabIndex = 17;
             // 
             // comboBox2
             // 
@@ -142,6 +142,7 @@
             // 
             label7.AutoSize = true;
             label7.BackColor = Color.Transparent;
+            label7.ForeColor = Color.MidnightBlue;
             label7.Location = new Point(94, 153);
             label7.Name = "label7";
             label7.Size = new Size(156, 25);
@@ -152,6 +153,7 @@
             // 
             label6.AutoSize = true;
             label6.BackColor = Color.Transparent;
+            label6.ForeColor = Color.MidnightBlue;
             label6.Location = new Point(159, 63);
             label6.Name = "label6";
             label6.Size = new Size(91, 25);
@@ -162,6 +164,7 @@
             // 
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
+            label5.ForeColor = Color.MidnightBlue;
             label5.Location = new Point(163, 108);
             label5.Name = "label5";
             label5.Size = new Size(87, 25);
@@ -172,6 +175,7 @@
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
+            label4.ForeColor = Color.MidnightBlue;
             label4.Location = new Point(171, 361);
             label4.Name = "label4";
             label4.Size = new Size(79, 25);
@@ -182,6 +186,7 @@
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
+            label3.ForeColor = Color.MidnightBlue;
             label3.Location = new Point(124, 319);
             label3.Name = "label3";
             label3.Size = new Size(126, 25);
@@ -192,6 +197,7 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
+            label2.ForeColor = Color.MidnightBlue;
             label2.Location = new Point(166, 274);
             label2.Name = "label2";
             label2.Size = new Size(84, 25);
@@ -203,7 +209,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Snap ITC", 12F, FontStyle.Italic, GraphicsUnit.Point);
-            label1.ForeColor = Color.Gold;
+            label1.ForeColor = Color.MidnightBlue;
             label1.Location = new Point(193, 18);
             label1.Name = "label1";
             label1.Size = new Size(226, 31);
@@ -212,8 +218,9 @@
             // 
             // buttonRegister
             // 
-            buttonRegister.BackColor = Color.Gold;
+            buttonRegister.BackColor = Color.MidnightBlue;
             buttonRegister.FlatStyle = FlatStyle.Popup;
+            buttonRegister.ForeColor = Color.White;
             buttonRegister.Location = new Point(308, 408);
             buttonRegister.Name = "buttonRegister";
             buttonRegister.Size = new Size(199, 42);
@@ -224,8 +231,9 @@
             // 
             // buttonBacktoLogin
             // 
-            buttonBacktoLogin.BackColor = Color.Gold;
+            buttonBacktoLogin.BackColor = Color.MidnightBlue;
             buttonBacktoLogin.FlatStyle = FlatStyle.Popup;
+            buttonBacktoLogin.ForeColor = Color.White;
             buttonBacktoLogin.Location = new Point(106, 408);
             buttonBacktoLogin.Name = "buttonBacktoLogin";
             buttonBacktoLogin.Size = new Size(199, 42);
@@ -265,7 +273,7 @@
         private Button buttonBacktoLogin;
         private ComboBox comboBox1;
         private Label label8;
-        private ComboBox comboBox3;
         private ComboBox comboBox2;
+        private TextBox textBox1;
     }
 }
