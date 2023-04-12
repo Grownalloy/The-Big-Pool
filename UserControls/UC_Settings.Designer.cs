@@ -41,11 +41,11 @@
             label1 = new Label();
             profilePicture = new PictureBox();
             panelSide = new Panel();
+            label9 = new Label();
             button2 = new Button();
             button1 = new Button();
             panel2 = new Panel();
             label2 = new Label();
-            label9 = new Label();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)profilePicture).BeginInit();
@@ -91,6 +91,7 @@
             labelSwimmerProfileCard.AutoSize = true;
             labelSwimmerProfileCard.BackColor = Color.Transparent;
             labelSwimmerProfileCard.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            labelSwimmerProfileCard.ForeColor = Color.Black;
             labelSwimmerProfileCard.Location = new Point(104, 25);
             labelSwimmerProfileCard.Name = "labelSwimmerProfileCard";
             labelSwimmerProfileCard.Size = new Size(291, 43);
@@ -183,6 +184,7 @@
             // 
             // profilePicture
             // 
+            profilePicture.BackColor = Color.White;
             profilePicture.Image = (Image)resources.GetObject("profilePicture.Image");
             profilePicture.InitialImage = (Image)resources.GetObject("profilePicture.InitialImage");
             profilePicture.Location = new Point(97, 75);
@@ -202,9 +204,21 @@
             panelSide.Size = new Size(221, 562);
             panelSide.TabIndex = 1;
             // 
+            // label9
+            // 
+            label9.BackColor = Color.Transparent;
+            label9.Dock = DockStyle.Top;
+            label9.Location = new Point(0, 0);
+            label9.Name = "label9";
+            label9.Size = new Size(221, 297);
+            label9.TabIndex = 0;
+            label9.Text = resources.GetString("label9.Text");
+            label9.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // button2
             // 
-            button2.BackColor = Color.Transparent;
+            button2.BackColor = Color.Gold;
+            button2.FlatStyle = FlatStyle.Popup;
             button2.Location = new Point(262, 11);
             button2.Name = "button2";
             button2.Size = new Size(221, 53);
@@ -215,17 +229,19 @@
             // 
             // button1
             // 
+            button1.BackColor = Color.Gold;
+            button1.FlatStyle = FlatStyle.Popup;
             button1.Location = new Point(489, 11);
             button1.Name = "button1";
             button1.Size = new Size(221, 53);
             button1.TabIndex = 0;
             button1.Text = "Edit";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // panel2
             // 
-            panel2.BackColor = Color.DeepSkyBlue;
+            panel2.BackColor = Color.Black;
             panel2.Controls.Add(button1);
             panel2.Controls.Add(button2);
             panel2.Controls.Add(label2);
@@ -238,25 +254,14 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.BorderStyle = BorderStyle.FixedSingle;
-            label2.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = Color.Black;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Segoe UI Black", 16F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label2.ForeColor = Color.White;
             label2.Location = new Point(27, 14);
             label2.Name = "label2";
-            label2.Size = new Size(226, 45);
+            label2.Size = new Size(146, 45);
             label2.TabIndex = 0;
-            label2.Text = "Account Settings";
-            // 
-            // label9
-            // 
-            label9.BackColor = Color.Transparent;
-            label9.Dock = DockStyle.Top;
-            label9.Location = new Point(0, 0);
-            label9.Name = "label9";
-            label9.Size = new Size(221, 297);
-            label9.TabIndex = 0;
-            label9.Text = resources.GetString("label9.Text");
-            label9.TextAlign = ContentAlignment.MiddleCenter;
+            label2.Text = "Settings";
             // 
             // UC_Settings
             // 

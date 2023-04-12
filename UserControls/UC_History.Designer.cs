@@ -41,9 +41,10 @@
             label4 = new Label();
             label3 = new Label();
             panel3 = new Panel();
+            monthCalendar1 = new MonthCalendar();
             button1 = new Button();
             label2 = new Label();
-            monthCalendar1 = new MonthCalendar();
+            label10 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
@@ -52,7 +53,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.DeepSkyBlue;
+            panel1.BackColor = Color.Black;
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
@@ -63,10 +64,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Font = new Font("Segoe UI Black", 16F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
             label1.Location = new Point(23, 14);
             label1.Name = "label1";
-            label1.Size = new Size(106, 43);
+            label1.Size = new Size(136, 45);
             label1.TabIndex = 0;
             label1.Text = "History";
             // 
@@ -84,6 +86,7 @@
             // panel4
             // 
             panel4.BackColor = Color.Transparent;
+            panel4.Controls.Add(label10);
             panel4.Controls.Add(label8);
             panel4.Controls.Add(label9);
             panel4.Controls.Add(label6);
@@ -111,6 +114,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI Light", 8F, FontStyle.Italic, GraphicsUnit.Point);
+            label9.ForeColor = Color.Gold;
             label9.Location = new Point(16, 301);
             label9.Name = "label9";
             label9.Size = new Size(68, 21);
@@ -131,6 +135,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Light", 8F, FontStyle.Italic, GraphicsUnit.Point);
+            label7.ForeColor = Color.Gold;
             label7.Location = new Point(16, 424);
             label7.Name = "label7";
             label7.Size = new Size(145, 21);
@@ -151,6 +156,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Light", 8F, FontStyle.Italic, GraphicsUnit.Point);
+            label4.ForeColor = Color.Gold;
             label4.Location = new Point(16, 178);
             label4.Name = "label4";
             label4.Size = new Size(66, 21);
@@ -160,10 +166,11 @@
             // label3
             // 
             label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(38, 28);
+            label3.Font = new Font("Segoe UI", 16F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label3.ForeColor = Color.Gold;
+            label3.Location = new Point(7, 11);
             label3.Name = "label3";
-            label3.Size = new Size(154, 82);
+            label3.Size = new Size(221, 111);
             label3.TabIndex = 5;
             label3.Text = "Daily Performance";
             label3.TextAlign = ContentAlignment.TopCenter;
@@ -181,14 +188,24 @@
             panel3.Size = new Size(501, 567);
             panel3.TabIndex = 3;
             // 
+            // monthCalendar1
+            // 
+            monthCalendar1.BackColor = SystemColors.InactiveBorder;
+            monthCalendar1.Location = new Point(89, 205);
+            monthCalendar1.Name = "monthCalendar1";
+            monthCalendar1.TabIndex = 4;
+            // 
             // button1
             // 
+            button1.BackColor = Color.Gold;
+            button1.FlatStyle = FlatStyle.Popup;
+            button1.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
             button1.Location = new Point(177, 489);
             button1.Name = "button1";
             button1.Size = new Size(141, 49);
             button1.TabIndex = 3;
             button1.Text = "Search";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -197,13 +214,15 @@
             label2.Size = new Size(471, 157);
             label2.TabIndex = 2;
             label2.Text = resources.GetString("label2.Text");
-            label2.TextAlign = ContentAlignment.TopRight;
+            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // monthCalendar1
+            // label10
             // 
-            monthCalendar1.Location = new Point(89, 205);
-            monthCalendar1.Name = "monthCalendar1";
-            monthCalendar1.TabIndex = 4;
+            label10.Location = new Point(7, 108);
+            label10.Name = "label10";
+            label10.Size = new Size(221, 24);
+            label10.TabIndex = 12;
+            label10.Text = "-------------------------------";
             // 
             // UC_History
             // 
@@ -239,5 +258,6 @@
         private Label label5;
         private Label label4;
         private MonthCalendar monthCalendar1;
+        private Label label10;
     }
 }

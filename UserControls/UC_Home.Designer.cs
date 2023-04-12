@@ -41,7 +41,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.DeepSkyBlue;
+            panel1.BackColor = Color.Black;
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
@@ -54,11 +54,11 @@
             // 
             label1.AutoSize = true;
             label1.FlatStyle = FlatStyle.Popup;
-            label1.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.Black;
+            label1.Font = new Font("Segoe UI Black", 16F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
             label1.Location = new Point(19, 13);
             label1.Name = "label1";
-            label1.Size = new Size(88, 43);
+            label1.Size = new Size(112, 45);
             label1.TabIndex = 0;
             label1.Text = "Home";
             // 
@@ -66,9 +66,9 @@
             // 
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(35, 270);
+            label2.Location = new Point(35, 271);
             label2.Name = "label2";
-            label2.Size = new Size(388, 106);
+            label2.Size = new Size(388, 98);
             label2.TabIndex = 1;
             label2.Text = "Here at The Big Pool, you will be able to ceate a customized practice set, view your past workouts and track your progress. ";
             label2.Click += label2_Click;
@@ -76,31 +76,34 @@
             // label3
             // 
             label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Britannic Bold", 22F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(35, 157);
+            label3.Font = new Font("Segoe UI", 22F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label3.Location = new Point(35, 130);
             label3.Name = "label3";
-            label3.Size = new Size(287, 104);
+            label3.Size = new Size(312, 127);
             label3.TabIndex = 2;
             label3.Text = "Time to jump in the pool.";
             label3.Click += label3_Click;
             // 
             // button1
             // 
-            button1.Location = new Point(35, 368);
+            button1.BackColor = Color.Gold;
+            button1.FlatStyle = FlatStyle.Popup;
+            button1.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Location = new Point(35, 379);
             button1.Name = "button1";
-            button1.Size = new Size(312, 71);
+            button1.Size = new Size(278, 59);
             button1.TabIndex = 3;
             button1.Text = "Generate Automatic Practice Swim";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // label4
             // 
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(35, 457);
+            label4.Location = new Point(35, 456);
             label4.Name = "label4";
-            label4.Size = new Size(351, 72);
+            label4.Size = new Size(351, 54);
             label4.TabIndex = 4;
             label4.Text = "Get started immediately, and have a random practice swim generated for you.";
             label4.Click += label4_Click;

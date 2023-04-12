@@ -81,8 +81,9 @@
             // 
             // buttonHome
             // 
-            buttonHome.BackColor = Color.DeepSkyBlue;
+            buttonHome.BackColor = Color.Gold;
             buttonHome.Dock = DockStyle.Fill;
+            buttonHome.FlatStyle = FlatStyle.Popup;
             buttonHome.Location = new Point(3, 162);
             buttonHome.Name = "buttonHome";
             buttonHome.Size = new Size(195, 113);
@@ -93,8 +94,9 @@
             // 
             // buttonSwim
             // 
-            buttonSwim.BackColor = Color.DeepSkyBlue;
+            buttonSwim.BackColor = Color.Gold;
             buttonSwim.Dock = DockStyle.Fill;
+            buttonSwim.FlatStyle = FlatStyle.Popup;
             buttonSwim.Location = new Point(3, 281);
             buttonSwim.Name = "buttonSwim";
             buttonSwim.Size = new Size(195, 113);
@@ -105,8 +107,9 @@
             // 
             // buttonHistory
             // 
-            buttonHistory.BackColor = Color.DeepSkyBlue;
+            buttonHistory.BackColor = Color.Gold;
             buttonHistory.Dock = DockStyle.Fill;
+            buttonHistory.FlatStyle = FlatStyle.Popup;
             buttonHistory.Location = new Point(3, 400);
             buttonHistory.Name = "buttonHistory";
             buttonHistory.Size = new Size(195, 113);
@@ -117,8 +120,9 @@
             // 
             // buttonSettings
             // 
-            buttonSettings.BackColor = Color.DeepSkyBlue;
+            buttonSettings.BackColor = Color.Gold;
             buttonSettings.Dock = DockStyle.Fill;
+            buttonSettings.FlatStyle = FlatStyle.Popup;
             buttonSettings.Location = new Point(3, 519);
             buttonSettings.Name = "buttonSettings";
             buttonSettings.Size = new Size(195, 116);
@@ -129,7 +133,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.White;
+            panel2.BackColor = Color.Black;
             panel2.Controls.Add(labelUsername);
             panel2.Controls.Add(pictureBox1);
             panel2.Dock = DockStyle.Fill;
@@ -141,6 +145,7 @@
             // labelUsername
             // 
             labelUsername.AutoSize = true;
+            labelUsername.ForeColor = Color.Gold;
             labelUsername.Location = new Point(53, 113);
             labelUsername.Name = "labelUsername";
             labelUsername.Size = new Size(91, 25);
@@ -149,6 +154,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.BackColor = Color.White;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(46, 8);
             pictureBox1.Name = "pictureBox1";
@@ -183,6 +189,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(941, 640);
             Controls.Add(panelDashboard);
             Controls.Add(panelSide);

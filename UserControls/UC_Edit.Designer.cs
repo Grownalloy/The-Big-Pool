@@ -39,47 +39,52 @@
             textBox6 = new TextBox();
             label7 = new Label();
             panelEdit = new Panel();
-            label2 = new Label();
-            label3 = new Label();
-            label6 = new Label();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
             comboBox3 = new ComboBox();
+            comboBox2 = new ComboBox();
+            comboBox1 = new ComboBox();
+            label6 = new Label();
+            label3 = new Label();
+            label2 = new Label();
             panelEdit.SuspendLayout();
             SuspendLayout();
             // 
             // button1
             // 
+            button1.BackColor = Color.Gold;
             button1.Dock = DockStyle.Bottom;
+            button1.FlatStyle = FlatStyle.Popup;
+            button1.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
             button1.Location = new Point(0, 581);
             button1.Name = "button1";
             button1.Size = new Size(221, 53);
             button1.TabIndex = 0;
             button1.Text = "Save";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // button2
             // 
+            button2.BackColor = Color.Gold;
             button2.Dock = DockStyle.Bottom;
+            button2.FlatStyle = FlatStyle.Popup;
+            button2.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
             button2.Location = new Point(0, 528);
             button2.Name = "button2";
             button2.Size = new Size(221, 53);
             button2.TabIndex = 1;
             button2.Text = "Cancel";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.BorderStyle = BorderStyle.FixedSingle;
-            label1.Font = new Font("Segoe Print", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.Black;
-            label1.Location = new Point(14, 3);
+            label1.Font = new Font("Segoe UI Semibold", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.Gold;
+            label1.Location = new Point(27, 14);
             label1.Name = "label1";
-            label1.Size = new Size(193, 30);
+            label1.Size = new Size(167, 21);
             label1.TabIndex = 2;
             label1.Text = "Edit Account Settings";
             // 
@@ -167,29 +172,32 @@
             panelEdit.Size = new Size(221, 634);
             panelEdit.TabIndex = 15;
             // 
-            // label2
+            // comboBox3
             // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Segoe UI", 8F, FontStyle.Italic, GraphicsUnit.Point);
-            label2.ForeColor = Color.Black;
-            label2.Location = new Point(17, 242);
-            label2.Name = "label2";
-            label2.Size = new Size(74, 21);
-            label2.TabIndex = 15;
-            label2.Text = "Category";
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Items.AddRange(new object[] { "50 yards", "100 yards", "200 yards", "400 yards" });
+            comboBox3.Location = new Point(17, 395);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(190, 33);
+            comboBox3.TabIndex = 20;
             // 
-            // label3
+            // comboBox2
             // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Segoe UI", 8F, FontStyle.Italic, GraphicsUnit.Point);
-            label3.ForeColor = Color.Black;
-            label3.Location = new Point(17, 307);
-            label3.Name = "label3";
-            label3.Size = new Size(77, 21);
-            label3.TabIndex = 16;
-            label3.Text = "Skill Level";
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "Garnet", "Bronze", "Silver", "Gold", "Senior" });
+            comboBox2.Location = new Point(17, 329);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(190, 33);
+            comboBox2.TabIndex = 19;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Stroke", "Medley", "Freestyle", "Pace", "Sprint" });
+            comboBox1.Location = new Point(17, 263);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(190, 33);
+            comboBox1.TabIndex = 18;
             // 
             // label6
             // 
@@ -203,32 +211,29 @@
             label6.TabIndex = 17;
             label6.Text = "Distance";
             // 
-            // comboBox1
+            // label3
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Stroke", "Medley", "Freestyle", "Pace", "Sprint" });
-            comboBox1.Location = new Point(17, 263);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(190, 33);
-            comboBox1.TabIndex = 18;
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Segoe UI", 8F, FontStyle.Italic, GraphicsUnit.Point);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(17, 307);
+            label3.Name = "label3";
+            label3.Size = new Size(77, 21);
+            label3.TabIndex = 16;
+            label3.Text = "Skill Level";
             // 
-            // comboBox2
+            // label2
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "Garnet", "Bronze", "Silver", "Gold", "Senior" });
-            comboBox2.Location = new Point(17, 329);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(190, 33);
-            comboBox2.TabIndex = 19;
-            // 
-            // comboBox3
-            // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Items.AddRange(new object[] { "50 yards", "100 yards", "200 yards", "400 yards" });
-            comboBox3.Location = new Point(17, 395);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(190, 33);
-            comboBox3.TabIndex = 20;
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Segoe UI", 8F, FontStyle.Italic, GraphicsUnit.Point);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(17, 242);
+            label2.Name = "label2";
+            label2.Size = new Size(74, 21);
+            label2.TabIndex = 15;
+            label2.Text = "Category";
             // 
             // UC_Edit
             // 
