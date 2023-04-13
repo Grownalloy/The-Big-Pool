@@ -71,16 +71,17 @@ namespace The_Big_Pool
                     {"Username", textBoxUsername.Text.ToLower() },
                     {"Password", hashpass },
                     { "Settings", new BsonDocument {
-                        {"Category", comboBox1.Text },
+                        {"Preferred Categories", comboBox1.Text },
                         {"Difficulty Level",comboBox2.Text },
-                        {"Distance",textBox1.Text},
-                        { "Skill level", Act.get_skill() },
-                        { "Preffered Distance", Act.get_Distance() },
+                        { "Skill level", comboBox2.Text },
+                        { "Preffered Distance", int.Parse(comboBox2.Text) },
                         { "Duration of work-out", Act.get_duration() }
                                                     }
                     }
                 };
-                users.InsertOne(doc);
+                //users.InsertOne(doc);
+                MessageBox.Show(comboBox1.Text);
+                MessageBox.Show(comboBox2.Text);
                 MessageBox.Show("Added account");
             }
             else
