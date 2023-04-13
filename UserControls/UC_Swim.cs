@@ -426,9 +426,6 @@ namespace The_Big_Pool.UserControls
                         { "date", TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow,
                         TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time")).ToString("MM/dd/yyyy HH:mm:ss") }
                     };
-                //byte[] metadataBytes = metadata.ToBson();
-                //int metadataSize = metadataBytes.Length;
-                //metadata.Add("size", metadataSize);
 
                 // Insert the metadata into the MongoDB collection
                 var filter_user = Builders<BsonDocument>.Filter.Eq("Username", username);
@@ -439,6 +436,26 @@ namespace The_Big_Pool.UserControls
                     IsUpsert = true //This inserts a new document if one doesnt exist
                 };
                 var updatedDocument = collection.FindOneAndUpdate(filter_user, update, options);
+
+                //Lines 440 to 458 pull the metadata into a pdf
+                var filter_metadata = Builders<BsonDocument>.Filter.Eq("metadata.practices", documentId);
+                var projection_metadata = Builders<BsonDocument>.Projection.Include("metadata.$");
+                var metadata_document = await collection.Find(filter_metadata).Project(projection_metadata).FirstOrDefaultAsync();
+
+                // Extract the metadata from the document
+                var metadata_pull = metadata_document["metadata"][0].AsBsonDocument;
+
+                // Create a new PDF document
+                var document = new Document();
+                var fileName = "metadata.pdf";
+                var filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), fileName);
+                var writer_pull = PdfWriter.GetInstance(document, new FileStream(filePath, FileMode.Create));
+
+                document.Open();
+                document.Add(new Paragraph("Practices: " + metadata_pull["practices"]));
+                document.Add(new Paragraph("Date: " + metadata_pull["date"]));
+                document.Close();
+                writer.Close();
 
                 // Check if the metadata was inserted successfully to the db
                 if (updatedDocument != null)
