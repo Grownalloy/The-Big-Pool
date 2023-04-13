@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Amazon.Auth.AccessControlPolicy;
+using Microsoft.Extensions.Configuration;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using System;
@@ -28,10 +29,6 @@ namespace The_Big_Pool.UserControls
             panelEdit.Controls.Add(usercontrol);
             usercontrol.BringToFront();
         }
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
@@ -39,7 +36,6 @@ namespace The_Big_Pool.UserControls
 
         private void button2_Click(object sender, EventArgs e)
         {
-            panelEdit.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -59,7 +55,7 @@ namespace The_Big_Pool.UserControls
             //need to add all the functions to the data is actually store
             if (textBox3.Text != "")
             {
-              
+
 
                 // Define the update to set the new username value
                 var update = Builders<BsonDocument>.Update.Set("Username", textBox3.Text);
@@ -73,7 +69,7 @@ namespace The_Big_Pool.UserControls
                     MessageBox.Show("Error: Username update failed.");
                 }
             }
-            if (textBox4.Text != ""&&textBox4.Text==textBox6.Text)
+            if (textBox4.Text != "" && textBox4.Text == textBox6.Text)
             {
                 var update = Builders<BsonDocument>.Update.Set("Password", BCrypt.Net.BCrypt.HashPassword(textBox4.Text));
                 var result = users.UpdateOne(filter_user, update);
@@ -100,7 +96,7 @@ namespace The_Big_Pool.UserControls
                     MessageBox.Show("Error: Categories update failed.");
                 }
             }
-            if(comboBox1.Text != "")
+            if (comboBox1.Text != "")
             {
                 var update = Builders<BsonDocument>.Update.Set("Settings.Skill level", comboBox1.Text);
                 var result = users.UpdateOne(filter_user, update);
@@ -113,9 +109,10 @@ namespace The_Big_Pool.UserControls
                     MessageBox.Show("Error: Skill Level update failed.");
                 }
             }
-            if (textBox1.Text!="")
+            if (textBox1.Text != "")
                 //and everything changes on the swimmer profile card and database\
                 panelEdit.Controls.Clear();
+
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)

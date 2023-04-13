@@ -49,5 +49,14 @@ namespace The_Big_Pool
             addUserControl(uc);
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to quit?", "Exit Application", MessageBoxButtons.YesNo);
+            if (result == System.Windows.Forms.DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }

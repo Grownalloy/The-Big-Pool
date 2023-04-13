@@ -58,7 +58,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(731, 73);
+            panel1.Size = new Size(797, 73);
             panel1.TabIndex = 0;
             // 
             // label1
@@ -80,7 +80,7 @@
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 73);
             panel2.Name = "panel2";
-            panel2.Size = new Size(731, 567);
+            panel2.Size = new Size(797, 581);
             panel2.TabIndex = 1;
             // 
             // panel4
@@ -197,7 +197,7 @@
             panel3.Dock = DockStyle.Left;
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(501, 567);
+            panel3.Size = new Size(501, 581);
             panel3.TabIndex = 3;
             // 
             // monthCalendar1
@@ -237,7 +237,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "UC_History";
-            Size = new Size(731, 640);
+            Size = new Size(797, 654);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);

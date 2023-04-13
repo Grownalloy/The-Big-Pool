@@ -325,7 +325,7 @@ namespace The_Big_Pool.UserControls
                         break;
                     }
                 }
-                
+
             }
             foreach (var setb in selectedSets)
             {
@@ -365,7 +365,7 @@ namespace The_Big_Pool.UserControls
                 var set = warmdownSets[index];
 
                 // add the set to the selected sets and update the total distance
-                
+
                 int x = set.GetValue("Distance").ToInt32();
                 x = x * set.GetValue("Reps").ToInt32();
                 if (x + totalDistance > (remainingWD + (remainingWD / 8)))

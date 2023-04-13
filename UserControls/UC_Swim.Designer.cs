@@ -82,7 +82,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(731, 74);
+            panel1.Size = new Size(797, 74);
             panel1.TabIndex = 0;
             // 
             // label8
@@ -435,7 +435,7 @@
             Controls.Add(panelCategory);
             Controls.Add(panel1);
             Name = "UC_Swim";
-            Size = new Size(731, 640);
+            Size = new Size(797, 654);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panelCategory.ResumeLayout(false);

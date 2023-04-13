@@ -55,16 +55,16 @@ namespace The_Big_Pool.UserControls
             var document = users.Find(filter_user).FirstOrDefault();
             int preferredDistance = 1;
             string durationOfWorkout = "";
-            string preferredCategories="";
-            string Skill="";
+            string preferredCategories = "";
+            string Skill = "";
             if (document != null)
             {
                 Skill = document["Settings"]["Skill level"].AsString;
                 preferredDistance = document["Settings"]["Preffered Distance"].AsInt32;
-               durationOfWorkout = document["Settings"]["Duration of work-out"].AsString;
-               preferredCategories = document["Settings"]["Preferred Categories"].AsString;
+                durationOfWorkout = document["Settings"]["Duration of work-out"].AsString;
+                preferredCategories = document["Settings"]["Preferred Categories"].AsString;
             }
-            Practicespecs practice = new Practicespecs(preferredDistance,Skill,durationOfWorkout,preferredCategories);
+            Practicespecs practice = new Practicespecs(preferredDistance, Skill, durationOfWorkout, preferredCategories);
 
             var remainingWU = practice.warmup();
             var categoryFilter = Builders<BsonDocument>.Filter.Regex("Category", new BsonRegularExpression("warmup", "i"));
@@ -152,12 +152,12 @@ namespace The_Big_Pool.UserControls
 
             var filterBuilder = Builders<BsonDocument>.Filter;
             var checkedItems = new List<string>();
-            
+
 
 
             string[] categories = preferredCategories.Split(','); // Split the string into an array of categories
 
-           var  filters = new List<FilterDefinition<BsonDocument>>();
+            var filters = new List<FilterDefinition<BsonDocument>>();
 
             foreach (string category in categories)
             {
@@ -167,7 +167,7 @@ namespace The_Big_Pool.UserControls
 
             filter = Builders<BsonDocument>.Filter.Or(filters);
 
-         
+
 
 
             filter = Builders<BsonDocument>.Filter.And(filter, skillFilter);
@@ -220,7 +220,7 @@ namespace The_Big_Pool.UserControls
                         break;
                     }
                 }
-                
+
             }
             foreach (var setb in selectedSets)
             {
@@ -326,7 +326,7 @@ namespace The_Big_Pool.UserControls
                 //metadata.Add("size", metadataSize);
 
                 // Insert the metadata into the MongoDB collection
-                 filter_user = Builders<BsonDocument>.Filter.Eq("Username", username);
+                filter_user = Builders<BsonDocument>.Filter.Eq("Username", username);
                 var update = Builders<BsonDocument>.Update.Push("metadata", metadata);
                 var options = new FindOneAndUpdateOptions<BsonDocument>
                 {
@@ -359,7 +359,7 @@ namespace The_Big_Pool.UserControls
                 // Handle exception
             }
         }
-    
+
 
         private void label4_Click(object sender, EventArgs e)
         {
