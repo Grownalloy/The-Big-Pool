@@ -39,12 +39,17 @@
             textBoxPassword = new TextBox();
             textBoxUsername = new TextBox();
             label1 = new Label();
+            panel1 = new Panel();
+            button1 = new Button();
+            label5 = new Label();
             panelLogin.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panelLogin
             // 
             panelLogin.BackgroundImage = (Image)resources.GetObject("panelLogin.BackgroundImage");
+            panelLogin.Controls.Add(panel1);
             panelLogin.Controls.Add(buttonCreateAccount);
             panelLogin.Controls.Add(buttonLogin);
             panelLogin.Controls.Add(label4);
@@ -55,9 +60,8 @@
             panelLogin.Controls.Add(label1);
             panelLogin.Dock = DockStyle.Fill;
             panelLogin.Location = new Point(0, 0);
-            panelLogin.Margin = new Padding(2, 2, 2, 2);
             panelLogin.Name = "panelLogin";
-            panelLogin.Size = new Size(429, 285);
+            panelLogin.Size = new Size(613, 475);
             panelLogin.TabIndex = 0;
             // 
             // buttonCreateAccount
@@ -65,10 +69,9 @@
             buttonCreateAccount.BackColor = Color.MidnightBlue;
             buttonCreateAccount.FlatStyle = FlatStyle.Popup;
             buttonCreateAccount.ForeColor = Color.White;
-            buttonCreateAccount.Location = new Point(64, 217);
-            buttonCreateAccount.Margin = new Padding(2, 2, 2, 2);
+            buttonCreateAccount.Location = new Point(91, 362);
             buttonCreateAccount.Name = "buttonCreateAccount";
-            buttonCreateAccount.Size = new Size(139, 25);
+            buttonCreateAccount.Size = new Size(199, 42);
             buttonCreateAccount.TabIndex = 7;
             buttonCreateAccount.Text = "Create Account";
             buttonCreateAccount.UseVisualStyleBackColor = false;
@@ -79,10 +82,9 @@
             buttonLogin.BackColor = Color.MidnightBlue;
             buttonLogin.FlatStyle = FlatStyle.Popup;
             buttonLogin.ForeColor = Color.White;
-            buttonLogin.Location = new Point(226, 217);
-            buttonLogin.Margin = new Padding(2, 2, 2, 2);
+            buttonLogin.Location = new Point(323, 362);
             buttonLogin.Name = "buttonLogin";
-            buttonLogin.Size = new Size(139, 25);
+            buttonLogin.Size = new Size(199, 42);
             buttonLogin.TabIndex = 6;
             buttonLogin.Text = "Login";
             buttonLogin.UseVisualStyleBackColor = false;
@@ -92,10 +94,9 @@
             // 
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe Print", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(50, 54);
-            label4.Margin = new Padding(2, 0, 2, 0);
+            label4.Location = new Point(71, 90);
             label4.Name = "label4";
-            label4.Size = new Size(335, 54);
+            label4.Size = new Size(479, 90);
             label4.TabIndex = 5;
             label4.Text = "Welcome to The Big Pool! New to the pool? Press the \"Create Account\" button below and get starter. Already have an account, continue logging in below.";
             label4.TextAlign = ContentAlignment.TopCenter;
@@ -105,10 +106,9 @@
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
-            label3.Location = new Point(69, 157);
-            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Location = new Point(99, 262);
             label3.Name = "label3";
-            label3.Size = new Size(87, 15);
+            label3.Size = new Size(132, 25);
             label3.TabIndex = 4;
             label3.Text = "Enter Password";
             // 
@@ -116,31 +116,28 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
-            label2.Location = new Point(66, 122);
-            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Location = new Point(94, 203);
             label2.Name = "label2";
-            label2.Size = new Size(90, 15);
+            label2.Size = new Size(136, 25);
             label2.TabIndex = 3;
             label2.Text = "Enter Username";
             // 
             // textBoxPassword
             // 
-            textBoxPassword.Location = new Point(183, 155);
-            textBoxPassword.Margin = new Padding(2, 2, 2, 2);
+            textBoxPassword.Location = new Point(261, 258);
             textBoxPassword.MaxLength = 20;
             textBoxPassword.Name = "textBoxPassword";
             textBoxPassword.PasswordChar = '*';
             textBoxPassword.PlaceholderText = "Password";
-            textBoxPassword.Size = new Size(180, 23);
+            textBoxPassword.Size = new Size(255, 31);
             textBoxPassword.TabIndex = 2;
             // 
             // textBoxUsername
             // 
-            textBoxUsername.Location = new Point(183, 121);
-            textBoxUsername.Margin = new Padding(2, 2, 2, 2);
+            textBoxUsername.Location = new Point(261, 202);
             textBoxUsername.Name = "textBoxUsername";
             textBoxUsername.PlaceholderText = "Username";
-            textBoxUsername.Size = new Size(180, 23);
+            textBoxUsername.Size = new Size(255, 31);
             textBoxUsername.TabIndex = 1;
             // 
             // label1
@@ -149,25 +146,62 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Snap ITC", 12F, FontStyle.Italic, GraphicsUnit.Point);
             label1.ForeColor = Color.MidnightBlue;
-            label1.Location = new Point(86, 27);
-            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Location = new Point(123, 45);
             label1.Name = "label1";
-            label1.Size = new Size(245, 22);
+            label1.Size = new Size(366, 31);
             label1.TabIndex = 0;
             label1.Text = "Welcome To The Big Pool!";
             // 
+            // panel1
+            // 
+            panel1.Controls.Add(label5);
+            panel1.Controls.Add(button1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(613, 29);
+            panel1.TabIndex = 8;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.MidnightBlue;
+            button1.Dock = DockStyle.Right;
+            button1.FlatStyle = FlatStyle.Popup;
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(567, 0);
+            button1.Name = "button1";
+            button1.Size = new Size(46, 29);
+            button1.TabIndex = 0;
+            button1.Text = "X";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Dock = DockStyle.Left;
+            label5.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.ForeColor = Color.MidnightBlue;
+            label5.Location = new Point(0, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(64, 28);
+            label5.TabIndex = 1;
+            label5.Text = "Login";
+            // 
             // Login
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(429, 285);
+            ClientSize = new Size(613, 475);
             Controls.Add(panelLogin);
-            Margin = new Padding(2, 2, 2, 2);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             panelLogin.ResumeLayout(false);
             panelLogin.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -182,5 +216,8 @@
         private TextBox textBoxPassword;
         private TextBox textBoxUsername;
         private Label label1;
+        private Panel panel1;
+        private Label label5;
+        private Button button1;
     }
 }
