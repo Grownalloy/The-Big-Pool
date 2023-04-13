@@ -24,6 +24,7 @@ namespace The_Big_Pool
             panelDashboard.Controls.Add(usercontrol);
             usercontrol.BringToFront();
         }
+
         private void buttonHome_Click(object sender, EventArgs e)
         {
             UC_Home uc = new UC_Home();
@@ -46,6 +47,7 @@ namespace The_Big_Pool
         {
             UC_Settings uc = new UC_Settings();
             addUserControl(uc);
+
         }
     }
 }
