@@ -58,10 +58,5 @@ namespace The_Big_Pool
                 Application.Exit();
             }
         }
-
-        private void panelSide_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

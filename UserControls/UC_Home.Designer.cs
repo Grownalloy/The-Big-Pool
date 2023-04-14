@@ -67,7 +67,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.MidnightBlue;
-            label2.Location = new Point(35, 278);
+            label2.Location = new Point(35, 271);
             label2.Name = "label2";
             label2.Size = new Size(388, 98);
             label2.TabIndex = 1;
@@ -79,7 +79,7 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 22F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label3.ForeColor = Color.WhiteSmoke;
-            label3.Location = new Point(35, 137);
+            label3.Location = new Point(35, 130);
             label3.Name = "label3";
             label3.Size = new Size(312, 127);
             label3.TabIndex = 2;
@@ -92,7 +92,7 @@
             button1.FlatStyle = FlatStyle.Popup;
             button1.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(35, 386);
+            button1.Location = new Point(35, 379);
             button1.Name = "button1";
             button1.Size = new Size(278, 59);
             button1.TabIndex = 3;
@@ -105,7 +105,7 @@
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.MidnightBlue;
-            label4.Location = new Point(35, 463);
+            label4.Location = new Point(35, 456);
             label4.Name = "label4";
             label4.Size = new Size(351, 54);
             label4.TabIndex = 4;
@@ -117,10 +117,9 @@
             panel2.BackColor = Color.Transparent;
             panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
             panel2.BackgroundImageLayout = ImageLayout.Stretch;
-            panel2.Dock = DockStyle.Right;
-            panel2.Location = new Point(424, 73);
+            panel2.Location = new Point(421, 73);
             panel2.Name = "panel2";
-            panel2.Size = new Size(373, 581);
+            panel2.Size = new Size(313, 568);
             panel2.TabIndex = 5;
             // 
             // UC_Home

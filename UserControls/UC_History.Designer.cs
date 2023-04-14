@@ -96,14 +96,14 @@
             panel4.Controls.Add(label3);
             panel4.Location = new Point(500, 0);
             panel4.Name = "panel4";
-            panel4.Size = new Size(297, 578);
+            panel4.Size = new Size(231, 567);
             panel4.TabIndex = 6;
             panel4.Paint += panel4_Paint;
             // 
             // label10
             // 
             label10.ForeColor = Color.White;
-            label10.Location = new Point(38, 108);
+            label10.Location = new Point(7, 108);
             label10.Name = "label10";
             label10.Size = new Size(221, 24);
             label10.TabIndex = 12;
@@ -180,7 +180,7 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 16F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label3.ForeColor = Color.MidnightBlue;
-            label3.Location = new Point(38, 11);
+            label3.Location = new Point(7, 11);
             label3.Name = "label3";
             label3.Size = new Size(221, 111);
             label3.TabIndex = 5;
