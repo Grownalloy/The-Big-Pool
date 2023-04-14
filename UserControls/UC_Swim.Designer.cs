@@ -123,7 +123,7 @@
             button1.BackgroundImageLayout = ImageLayout.None;
             button1.FlatStyle = FlatStyle.Popup;
             button1.ForeColor = Color.White;
-            button1.Location = new Point(255, 538);
+            button1.Location = new Point(288, 538);
             button1.Name = "button1";
             button1.Size = new Size(221, 53);
             button1.TabIndex = 1;
@@ -135,7 +135,7 @@
             // 
             panelCategory.BackColor = Color.MidnightBlue;
             panelCategory.Controls.Add(groupBoxCategory);
-            panelCategory.Location = new Point(131, 107);
+            panelCategory.Location = new Point(164, 107);
             panelCategory.Name = "panelCategory";
             panelCategory.Size = new Size(223, 258);
             panelCategory.TabIndex = 2;
@@ -211,7 +211,7 @@
             // 
             panelDifficulty.BackColor = Color.MidnightBlue;
             panelDifficulty.Controls.Add(groupBoxDifficulty);
-            panelDifficulty.Location = new Point(376, 107);
+            panelDifficulty.Location = new Point(409, 107);
             panelDifficulty.Name = "panelDifficulty";
             panelDifficulty.Size = new Size(223, 258);
             panelDifficulty.TabIndex = 3;
@@ -291,7 +291,7 @@
             // 
             panelTime.BackColor = Color.MidnightBlue;
             panelTime.Controls.Add(groupBox1);
-            panelTime.Location = new Point(376, 388);
+            panelTime.Location = new Point(409, 388);
             panelTime.Name = "panelTime";
             panelTime.Size = new Size(277, 122);
             panelTime.TabIndex = 4;
@@ -374,7 +374,7 @@
             panelDistance.Controls.Add(label4);
             panelDistance.Controls.Add(textBox1);
             panelDistance.Controls.Add(groupBoxDistance);
-            panelDistance.Location = new Point(77, 388);
+            panelDistance.Location = new Point(110, 388);
             panelDistance.Name = "panelDistance";
             panelDistance.Size = new Size(277, 122);
             panelDistance.TabIndex = 5;

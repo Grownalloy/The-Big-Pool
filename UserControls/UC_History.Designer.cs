@@ -96,27 +96,27 @@
             panel4.Controls.Add(label3);
             panel4.Location = new Point(500, 0);
             panel4.Name = "panel4";
-            panel4.Size = new Size(231, 567);
+            panel4.Size = new Size(297, 578);
             panel4.TabIndex = 6;
             panel4.Paint += panel4_Paint;
             // 
             // label10
             // 
             label10.ForeColor = Color.White;
-            label10.Location = new Point(7, 108);
+            label10.Location = new Point(5, 108);
             label10.Name = "label10";
-            label10.Size = new Size(221, 24);
+            label10.Size = new Size(287, 26);
             label10.TabIndex = 12;
-            label10.Text = "-------------------------------";
+            label10.Text = "---------------------------------------";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 20F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label8.Font = new Font("Segoe UI", 24F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(16, 250);
+            label8.Location = new Point(17, 294);
             label8.Name = "label8";
-            label8.Size = new Size(103, 54);
+            label8.Size = new Size(125, 65);
             label8.TabIndex = 11;
             label8.Text = "0:00";
             // 
@@ -125,7 +125,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI Light", 8F, FontStyle.Italic, GraphicsUnit.Point);
             label9.ForeColor = Color.MidnightBlue;
-            label9.Location = new Point(16, 301);
+            label9.Location = new Point(17, 359);
             label9.Name = "label9";
             label9.Size = new Size(68, 21);
             label9.TabIndex = 10;
@@ -134,11 +134,11 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 20F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label6.Font = new Font("Segoe UI", 24F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(16, 378);
+            label6.Location = new Point(17, 422);
             label6.Name = "label6";
-            label6.Size = new Size(46, 54);
+            label6.Size = new Size(56, 65);
             label6.TabIndex = 9;
             label6.Text = "0";
             // 
@@ -147,7 +147,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Light", 8F, FontStyle.Italic, GraphicsUnit.Point);
             label7.ForeColor = Color.MidnightBlue;
-            label7.Location = new Point(16, 424);
+            label7.Location = new Point(17, 486);
             label7.Name = "label7";
             label7.Size = new Size(145, 21);
             label7.TabIndex = 8;
@@ -156,11 +156,11 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 20F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label5.Font = new Font("Segoe UI", 24F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(16, 122);
+            label5.Location = new Point(17, 166);
             label5.Name = "label5";
-            label5.Size = new Size(103, 54);
+            label5.Size = new Size(125, 65);
             label5.TabIndex = 7;
             label5.Text = "0.00";
             // 
@@ -169,7 +169,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Light", 8F, FontStyle.Italic, GraphicsUnit.Point);
             label4.ForeColor = Color.MidnightBlue;
-            label4.Location = new Point(16, 178);
+            label4.Location = new Point(17, 236);
             label4.Name = "label4";
             label4.Size = new Size(66, 21);
             label4.TabIndex = 6;
@@ -180,9 +180,9 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 16F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label3.ForeColor = Color.MidnightBlue;
-            label3.Location = new Point(7, 11);
+            label3.Location = new Point(5, 11);
             label3.Name = "label3";
-            label3.Size = new Size(221, 111);
+            label3.Size = new Size(287, 111);
             label3.TabIndex = 5;
             label3.Text = "Daily Performance";
             label3.TextAlign = ContentAlignment.TopCenter;

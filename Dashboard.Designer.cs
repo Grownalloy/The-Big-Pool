@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             panelSide = new Panel();
-            tableLayoutPanel1 = new TableLayoutPanel();
             buttonHome = new Button();
             buttonSwim = new Button();
             buttonHistory = new Button();
@@ -44,7 +43,6 @@
             label1 = new Label();
             button1 = new Button();
             panelSide.SuspendLayout();
-            tableLayoutPanel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelDashboard.SuspendLayout();
@@ -55,46 +53,28 @@
             // panelSide
             // 
             panelSide.BorderStyle = BorderStyle.FixedSingle;
-            panelSide.Controls.Add(tableLayoutPanel1);
+            panelSide.Controls.Add(buttonSettings);
+            panelSide.Controls.Add(panel2);
+            panelSide.Controls.Add(buttonHome);
+            panelSide.Controls.Add(buttonHistory);
+            panelSide.Controls.Add(buttonSwim);
             panelSide.Dock = DockStyle.Left;
             panelSide.Location = new Point(0, 0);
             panelSide.Name = "panelSide";
             panelSide.Size = new Size(203, 690);
             panelSide.TabIndex = 0;
             // 
-            // tableLayoutPanel1
-            // 
-            tableLayoutPanel1.ColumnCount = 1;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Controls.Add(buttonHome, 0, 1);
-            tableLayoutPanel1.Controls.Add(buttonSwim, 0, 2);
-            tableLayoutPanel1.Controls.Add(buttonHistory, 0, 3);
-            tableLayoutPanel1.Controls.Add(buttonSettings, 0, 4);
-            tableLayoutPanel1.Controls.Add(panel2, 0, 0);
-            tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Location = new Point(0, 0);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 5;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 18.75F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 18.75F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 18.75F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 18.75F));
-            tableLayoutPanel1.Size = new Size(201, 688);
-            tableLayoutPanel1.TabIndex = 0;
-            // 
             // buttonHome
             // 
             buttonHome.BackColor = Color.White;
             buttonHome.BackgroundImage = (Image)resources.GetObject("buttonHome.BackgroundImage");
             buttonHome.BackgroundImageLayout = ImageLayout.Zoom;
-            buttonHome.Dock = DockStyle.Fill;
             buttonHome.FlatStyle = FlatStyle.Popup;
             buttonHome.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             buttonHome.ForeColor = Color.DeepSkyBlue;
-            buttonHome.Location = new Point(3, 175);
+            buttonHome.Location = new Point(3, 206);
             buttonHome.Name = "buttonHome";
-            buttonHome.Size = new Size(195, 123);
+            buttonHome.Size = new Size(195, 55);
             buttonHome.TabIndex = 0;
             buttonHome.TextAlign = ContentAlignment.TopLeft;
             buttonHome.UseVisualStyleBackColor = false;
@@ -105,13 +85,12 @@
             buttonSwim.BackColor = Color.White;
             buttonSwim.BackgroundImage = (Image)resources.GetObject("buttonSwim.BackgroundImage");
             buttonSwim.BackgroundImageLayout = ImageLayout.Zoom;
-            buttonSwim.Dock = DockStyle.Fill;
             buttonSwim.FlatStyle = FlatStyle.Popup;
             buttonSwim.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             buttonSwim.ForeColor = Color.DeepSkyBlue;
-            buttonSwim.Location = new Point(3, 304);
+            buttonSwim.Location = new Point(3, 267);
             buttonSwim.Name = "buttonSwim";
-            buttonSwim.Size = new Size(195, 123);
+            buttonSwim.Size = new Size(195, 55);
             buttonSwim.TabIndex = 1;
             buttonSwim.TextAlign = ContentAlignment.TopLeft;
             buttonSwim.UseVisualStyleBackColor = false;
@@ -122,13 +101,12 @@
             buttonHistory.BackColor = Color.White;
             buttonHistory.BackgroundImage = (Image)resources.GetObject("buttonHistory.BackgroundImage");
             buttonHistory.BackgroundImageLayout = ImageLayout.Zoom;
-            buttonHistory.Dock = DockStyle.Fill;
             buttonHistory.FlatStyle = FlatStyle.Popup;
             buttonHistory.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             buttonHistory.ForeColor = Color.DeepSkyBlue;
-            buttonHistory.Location = new Point(3, 433);
+            buttonHistory.Location = new Point(3, 328);
             buttonHistory.Name = "buttonHistory";
-            buttonHistory.Size = new Size(195, 123);
+            buttonHistory.Size = new Size(195, 55);
             buttonHistory.TabIndex = 2;
             buttonHistory.TextAlign = ContentAlignment.TopLeft;
             buttonHistory.UseVisualStyleBackColor = false;
@@ -139,13 +117,12 @@
             buttonSettings.BackColor = Color.White;
             buttonSettings.BackgroundImage = (Image)resources.GetObject("buttonSettings.BackgroundImage");
             buttonSettings.BackgroundImageLayout = ImageLayout.Zoom;
-            buttonSettings.Dock = DockStyle.Fill;
             buttonSettings.FlatStyle = FlatStyle.Popup;
             buttonSettings.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             buttonSettings.ForeColor = Color.DeepSkyBlue;
-            buttonSettings.Location = new Point(3, 562);
+            buttonSettings.Location = new Point(3, 630);
             buttonSettings.Name = "buttonSettings";
-            buttonSettings.Size = new Size(195, 123);
+            buttonSettings.Size = new Size(195, 55);
             buttonSettings.TabIndex = 3;
             buttonSettings.TextAlign = ContentAlignment.TopLeft;
             buttonSettings.UseVisualStyleBackColor = false;
@@ -156,8 +133,7 @@
             panel2.BackColor = Color.White;
             panel2.Controls.Add(labelUsername);
             panel2.Controls.Add(pictureBox1);
-            panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(3, 3);
+            panel2.Location = new Point(3, 34);
             panel2.Name = "panel2";
             panel2.Size = new Size(195, 166);
             panel2.TabIndex = 4;
@@ -174,7 +150,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.BackColor = Color.DeepSkyBlue;
+            pictureBox1.BackColor = Color.LightGray;
             pictureBox1.BorderStyle = BorderStyle.FixedSingle;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(46, 8);
@@ -210,22 +186,20 @@
             // 
             panel1.Controls.Add(label1);
             panel1.Controls.Add(button1);
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(203, 0);
+            panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(799, 34);
+            panel1.Size = new Size(1002, 34);
             panel1.TabIndex = 2;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Dock = DockStyle.Left;
-            label1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.MidnightBlue;
-            label1.Location = new Point(0, 0);
+            label1.Location = new Point(3, 5);
             label1.Name = "label1";
-            label1.Size = new Size(131, 28);
+            label1.Size = new Size(119, 25);
             label1.TabIndex = 1;
             label1.Text = "The Big Pool";
             // 
@@ -233,9 +207,9 @@
             // 
             button1.BackColor = Color.DeepSkyBlue;
             button1.Dock = DockStyle.Right;
-            button1.FlatStyle = FlatStyle.Popup;
+            button1.FlatStyle = FlatStyle.System;
             button1.ForeColor = Color.MidnightBlue;
-            button1.Location = new Point(736, 0);
+            button1.Location = new Point(939, 0);
             button1.Name = "button1";
             button1.Size = new Size(63, 34);
             button1.TabIndex = 0;
@@ -258,7 +232,6 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Dashboard";
             panelSide.ResumeLayout(false);
-            tableLayoutPanel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -272,7 +245,6 @@
         #endregion
 
         private Panel panelSide;
-        private TableLayoutPanel tableLayoutPanel1;
         private Button buttonHome;
         private Button buttonSwim;
         private Button buttonHistory;

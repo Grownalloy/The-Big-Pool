@@ -119,7 +119,7 @@
             panel2.BackgroundImageLayout = ImageLayout.Stretch;
             panel2.Location = new Point(421, 73);
             panel2.Name = "panel2";
-            panel2.Size = new Size(313, 568);
+            panel2.Size = new Size(376, 581);
             panel2.TabIndex = 5;
             // 
             // UC_Home
