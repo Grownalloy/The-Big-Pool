@@ -68,7 +68,6 @@ namespace The_Big_Pool
             {
                 MessageBox.Show("Invalid Login");
             }
-
         }
         public class UserSession
         {

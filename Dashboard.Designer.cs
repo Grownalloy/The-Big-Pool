@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             panelSide = new Panel();
-            buttonHome = new Button();
-            buttonSwim = new Button();
-            buttonHistory = new Button();
             buttonSettings = new Button();
             panel2 = new Panel();
             labelUsername = new Label();
             pictureBox1 = new PictureBox();
+            buttonHome = new Button();
+            buttonHistory = new Button();
+            buttonSwim = new Button();
             panelDashboard = new Panel();
             pictureBox2 = new PictureBox();
             panel1 = new Panel();
@@ -63,54 +63,6 @@
             panelSide.Name = "panelSide";
             panelSide.Size = new Size(203, 690);
             panelSide.TabIndex = 0;
-            // 
-            // buttonHome
-            // 
-            buttonHome.BackColor = Color.White;
-            buttonHome.BackgroundImage = (Image)resources.GetObject("buttonHome.BackgroundImage");
-            buttonHome.BackgroundImageLayout = ImageLayout.Zoom;
-            buttonHome.FlatStyle = FlatStyle.Popup;
-            buttonHome.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonHome.ForeColor = Color.DeepSkyBlue;
-            buttonHome.Location = new Point(3, 206);
-            buttonHome.Name = "buttonHome";
-            buttonHome.Size = new Size(195, 55);
-            buttonHome.TabIndex = 0;
-            buttonHome.TextAlign = ContentAlignment.TopLeft;
-            buttonHome.UseVisualStyleBackColor = false;
-            buttonHome.Click += buttonHome_Click;
-            // 
-            // buttonSwim
-            // 
-            buttonSwim.BackColor = Color.White;
-            buttonSwim.BackgroundImage = (Image)resources.GetObject("buttonSwim.BackgroundImage");
-            buttonSwim.BackgroundImageLayout = ImageLayout.Zoom;
-            buttonSwim.FlatStyle = FlatStyle.Popup;
-            buttonSwim.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonSwim.ForeColor = Color.DeepSkyBlue;
-            buttonSwim.Location = new Point(3, 267);
-            buttonSwim.Name = "buttonSwim";
-            buttonSwim.Size = new Size(195, 55);
-            buttonSwim.TabIndex = 1;
-            buttonSwim.TextAlign = ContentAlignment.TopLeft;
-            buttonSwim.UseVisualStyleBackColor = false;
-            buttonSwim.Click += buttonSwim_Click;
-            // 
-            // buttonHistory
-            // 
-            buttonHistory.BackColor = Color.White;
-            buttonHistory.BackgroundImage = (Image)resources.GetObject("buttonHistory.BackgroundImage");
-            buttonHistory.BackgroundImageLayout = ImageLayout.Zoom;
-            buttonHistory.FlatStyle = FlatStyle.Popup;
-            buttonHistory.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonHistory.ForeColor = Color.DeepSkyBlue;
-            buttonHistory.Location = new Point(3, 328);
-            buttonHistory.Name = "buttonHistory";
-            buttonHistory.Size = new Size(195, 55);
-            buttonHistory.TabIndex = 2;
-            buttonHistory.TextAlign = ContentAlignment.TopLeft;
-            buttonHistory.UseVisualStyleBackColor = false;
-            buttonHistory.Click += buttonHistory_Click;
             // 
             // buttonSettings
             // 
@@ -147,6 +99,7 @@
             labelUsername.Size = new Size(91, 25);
             labelUsername.TabIndex = 1;
             labelUsername.Text = "Username";
+            labelUsername.Click += labelUsername_Click;
             // 
             // pictureBox1
             // 
@@ -159,6 +112,54 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            // 
+            // buttonHome
+            // 
+            buttonHome.BackColor = Color.White;
+            buttonHome.BackgroundImage = (Image)resources.GetObject("buttonHome.BackgroundImage");
+            buttonHome.BackgroundImageLayout = ImageLayout.Zoom;
+            buttonHome.FlatStyle = FlatStyle.Popup;
+            buttonHome.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonHome.ForeColor = Color.DeepSkyBlue;
+            buttonHome.Location = new Point(3, 206);
+            buttonHome.Name = "buttonHome";
+            buttonHome.Size = new Size(195, 55);
+            buttonHome.TabIndex = 0;
+            buttonHome.TextAlign = ContentAlignment.TopLeft;
+            buttonHome.UseVisualStyleBackColor = false;
+            buttonHome.Click += buttonHome_Click;
+            // 
+            // buttonHistory
+            // 
+            buttonHistory.BackColor = Color.White;
+            buttonHistory.BackgroundImage = (Image)resources.GetObject("buttonHistory.BackgroundImage");
+            buttonHistory.BackgroundImageLayout = ImageLayout.Zoom;
+            buttonHistory.FlatStyle = FlatStyle.Popup;
+            buttonHistory.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonHistory.ForeColor = Color.DeepSkyBlue;
+            buttonHistory.Location = new Point(3, 328);
+            buttonHistory.Name = "buttonHistory";
+            buttonHistory.Size = new Size(195, 55);
+            buttonHistory.TabIndex = 2;
+            buttonHistory.TextAlign = ContentAlignment.TopLeft;
+            buttonHistory.UseVisualStyleBackColor = false;
+            buttonHistory.Click += buttonHistory_Click;
+            // 
+            // buttonSwim
+            // 
+            buttonSwim.BackColor = Color.White;
+            buttonSwim.BackgroundImage = (Image)resources.GetObject("buttonSwim.BackgroundImage");
+            buttonSwim.BackgroundImageLayout = ImageLayout.Zoom;
+            buttonSwim.FlatStyle = FlatStyle.Popup;
+            buttonSwim.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonSwim.ForeColor = Color.DeepSkyBlue;
+            buttonSwim.Location = new Point(3, 267);
+            buttonSwim.Name = "buttonSwim";
+            buttonSwim.Size = new Size(195, 55);
+            buttonSwim.TabIndex = 1;
+            buttonSwim.TextAlign = ContentAlignment.TopLeft;
+            buttonSwim.UseVisualStyleBackColor = false;
+            buttonSwim.Click += buttonSwim_Click;
             // 
             // panelDashboard
             // 

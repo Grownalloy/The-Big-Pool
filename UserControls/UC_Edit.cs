@@ -17,7 +17,7 @@ namespace The_Big_Pool.UserControls
 {
     public partial class UC_Edit : UserControl
     {
-        UC_Settings panelSide;
+        //UC_Settings panelSide;
         public UC_Edit()
         {
             InitializeComponent();

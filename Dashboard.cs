@@ -58,5 +58,10 @@ namespace The_Big_Pool
                 Application.Exit();
             }
         }
+
+        private void labelUsername_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
