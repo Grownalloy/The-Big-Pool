@@ -30,9 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registration));
             panelRegistration = new Panel();
-            panel1 = new Panel();
-            button1 = new Button();
             label9 = new Label();
+            button1 = new Button();
             textBox1 = new TextBox();
             label8 = new Label();
             comboBox2 = new ComboBox();
@@ -50,14 +49,14 @@
             buttonRegister = new Button();
             buttonBacktoLogin = new Button();
             panelRegistration.SuspendLayout();
-            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panelRegistration
             // 
             panelRegistration.BackColor = Color.Transparent;
             panelRegistration.BackgroundImage = (Image)resources.GetObject("panelRegistration.BackgroundImage");
-            panelRegistration.Controls.Add(panel1);
+            panelRegistration.Controls.Add(label9);
+            panelRegistration.Controls.Add(button1);
             panelRegistration.Controls.Add(textBox1);
             panelRegistration.Controls.Add(label8);
             panelRegistration.Controls.Add(comboBox2);
@@ -80,35 +79,9 @@
             panelRegistration.Size = new Size(613, 494);
             panelRegistration.TabIndex = 16;
             // 
-            // panel1
-            // 
-            panel1.BackColor = Color.White;
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(label9);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(613, 29);
-            panel1.TabIndex = 20;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.MidnightBlue;
-            button1.Dock = DockStyle.Right;
-            button1.FlatStyle = FlatStyle.Popup;
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(564, 0);
-            button1.Name = "button1";
-            button1.Size = new Size(49, 29);
-            button1.TabIndex = 1;
-            button1.Text = "X";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
-            // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Dock = DockStyle.Left;
             label9.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             label9.ForeColor = Color.MidnightBlue;
             label9.Location = new Point(0, 0);
@@ -116,6 +89,19 @@
             label9.Size = new Size(128, 28);
             label9.TabIndex = 0;
             label9.Text = "Registration";
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Transparent;
+            button1.FlatStyle = FlatStyle.System;
+            button1.ForeColor = Color.MidnightBlue;
+            button1.Location = new Point(563, 1);
+            button1.Name = "button1";
+            button1.Size = new Size(49, 29);
+            button1.TabIndex = 1;
+            button1.Text = "X";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // textBox1
             // 
@@ -300,8 +286,6 @@
             Text = "Registration";
             panelRegistration.ResumeLayout(false);
             panelRegistration.PerformLayout();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -324,7 +308,6 @@
         private Label label8;
         private ComboBox comboBox2;
         private TextBox textBox1;
-        private Panel panel1;
         private Button button1;
         private Label label9;
     }

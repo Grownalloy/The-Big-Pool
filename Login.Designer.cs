@@ -31,7 +31,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             panelLogin = new Panel();
-            panel1 = new Panel();
             label5 = new Label();
             button1 = new Button();
             buttonCreateAccount = new Button();
@@ -43,13 +42,13 @@
             textBoxUsername = new TextBox();
             label1 = new Label();
             panelLogin.SuspendLayout();
-            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panelLogin
             // 
             panelLogin.BackgroundImage = (Image)resources.GetObject("panelLogin.BackgroundImage");
-            panelLogin.Controls.Add(panel1);
+            panelLogin.Controls.Add(button1);
+            panelLogin.Controls.Add(label5);
             panelLogin.Controls.Add(buttonCreateAccount);
             panelLogin.Controls.Add(buttonLogin);
             panelLogin.Controls.Add(label4);
@@ -64,20 +63,10 @@
             panelLogin.Size = new Size(613, 475);
             panelLogin.TabIndex = 0;
             // 
-            // panel1
-            // 
-            panel1.Controls.Add(label5);
-            panel1.Controls.Add(button1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(613, 29);
-            panel1.TabIndex = 8;
-            // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Dock = DockStyle.Left;
+            label5.BackColor = Color.Transparent;
             label5.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = Color.MidnightBlue;
             label5.Location = new Point(0, 0);
@@ -89,10 +78,9 @@
             // button1
             // 
             button1.BackColor = Color.MidnightBlue;
-            button1.Dock = DockStyle.Right;
-            button1.FlatStyle = FlatStyle.Popup;
+            button1.FlatStyle = FlatStyle.System;
             button1.ForeColor = Color.White;
-            button1.Location = new Point(567, 0);
+            button1.Location = new Point(563, 2);
             button1.Name = "button1";
             button1.Size = new Size(46, 29);
             button1.TabIndex = 0;
@@ -200,8 +188,6 @@
             Text = "Login";
             panelLogin.ResumeLayout(false);
             panelLogin.PerformLayout();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -216,7 +202,6 @@
         private TextBox textBoxPassword;
         private TextBox textBoxUsername;
         private Label label1;
-        private Panel panel1;
         private Label label5;
         private Button button1;
     }
