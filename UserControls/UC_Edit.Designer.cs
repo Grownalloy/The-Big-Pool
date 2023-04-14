@@ -80,7 +80,6 @@
             textBox3.PlaceholderText = "Username";
             textBox3.Size = new Size(190, 31);
             textBox3.TabIndex = 8;
-            textBox3.TextChanged += textBox3_TextChanged;
             // 
             // label4
             // 
@@ -101,7 +100,6 @@
             textBox4.PlaceholderText = "Password";
             textBox4.Size = new Size(190, 31);
             textBox4.TabIndex = 10;
-            textBox4.TextChanged += textBox4_TextChanged;
             // 
             // label5
             // 

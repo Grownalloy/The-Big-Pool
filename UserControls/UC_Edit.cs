@@ -17,7 +17,7 @@ namespace The_Big_Pool.UserControls
 {
     public partial class UC_Edit : UserControl
     {
-        UC_Settings panelSide;
+
         public UC_Edit()
         {
             InitializeComponent();
@@ -28,14 +28,6 @@ namespace The_Big_Pool.UserControls
             panelEdit.Controls.Clear();
             panelEdit.Controls.Add(usercontrol);
             usercontrol.BringToFront();
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -115,9 +107,5 @@ namespace The_Big_Pool.UserControls
 
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
