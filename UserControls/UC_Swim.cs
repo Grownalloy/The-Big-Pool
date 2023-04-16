@@ -417,15 +417,17 @@ namespace The_Big_Pool.UserControls
             {
                 var collection = database.GetCollection<BsonDocument>("user");
                 string username = UserSession.Instance.Username;
+
                 // Generate a unique ID for each document
                 string documentId = "SelectedSets_" + Guid.NewGuid().ToString();
+
                 // Create the PDF metadata
                 var metadata = new BsonDocument
-                    {
-                        { "practices", documentId},
-                        { "date", TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow,
-                        TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time")).ToString("MM/dd/yyyy HH:mm:ss") }
-                    };
+    {
+        { "practices", documentId },
+        { "date", TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow,
+            TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time")).ToString("MM/dd/yyyy HH:mm:ss") }
+    };
 
                 // Insert the metadata into the MongoDB collection
                 var filter_user = Builders<BsonDocument>.Filter.Eq("Username", username);
@@ -433,52 +435,57 @@ namespace The_Big_Pool.UserControls
                 var options = new FindOneAndUpdateOptions<BsonDocument>
                 {
                     ReturnDocument = ReturnDocument.After,
-                    IsUpsert = true //This inserts a new document if one doesnt exist
+                    IsUpsert = true //This inserts a new document if one doesn't exist
                 };
                 var updatedDocument = collection.FindOneAndUpdate(filter_user, update, options);
 
-                //Lines 440 to 458 pull the metadata into a pdf
-                var filter_metadata = Builders<BsonDocument>.Filter.Eq("metadata.practices", documentId);
-                var projection_metadata = Builders<BsonDocument>.Projection.Include("metadata.$");
-                var metadata_document = await collection.Find(filter_metadata).Project(projection_metadata).FirstOrDefaultAsync();
+                // Divide the PDF file into chunks and upload each chunk to MongoDB
+                var filePath = output;
+                int chunkSize = 1024 * 1024; // 1 MB chunk size
+                int chunkNumber = 1;
 
-                // Extract the metadata from the document
-                var metadata_pull = metadata_document["metadata"][0].AsBsonDocument;
-
-                // Create a new PDF document
-                var document = new Document();
-                var fileName = "metadata.pdf";
-                var filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), fileName);
-                var writer_pull = PdfWriter.GetInstance(document, new FileStream(filePath, FileMode.Create));
-
-                document.Open();
-                document.Add(new Paragraph("Practices: " + metadata_pull["practices"]));
-                document.Add(new Paragraph("Date: " + metadata_pull["date"]));
-                document.Close();
-                writer.Close();
-
-                // Check if the metadata was inserted successfully to the db
-                if (updatedDocument != null)
+                using (var stream = File.OpenRead(filePath))
                 {
-                    var insertedMetadata = updatedDocument["metadata"].AsBsonArray.Last().AsBsonDocument;
-                    if (insertedMetadata == metadata)
+                    byte[] buffer = new byte[chunkSize];
+                    int bytesRead;
+
+                    while ((bytesRead = stream.Read(buffer, 0, buffer.Length)) > 0)
                     {
-                        MessageBox.Show("Pushed PDF to database successfully");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Failed to insert metadata into database");
+                        var chunkData = new BsonDocument
+            {
+                { "documentId", documentId },
+                { "chunkNumber", chunkNumber },
+                { "data", new BsonBinaryData(buffer, BsonBinarySubType.Binary, GuidRepresentation.Unspecified) }
+            };
+
+                        collection.InsertOne(chunkData);
+                        chunkNumber++;
                     }
                 }
-                else
+
+                // Download the uploaded PDF to a local file on the desktop
+                var filter_document = Builders<BsonDocument>.Filter.Eq("documentId", documentId);
+                var chunks = collection.Find(filter_document).ToList();
+
+                if (chunks.Any())
                 {
-                    MessageBox.Show("Failed to update user document in database");
+                    var desktopFolder = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                    var downloadPath = Path.Combine(desktopFolder, "downloadtest.pdf");
+
+                    using (var outputStream = File.Create(downloadPath))
+                    {
+                        foreach (var chunk in chunks.OrderBy(c => c["chunkNumber"].AsInt32))
+                        {
+                            var data = chunk["data"].AsByteArray;
+                            outputStream.Write(data, 0, data.Length);
+                        }
+                    }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Failed to create practice or upload to MongoDB\n" + ex);
-                // Handle exception
+                MessageBox.Show(ex.Message + "Failed to create practice or upload to MongoDB");
+                Clipboard.SetText(ex.Message);
             }
         }
 
