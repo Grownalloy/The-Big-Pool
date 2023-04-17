@@ -25,6 +25,7 @@ using iTextSharp.text.pdf;
 using Microsoft.VisualBasic;
 using System.Collections.ObjectModel;
 using System.Reflection.Metadata.Ecma335;
+using SharpCompress.Common;
 
 namespace The_Big_Pool.UserControls
 {
@@ -426,7 +427,7 @@ namespace The_Big_Pool.UserControls
     {
         { "practices", documentId },
         { "date", TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow,
-            TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time")).ToString("MM/dd/yyyy HH:mm:ss") }
+            TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time")).ToString("MM/dd/yyyy") }
     };
 
                 // Insert the metadata into the MongoDB collection
@@ -439,7 +440,7 @@ namespace The_Big_Pool.UserControls
                 };
                 var updatedDocument = collection.FindOneAndUpdate(filter_user, update, options);
 
-                // Divide the PDF file into chunks and upload each chunk to MongoDB
+               // Divide the PDF file into chunks and add each chunk to the document
                 var filePath = output;
                 int chunkSize = 1024 * 1024; // 1 MB chunk size
                 int chunkNumber = 1;
@@ -453,12 +454,15 @@ namespace The_Big_Pool.UserControls
                     {
                         var chunkData = new BsonDocument
             {
+                            {"Date", TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow,
+            TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time")).ToString("MM/dd/yyyy") },
                 { "documentId", documentId },
                 { "chunkNumber", chunkNumber },
                 { "data", new BsonBinaryData(buffer, BsonBinarySubType.Binary, GuidRepresentation.Unspecified) }
             };
 
-                        collection.InsertOne(chunkData);
+                        update = Builders<BsonDocument>.Update.Push("chunks", chunkData);
+                        updatedDocument = collection.FindOneAndUpdate(filter_user, update, options);
                         chunkNumber++;
                     }
                 }
