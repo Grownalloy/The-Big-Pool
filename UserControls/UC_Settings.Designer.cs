@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Settings));
             tableLayoutPanel1 = new TableLayoutPanel();
+            panelSide = new Panel();
+            button1 = new Button();
+            label9 = new Label();
             panel1 = new Panel();
             labelSwimmerProfileCard = new Label();
             button2 = new Button();
@@ -41,15 +44,12 @@
             label3 = new Label();
             label1 = new Label();
             profilePicture = new PictureBox();
-            panelSide = new Panel();
-            button1 = new Button();
-            label9 = new Label();
             panel2 = new Panel();
             label2 = new Label();
             tableLayoutPanel1.SuspendLayout();
+            panelSide.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)profilePicture).BeginInit();
-            panelSide.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
@@ -67,6 +67,41 @@
             tableLayoutPanel1.Size = new Size(797, 592);
             tableLayoutPanel1.TabIndex = 0;
             // 
+            // panelSide
+            // 
+            panelSide.BackgroundImage = (Image)resources.GetObject("panelSide.BackgroundImage");
+            panelSide.Controls.Add(button1);
+            panelSide.Controls.Add(label9);
+            panelSide.Dock = DockStyle.Fill;
+            panelSide.Location = new Point(573, 3);
+            panelSide.Name = "panelSide";
+            panelSide.Size = new Size(221, 586);
+            panelSide.TabIndex = 1;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.White;
+            button1.FlatStyle = FlatStyle.Popup;
+            button1.ForeColor = Color.MidnightBlue;
+            button1.Location = new Point(27, 20);
+            button1.Name = "button1";
+            button1.Size = new Size(163, 37);
+            button1.TabIndex = 0;
+            button1.Text = "Edit";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // label9
+            // 
+            label9.BackColor = Color.Transparent;
+            label9.ForeColor = Color.White;
+            label9.Location = new Point(0, 75);
+            label9.Name = "label9";
+            label9.Size = new Size(221, 297);
+            label9.TabIndex = 0;
+            label9.Text = resources.GetString("label9.Text");
+            label9.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // panel1
             // 
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
@@ -80,9 +115,9 @@
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(profilePicture);
-            panel1.Location = new Point(3, 65);
+            panel1.Location = new Point(0, 65);
             panel1.Name = "panel1";
-            panel1.Size = new Size(564, 586);
+            panel1.Size = new Size(567, 586);
             panel1.TabIndex = 0;
             // 
             // labelSwimmerProfileCard
@@ -206,41 +241,6 @@
             profilePicture.TabIndex = 0;
             profilePicture.TabStop = false;
             // 
-            // panelSide
-            // 
-            panelSide.BackgroundImage = (Image)resources.GetObject("panelSide.BackgroundImage");
-            panelSide.Controls.Add(button1);
-            panelSide.Controls.Add(label9);
-            panelSide.Dock = DockStyle.Fill;
-            panelSide.Location = new Point(573, 3);
-            panelSide.Name = "panelSide";
-            panelSide.Size = new Size(221, 586);
-            panelSide.TabIndex = 1;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.White;
-            button1.FlatStyle = FlatStyle.Popup;
-            button1.ForeColor = Color.MidnightBlue;
-            button1.Location = new Point(27, 20);
-            button1.Name = "button1";
-            button1.Size = new Size(163, 37);
-            button1.TabIndex = 0;
-            button1.Text = "Edit";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
-            // 
-            // label9
-            // 
-            label9.BackColor = Color.Transparent;
-            label9.ForeColor = Color.White;
-            label9.Location = new Point(0, 75);
-            label9.Name = "label9";
-            label9.Size = new Size(221, 297);
-            label9.TabIndex = 0;
-            label9.Text = resources.GetString("label9.Text");
-            label9.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // panel2
             // 
             panel2.BackColor = Color.MidnightBlue;
@@ -274,10 +274,10 @@
             Size = new Size(797, 654);
             Load += UC_Settings_Load;
             tableLayoutPanel1.ResumeLayout(false);
+            panelSide.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)profilePicture).EndInit();
-            panelSide.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);
