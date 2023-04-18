@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,9 +14,10 @@ namespace The_Big_Pool
 {
     public partial class Dashboard : Form
     {
-        public Dashboard()
+        public Dashboard(string username)
         {
             InitializeComponent();
+            labelUsername.Text = username;
         }
         private void addUserControl(UserControl usercontrol)
         {

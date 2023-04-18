@@ -114,10 +114,5 @@ namespace The_Big_Pool.UserControls
                 panelEdit.Controls.Clear();
 
         }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
