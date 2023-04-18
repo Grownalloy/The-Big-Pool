@@ -57,7 +57,7 @@
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(2, 2, 2, 2);
+            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
             panel1.Size = new Size(558, 44);
             panel1.TabIndex = 0;
@@ -81,7 +81,7 @@
             panel2.Controls.Add(panel3);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 44);
-            panel2.Margin = new Padding(2, 2, 2, 2);
+            panel2.Margin = new Padding(2);
             panel2.Name = "panel2";
             panel2.Size = new Size(558, 348);
             panel2.TabIndex = 1;
@@ -98,7 +98,7 @@
             panel4.Controls.Add(label4);
             panel4.Controls.Add(label3);
             panel4.Location = new Point(350, 0);
-            panel4.Margin = new Padding(2, 2, 2, 2);
+            panel4.Margin = new Padding(2);
             panel4.Name = "panel4";
             panel4.Size = new Size(208, 347);
             panel4.TabIndex = 6;
@@ -208,7 +208,7 @@
             panel3.Controls.Add(label2);
             panel3.Dock = DockStyle.Left;
             panel3.Location = new Point(0, 0);
-            panel3.Margin = new Padding(2, 2, 2, 2);
+            panel3.Margin = new Padding(2);
             panel3.Name = "panel3";
             panel3.Size = new Size(351, 348);
             panel3.TabIndex = 3;
@@ -229,12 +229,13 @@
             button1.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
             button1.ForeColor = Color.White;
             button1.Location = new Point(124, 293);
-            button1.Margin = new Padding(2, 2, 2, 2);
+            button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(99, 29);
             button1.TabIndex = 3;
             button1.Text = "Search";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label2
             // 
@@ -253,7 +254,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "UC_History";
             Size = new Size(558, 392);
             panel1.ResumeLayout(false);
