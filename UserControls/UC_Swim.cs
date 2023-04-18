@@ -24,7 +24,6 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 using Microsoft.VisualBasic;
 using System.Collections.ObjectModel;
-using System.Reflection.Metadata.Ecma335;
 using SharpCompress.Common;
 
 namespace The_Big_Pool.UserControls
@@ -51,7 +50,46 @@ namespace The_Big_Pool.UserControls
             }
             return true;
         }
-        private async void button1_Click(object sender, EventArgs e)
+        public static int ConvertTimeToSeconds(string time) //hh:mm:ss
+        {
+            TimeSpan timeSpan = TimeSpan.Parse(time);
+            return (int)timeSpan.TotalSeconds;
+        }
+        public static int ConvertTimeStringToSeconds(string timeString) //MM;ss
+        {
+            if (string.IsNullOrWhiteSpace(timeString))
+            {
+                throw new ArgumentException("Invalid time string.", nameof(timeString));
+            }
+
+            string[] timeParts = timeString.Split(':');
+            if (timeParts.Length != 2)
+            {
+                throw new ArgumentException("Invalid time string format.", nameof(timeString));
+            }
+
+            if (!int.TryParse(timeParts[0], out int minutes) || !int.TryParse(timeParts[1], out int seconds))
+            {
+                throw new ArgumentException("Invalid time string format.", nameof(timeString));
+            }
+
+            if (minutes < 0 || seconds < 0 || seconds >= 60)
+            {
+                throw new ArgumentException("Invalid time string format.", nameof(timeString));
+            }
+
+            return (minutes * 60) + seconds;
+        }
+
+        public static string ConvertSecondsToTime(int seconds)
+        {
+            int hours = seconds / 3600;
+            int minutes = (seconds % 3600) / 60;
+            int remainingSeconds = seconds % 60;
+
+            return string.Format("{0}:{1:D2}:{2:D2}", hours, minutes, remainingSeconds);
+        }
+        private void button1_Click(object sender, EventArgs e)
         {
             string category = "";
             string Skill = "";
@@ -112,8 +150,10 @@ namespace The_Big_Pool.UserControls
                 return;
             }
 
-            TimeSpan totalTime = TimeSpan.Parse(timeString);
+            int practicelength = ConvertTimeToSeconds(timeString);
 
+            var elapsedist = 0;
+            var elapsedtime = 0;
 
             if (radioButtonGarnet.Checked) { Skill = "Garnet"; }
             if (radioButtonBronze.Checked) { Skill = "Bronze"; }
@@ -168,9 +208,15 @@ namespace The_Big_Pool.UserControls
             // create variables to keep track of the selected sets and the total distance
             var selectedSets = new List<BsonDocument>();
             var totalDistance = 0;
+            var totaltime = 0;
 
+
+            var warmuptime = practicelength / 5;
+            var mainsettime = (int)((practicelength - warmuptime) * .85);
+            var warmdowntime = practicelength - (mainsettime + warmuptime);
+            practicelength = warmdowntime + mainsettime + warmuptime;
             // keep selecting sets until the total distance is greater than or equal to the target distance
-            while (totalDistance < remainingWU)
+            while (totalDistance <= remainingWU || totaltime<= warmuptime)
             {
                 // randomly select a set from the warmup sets
                 var index = rng.Next(warmupSets.Count);
@@ -180,8 +226,11 @@ namespace The_Big_Pool.UserControls
 
                 BsonValue x = set.GetValue("Distance");
                 BsonValue y = set.GetValue("Reps");
+                BsonValue w = set.GetValue("interval");
+                MessageBox.Show(w.ToString());
+                var t = ConvertTimeStringToSeconds(w.ToString())*y.ToInt32();
                 var z = x.ToInt32() * y.ToInt32();
-                if ((z + totalDistance) > (remainingWU + (remainingWU / 8)))
+                if (((z + totalDistance) >= (remainingWU + (remainingWU / 8)))||((t+totaltime)>=(warmuptime+(int)(warmuptime/8))))
                 {
                     warmupSets.RemoveAt(index);
 
@@ -193,8 +242,10 @@ namespace The_Big_Pool.UserControls
                 }
                 else
                 {
-                    MessageBox.Show(index.ToString());
                     totalDistance += z;
+                    elapsedist += z;
+                    totaltime += t;
+                    elapsedtime += t;
                     selectedSets.Add(set);
                     // remove the set from the warmup sets to prevent duplicates
                     warmupSets.RemoveAt(index);
@@ -234,7 +285,7 @@ namespace The_Big_Pool.UserControls
             var p = new Paragraph($"{totalDistance}");
             doc.Add(p);
 
-            MessageBox.Show("PDF file created on your desktop.");
+  
 
             int remainingMS = practice.mainset();
 
@@ -288,22 +339,21 @@ namespace The_Big_Pool.UserControls
             // create variables to keep track of the selected sets and the total distance
             selectedSets = new List<BsonDocument>();
             totalDistance = 0;
-
+            totaltime = 0;
             // keep selecting sets until the total distance is greater than or equal to the target distance
-            while (totalDistance < remainingMS)
+            while (totalDistance < remainingMS|| totaltime < mainsettime)
             {
                 // randomly select a set from the warmup sets
                 var index = rng.Next(MainSets.Count);
                 var set = MainSets[index];
 
                 // add the set to the selected sets and update the total distance
-                selectedSets.Add(set);
-
-
                 BsonValue x = set.GetValue("Distance");
                 BsonValue y = set.GetValue("Reps");
+                BsonValue w = set.GetValue("interval");
+                var t = ConvertTimeStringToSeconds(w.ToString()) * y.ToInt32();
                 var z = x.ToInt32() * y.ToInt32();
-                if (z > (remainingMS - totalDistance))
+                if (((z + totalDistance) >= (remainingMS + (remainingMS / 8))) || ((t + totaltime) >= (mainsettime + (int)(mainsettime / 8))))
                 {
                     MainSets.RemoveAt(index);
 
@@ -316,6 +366,9 @@ namespace The_Big_Pool.UserControls
                 else
                 {
                     totalDistance += z;
+                    elapsedist += z;
+                    totaltime += t;
+                    elapsedtime += t;
                     selectedSets.Add(set);
                     // remove the set from the warmup sets to prevent duplicates
                     MainSets.RemoveAt(index);
@@ -349,7 +402,7 @@ namespace The_Big_Pool.UserControls
 
             int remainingWD = practice.warmdown();
 
-            categoryFilter = Builders<BsonDocument>.Filter.Regex("Category", new BsonRegularExpression("warmup", "i")); //When added change warmup to warmdown
+            categoryFilter = Builders<BsonDocument>.Filter.Regex("Category", new BsonRegularExpression("warmdown", "i")); //When added change warmup to warmdown
             filter = Builders<BsonDocument>.Filter.And(categoryFilter, skillFilter);
 
 
@@ -357,19 +410,26 @@ namespace The_Big_Pool.UserControls
             var warmdownSets = sets.Find(filter).ToList();
             selectedSets = new List<BsonDocument>();
             totalDistance = 0;
-
+            totaltime = 0;
             // keep selecting sets until the total distance is greater than or equal to the target distance
-            while (totalDistance < remainingWD)
+            while (totalDistance < remainingWD|| totaltime<warmdowntime)
             {
                 // randomly select a set from the warmup sets
+                if((warmdownSets.Count==0))
+                    {
+                    break;
+                    }
                 var index = rng.Next(warmdownSets.Count);
                 var set = warmdownSets[index];
 
                 // add the set to the selected sets and update the total distance
 
-                int x = set.GetValue("Distance").ToInt32();
-                x = x * set.GetValue("Reps").ToInt32();
-                if (x + totalDistance > (remainingWD + (remainingWD / 8)))
+                BsonValue x = set.GetValue("Distance");
+                BsonValue y = set.GetValue("Reps");
+                BsonValue w = set.GetValue("interval");
+                var t = ConvertTimeStringToSeconds(w.ToString()) * y.ToInt32();
+                var z = x.ToInt32() * y.ToInt32();
+                if (((z + totalDistance) >= (remainingWU + (remainingWU / 8))) || ((t + totaltime) >= (warmuptime + (int)(warmuptime / 8))))
                 {
 
                     warmdownSets.RemoveAt(index);
@@ -383,8 +443,10 @@ namespace The_Big_Pool.UserControls
                 else
                 {
                     selectedSets.Add(set);
-                    totalDistance += x;
-
+                    totalDistance += z;
+                    elapsedist += z;
+                    totaltime += t;
+                    elapsedtime += t;
                     // remove the set from the warmup sets to prevent duplicates
                     warmdownSets.RemoveAt(index);
 
@@ -456,10 +518,12 @@ namespace The_Big_Pool.UserControls
             {
                             {"Date", TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow,
             TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time")).ToString("MM/dd/yyyy") },
+                            {"Total Time", ConvertSecondsToTime(elapsedtime) },
+                            {"Total Distance", elapsedist },
                 { "documentId", documentId },
                 { "chunkNumber", chunkNumber },
                 { "data", new BsonBinaryData(buffer, BsonBinarySubType.Binary, GuidRepresentation.Unspecified) }
-            };
+          };
 
                         update = Builders<BsonDocument>.Update.Push("chunks", chunkData);
                         updatedDocument = collection.FindOneAndUpdate(filter_user, update, options);
@@ -484,6 +548,16 @@ namespace The_Big_Pool.UserControls
                             outputStream.Write(data, 0, data.Length);
                         }
                     }
+                }
+
+                if (File.Exists(output))
+                {
+                    File.Delete(output);
+                    Console.WriteLine("File deleted successfully.");
+                }
+                else
+                {
+                    Console.WriteLine("File does not exist.");
                 }
             }
             catch (Exception ex)

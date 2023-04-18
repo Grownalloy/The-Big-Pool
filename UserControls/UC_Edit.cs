@@ -56,9 +56,9 @@ namespace The_Big_Pool.UserControls
             if (textBox3.Text != "")
             {
 
-
+                UserSession.Instance.Username = textBox3.Text;
                 // Define the update to set the new username value
-                var update = Builders<BsonDocument>.Update.Set("Username", textBox3.Text);
+                var update = Builders<BsonDocument>.Update.Set("Username", textBox3.Text.ToLower());
                 var result = users.UpdateOne(filter_user, update);
                 if (result.ModifiedCount == 1)
                 {

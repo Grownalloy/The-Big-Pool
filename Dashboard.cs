@@ -9,15 +9,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using The_Big_Pool.UserControls;
+using static The_Big_Pool.Login;
 
 namespace The_Big_Pool
 {
     public partial class Dashboard : Form
     {
-        public Dashboard(string username)
+        public Dashboard()
         {
             InitializeComponent();
-            labelUsername.Text = username;
+            labelUsername.Text = UserSession.Instance.Username;
         }
         private void addUserControl(UserControl usercontrol)
         {

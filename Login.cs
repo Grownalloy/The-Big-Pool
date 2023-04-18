@@ -60,7 +60,7 @@ namespace The_Big_Pool
                 UserSession.Instance.Password = TS;
 
 
-                Dashboard dashboard = new Dashboard(textBoxUsername.Text);
+                Dashboard dashboard = new Dashboard();
                 dashboard.Show();
                 Visible = false;
             }
