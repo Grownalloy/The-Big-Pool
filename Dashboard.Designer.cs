@@ -99,6 +99,7 @@
             labelUsername.Size = new Size(91, 25);
             labelUsername.TabIndex = 1;
             labelUsername.Text = "Username";
+            labelUsername.TextAlign = ContentAlignment.MiddleCenter;
             labelUsername.Click += labelUsername_Click;
             // 
             // pictureBox1

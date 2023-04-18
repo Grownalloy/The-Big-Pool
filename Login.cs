@@ -60,7 +60,7 @@ namespace The_Big_Pool
                 UserSession.Instance.Password = TS;
 
 
-                Dashboard dashboard = new Dashboard();
+                Dashboard dashboard = new Dashboard(textBoxUsername.Text);
                 dashboard.Show();
                 Visible = false;
             }
@@ -68,6 +68,7 @@ namespace The_Big_Pool
             {
                 MessageBox.Show("Invalid Login");
             }
+
         }
         public class UserSession
         {
