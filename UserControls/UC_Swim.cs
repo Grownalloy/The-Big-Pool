@@ -540,6 +540,7 @@ namespace The_Big_Pool.UserControls
             p = new Paragraph("Total Distance of Practice:" + $" {elapsedist}\n");
             doc.Add(p);
             doc.Close();
+            MessageBox.Show("practice saved to desktop");
             try
             {
                 var collection = database.GetCollection<BsonDocument>("user");
