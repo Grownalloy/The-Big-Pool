@@ -74,7 +74,6 @@ namespace The_Big_Pool
                     {"Password", hashpass },
                     { "Settings", new BsonDocument {
                         {"Preferred Categories", comboBox1.Text },
-                        {"Difficulty Level",comboBox2.Text },
                         { "Skill level", comboBox2.Text },
                         { "Preffered Distance", prefdist },
                         { "Duration of work-out", Act.get_duration() }
