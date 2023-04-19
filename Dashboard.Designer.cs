@@ -41,7 +41,7 @@
             pictureBox2 = new PictureBox();
             panel1 = new Panel();
             label1 = new Label();
-            button1 = new Button();
+            ExitButton = new Button();
             panelSide.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -94,11 +94,11 @@
             // 
             labelUsername.AutoSize = true;
             labelUsername.ForeColor = Color.Black;
-            labelUsername.Location = new Point(53, 113);
+            labelUsername.Location = new Point(85, 113);
             labelUsername.Name = "labelUsername";
-            labelUsername.Size = new Size(91, 25);
+            labelUsername.Size = new Size(25, 25);
             labelUsername.TabIndex = 1;
-            labelUsername.Text = "Username";
+            labelUsername.Text = "H";
             labelUsername.TextAlign = ContentAlignment.MiddleCenter;
             labelUsername.Click += labelUsername_Click;
             // 
@@ -187,7 +187,7 @@
             // panel1
             // 
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(ExitButton);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(1002, 34);
@@ -205,19 +205,19 @@
             label1.TabIndex = 1;
             label1.Text = "The Big Pool";
             // 
-            // button1
+            // ExitButton
             // 
-            button1.BackColor = Color.DeepSkyBlue;
-            button1.Dock = DockStyle.Right;
-            button1.FlatStyle = FlatStyle.System;
-            button1.ForeColor = Color.MidnightBlue;
-            button1.Location = new Point(939, 0);
-            button1.Name = "button1";
-            button1.Size = new Size(63, 34);
-            button1.TabIndex = 0;
-            button1.Text = "X";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            ExitButton.BackColor = Color.DeepSkyBlue;
+            ExitButton.Dock = DockStyle.Right;
+            ExitButton.FlatStyle = FlatStyle.System;
+            ExitButton.ForeColor = Color.MidnightBlue;
+            ExitButton.Location = new Point(939, 0);
+            ExitButton.Name = "ExitButton";
+            ExitButton.Size = new Size(63, 34);
+            ExitButton.TabIndex = 0;
+            ExitButton.Text = "X";
+            ExitButton.UseVisualStyleBackColor = false;
+            ExitButton.Click += ExitButton_Click;
             // 
             // Dashboard
             // 
@@ -257,7 +257,7 @@
         private Panel panelDashboard;
         private PictureBox pictureBox2;
         private Panel panel1;
-        private Button button1;
+        private Button ExitButton;
         private Label label1;
     }
 }

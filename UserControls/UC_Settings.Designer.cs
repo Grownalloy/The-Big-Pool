@@ -38,7 +38,7 @@
             button2 = new Button();
             label8 = new Label();
             label7 = new Label();
-            label6 = new Label();
+            categoryLabel = new Label();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
@@ -109,7 +109,7 @@
             panel1.Controls.Add(button2);
             panel1.Controls.Add(label8);
             panel1.Controls.Add(label7);
-            panel1.Controls.Add(label6);
+            panel1.Controls.Add(categoryLabel);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
@@ -137,7 +137,7 @@
             button2.BackColor = Color.MidnightBlue;
             button2.FlatStyle = FlatStyle.Popup;
             button2.ForeColor = Color.White;
-            button2.Location = new Point(189, 513);
+            button2.Location = new Point(175, 513);
             button2.Name = "button2";
             button2.Size = new Size(216, 37);
             button2.TabIndex = 1;
@@ -169,17 +169,17 @@
             label7.TabIndex = 6;
             label7.Text = "Skill Level";
             // 
-            // label6
+            // categoryLabel
             // 
-            label6.AutoSize = true;
-            label6.BackColor = Color.Transparent;
-            label6.Font = new Font("Segoe UI Semilight", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.ForeColor = Color.White;
-            label6.Location = new Point(291, 410);
-            label6.Name = "label6";
-            label6.Size = new Size(82, 25);
-            label6.TabIndex = 5;
-            label6.Text = "Category";
+            categoryLabel.AutoSize = true;
+            categoryLabel.BackColor = Color.Transparent;
+            categoryLabel.Font = new Font("Segoe UI Semilight", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            categoryLabel.ForeColor = Color.White;
+            categoryLabel.Location = new Point(291, 410);
+            categoryLabel.Name = "categoryLabel";
+            categoryLabel.Size = new Size(82, 25);
+            categoryLabel.TabIndex = 5;
+            categoryLabel.Text = "Category";
             // 
             // label5
             // 
@@ -228,6 +228,7 @@
             label1.Size = new Size(96, 25);
             label1.TabIndex = 1;
             label1.Text = "Username";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // profilePicture
             // 
@@ -272,7 +273,6 @@
             Controls.Add(tableLayoutPanel1);
             Name = "UC_Settings";
             Size = new Size(797, 654);
-            Load += UC_Settings_Load;
             tableLayoutPanel1.ResumeLayout(false);
             panelSide.ResumeLayout(false);
             panel1.ResumeLayout(false);
@@ -296,7 +296,7 @@
         private Label label2;
         private Label label8;
         private Label label7;
-        private Label label6;
+        private Label categoryLabel;
         private Label label5;
         private Label label4;
         private Label label3;

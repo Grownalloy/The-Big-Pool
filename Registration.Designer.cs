@@ -168,7 +168,6 @@
             textBoxUsername.PlaceholderText = "Username";
             textBoxUsername.Size = new Size(253, 31);
             textBoxUsername.TabIndex = 12;
-            textBoxUsername.TextChanged += textBoxUsername_TextChanged;
             // 
             // label7
             // 
