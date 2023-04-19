@@ -545,6 +545,7 @@ namespace The_Big_Pool.UserControls
             doc.Add(p);
             p = new Paragraph("Total Distance of Practice:" + $" {elapsedist}\n");
             doc.Add(p);
+            doc.Close();
             try
             {
                 var collection = database.GetCollection<BsonDocument>("user");
