@@ -17,12 +17,12 @@ namespace The_Big_Pool.UserControls
 {
     public partial class UC_History : UserControl
     {
-        private string Date="MM/dd/yyyy";
+        private string Date = "MM/dd/yyyy";
         private string Date2 = "MM-dd-yyyy.pdf";
         public UC_History()
         {
             InitializeComponent();
-            
+
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -48,12 +48,7 @@ namespace The_Big_Pool.UserControls
         {
             DateTime selectedDate = monthCalendar1.SelectionStart;
             Date = selectedDate.ToString("MM/dd/yyyy");
-            Date2 = selectedDate.ToString("MM-dd-yyyy")+".pdf";
-        }
-
-            private void button1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("buttonClicky");
+            Date2 = selectedDate.ToString("MM-dd-yyyy") + ".pdf";
             IConfiguration config = new ConfigurationBuilder()
                   .AddJsonFile("appsettings.json", true, true)
                   .Build();
@@ -62,16 +57,48 @@ namespace The_Big_Pool.UserControls
             var client = new MongoClient(connectionString);
             var database = client.GetDatabase("TheBigPool");
             var collection = database.GetCollection<BsonDocument>("user");
-            DateTime selectedDate = monthCalendar1.SelectionStart;
             string date = selectedDate.ToString("MM/dd/yyyy");
             var filter = Builders<BsonDocument>.Filter.And(
     Builders<BsonDocument>.Filter.Eq("Username", UserSession.Instance.Username),
+    Builders<BsonDocument>.Filter.Eq("chunks.Date", date));
 
-    Builders<BsonDocument>.Filter.Eq("chunks.Date", date)
-);
+            var projection = Builders<BsonDocument>.Projection.Include("chunks.chunkNumber").Include("chunks.Total Distance").Include("chunks.Total Time");
+
+            var doc = collection.Find(filter).Project(projection).FirstOrDefault();
+
+            if (doc != null && doc["chunks"] is BsonArray chunks && chunks.Count > 0)
+            {
+                var firstChunk = chunks[0];
+                var x = firstChunk["Total Distance"].ToInt32();
+                label5.Text = x.ToString();
+                label8.Text = firstChunk["Total Time"].ToString();
+            }
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            IConfiguration config = new ConfigurationBuilder()
+    .AddJsonFile("appsettings.json", true, true)
+    .Build();
+            string connectionString = config.GetConnectionString("MongoDB");
+
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("TheBigPool");
+            var collection = database.GetCollection<BsonDocument>("user");
+            DateTime selectedDate = monthCalendar1.SelectionStart;
+            string date = selectedDate.ToString("MM/dd/yyyy");
+            var filter = Builders<BsonDocument>.Filter.And(
+                Builders<BsonDocument>.Filter.Eq("Username", UserSession.Instance.Username),
+                Builders<BsonDocument>.Filter.Eq("chunks.Date", date)
+            );
             var projection = Builders<BsonDocument>.Projection.Include("chunks.chunkNumber").Include("chunks.data");
 
-            var chunks = collection.Find(filter).Project(projection).ToList();
+            var cursor = collection.Find(filter).Project(projection).ToCursor();
+            var chunks = new List<BsonDocument>();
+            while (cursor.MoveNext())
+            {
+                chunks.AddRange(cursor.Current);
+            }
+
             var count = chunks.Count;
 
             // Show a message box with yes and no buttons
@@ -103,17 +130,21 @@ namespace The_Big_Pool.UserControls
                 }
                 catch (Exception ex) { MessageBox.Show(ex.Message); }
                 return;
-
             }
             else
             {
                 // User clicked "No" button, do something else or just return
                 return;
             }
+
+        }
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
- 
+
 
 
 

@@ -296,27 +296,27 @@ namespace The_Big_Pool.UserControls
 
             if (checkBoxFreestyle.Checked)
             {
-                filters.Add(Builders<BsonDocument>.Filter.Regex("Category", new BsonRegularExpression("Freestyle", "i")));
+                filters.Add(Builders<BsonDocument>.Filter.Regex("Category", new BsonRegularExpression("freestyle", "i")));
             }
 
             if (checkBoxMedley.Checked)
             {
-                filters.Add(Builders<BsonDocument>.Filter.Regex("Category", new BsonRegularExpression("Medley", "i")));
+                filters.Add(Builders<BsonDocument>.Filter.Regex("Category", new BsonRegularExpression("medley", "i")));
             }
 
             if (checkBoxPace.Checked)
             {
-                filters.Add(Builders<BsonDocument>.Filter.Regex("Category", new BsonRegularExpression("Pace", "i")));
+                filters.Add(Builders<BsonDocument>.Filter.Regex("Category", new BsonRegularExpression("pace", "i")));
             }
 
             if (checkBoxSprint.Checked)
             {
-                filters.Add(Builders<BsonDocument>.Filter.Regex("Category", new BsonRegularExpression("Sprint", "i")));
+                filters.Add(Builders<BsonDocument>.Filter.Regex("Category", new BsonRegularExpression("sprint", "i")));
             }
 
             if (checkBoxStroke.Checked)
             {
-                filters.Add(Builders<BsonDocument>.Filter.Regex("Category", new BsonRegularExpression("Stroke", "i")));
+                filters.Add(Builders<BsonDocument>.Filter.Regex("Category", new BsonRegularExpression("stroke", "i")));
             }
 
 
