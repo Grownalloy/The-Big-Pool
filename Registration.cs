@@ -29,6 +29,7 @@ namespace The_Big_Pool
 
         private void buttonRegister_Click(object sender, EventArgs e)
         {
+            int prefdist;
             IConfiguration config = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json", true, true)
                 .Build();
@@ -63,6 +64,7 @@ namespace The_Big_Pool
                 failcause += "Passwords do not match";
             if (failcause == "")
             {
+                prefdist =int.Parse( textBox1.Text);
                 string hashpass = BCrypt.Net.BCrypt.HashPassword(textBoxPassword.Text);
 
 
@@ -74,7 +76,7 @@ namespace The_Big_Pool
                         {"Preferred Categories", comboBox1.Text },
                         {"Difficulty Level",comboBox2.Text },
                         { "Skill level", comboBox2.Text },
-                        { "Preffered Distance", comboBox2.Text },
+                        { "Preffered Distance", prefdist },
                         { "Duration of work-out", Act.get_duration() }
                                                     }
                     }

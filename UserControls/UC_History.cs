@@ -89,11 +89,10 @@ namespace The_Big_Pool.UserControls
             var client = new MongoClient(connectionString);
             var database = client.GetDatabase("TheBigPool");
             var collection = database.GetCollection<BsonDocument>("user");
-            DateTime selectedDate = monthCalendar1.SelectionStart;
-            string date = selectedDate.ToString("MM/dd/yyyy");
+           
             var filter = Builders<BsonDocument>.Filter.And(
                 Builders<BsonDocument>.Filter.Eq("Username", UserSession.Instance.Username),
-                Builders<BsonDocument>.Filter.Eq("chunks.Date", date)
+                Builders<BsonDocument>.Filter.Eq("chunks.Date", Date)
             );
             var projection = Builders<BsonDocument>.Projection.Include("chunks.chunkNumber").Include("chunks.data");
 
@@ -107,7 +106,7 @@ namespace The_Big_Pool.UserControls
             var count = chunks.Count;
 
             // Show a message box with yes and no buttons
-            DialogResult result = MessageBox.Show("There are: " + count + " Practices from:  " + selectedDate.ToShortDateString() + " Would you like to download them?", "Selected Date", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("There are: " + count + " Practices from:  " + Date + " Would you like to download them?", "Selected Date", MessageBoxButtons.YesNo);
 
             // Check the user's response
             if (result == DialogResult.Yes)

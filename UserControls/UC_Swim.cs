@@ -273,7 +273,7 @@ namespace The_Big_Pool.UserControls
             Paragraph intro = new Paragraph("The Big Pool" + "\n", fontTitle);
             Paragraph line= new Paragraph("--------------------------------------------------------------------------------------------------------", fontLine);
             Paragraph instructions = new Paragraph(" Time to jump in the pool!  Below your practice swim set has been generated. " +
-                "Based upon your selections a warm-up set, main set, and side set has been created with the given reps x Distance."+
+                "Based upon your selections a warm-up set, main set, and warmdown has been created with the given reps x Distance."+
                 " Some sets contain extra information depending on the category selected.");
             line.Alignment = Element.ALIGN_CENTER;
             instructions.Alignment = Element.ALIGN_CENTER;
@@ -381,7 +381,7 @@ namespace The_Big_Pool.UserControls
                 BsonValue w = set.GetValue("interval");
                 var t = ConvertTimeStringToSeconds(w.ToString()) * y.ToInt32();
                 var z = x.ToInt32() * y.ToInt32();
-                if (((z + totalDistance) >= (remainingMS + (remainingMS / 8))) || ((t + totaltime) >= (mainsettime + (int)(mainsettime / 8))))
+                if (((z + totalDistance) >= (remainingMS + (remainingMS / 4))) || ((t + totaltime) >= (mainsettime + (int)(mainsettime / 8))))
                 {
                     MainSets.RemoveAt(index);
 
@@ -459,7 +459,7 @@ namespace The_Big_Pool.UserControls
                 BsonValue w = set.GetValue("interval");
                 var t = ConvertTimeStringToSeconds(w.ToString()) * y.ToInt32();
                 var z = x.ToInt32() * y.ToInt32();
-                if (((z + totalDistance) >= (remainingWU + (remainingWU / 8))) || ((t + totaltime) >= (warmuptime + (int)(warmuptime / 8))))
+                if (((z + totalDistance) >= (remainingWU + (remainingWU / 4))) || ((t + totaltime) >= (warmuptime + (int)(warmuptime / 4))))
                 {
 
                     warmdownSets.RemoveAt(index);
@@ -488,7 +488,7 @@ namespace The_Big_Pool.UserControls
                 }
             }
 
-            Paragraph Sideset = new Paragraph("Side Sets: ", fontSub);
+            Paragraph Sideset = new Paragraph("Warmdown: ", fontSub);
             doc.Add(Sideset);
 
             foreach (var setD in selectedSets)

@@ -6,7 +6,7 @@ namespace The_Big_Pool.UserControls
     {
         int distance = 1000;
         string skil_lvl = "Garnet";
-        string duration = "1:00:00";
+        string duration = "8:00:00";
         string categories = "Freestyle";
        public Practicespecs(int d, string s, string t, string c)
         {
