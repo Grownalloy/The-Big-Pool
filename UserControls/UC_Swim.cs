@@ -25,6 +25,9 @@ using iTextSharp.text.pdf;
 using Microsoft.VisualBasic;
 using System.Collections.ObjectModel;
 using SharpCompress.Common;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Font = iTextSharp.text.Font;
+using iTextSharp.text.pdf.draw;
 
 namespace The_Big_Pool.UserControls
 {
@@ -263,7 +266,28 @@ namespace The_Big_Pool.UserControls
 
 
             doc.Open();
+            iTextSharp.text.Font fontTitle = FontFactory.GetFont("TimesNewRoman", 30, iTextSharp.text.Font.BOLD, BaseColor.BLACK);
+            iTextSharp.text.Font fontLine = FontFactory.GetFont("TimesNewRoman", 15, iTextSharp.text.Font.BOLD, BaseColor.BLUE);
+            iTextSharp.text.Font fontSub = FontFactory.GetFont("TimesNewRoman", 15, iTextSharp.text.Font.BOLD, BaseColor.ORANGE);
+            //Create a paragraph with custom font and alignment
+            Paragraph intro = new Paragraph("The Big Pool" + "\n", fontTitle);
+            Paragraph line= new Paragraph("--------------------------------------------------------------------------------------------------------", fontLine);
+            Paragraph instructions = new Paragraph(" Time to jump in the pool!  Below your practice swim set has been generated. " +
+                "Based upon your selections a warm-up set, main set, and side set has been created with the given reps x Distance."+
+                " Some sets contain extra information depending on the category selected.");
+            line.Alignment = Element.ALIGN_CENTER;
+            instructions.Alignment = Element.ALIGN_CENTER;
+            intro.Alignment = Element.ALIGN_CENTER;
 
+            //Add paragraph to the document
+            doc.Add(intro);
+            doc.Add(line);
+            doc.Add(instructions);
+
+            //Warm up set section
+            Paragraph warmups = new Paragraph("Warm Up: \n",fontSub);
+            warmups.Alignment = Element.ALIGN_LEFT;
+            doc.Add(warmups);
 
             foreach (var set in selectedSets)
             {
@@ -276,16 +300,20 @@ namespace The_Big_Pool.UserControls
                 distance = distance.Replace(",", "x");
 
 
-                var paragraph = new Paragraph($" {reps}     x      {distance} ");
+                var paragraph = new Paragraph($" {reps}x{distance} ");
                 var tab = new Paragraph("\t");
-
+                paragraph.IndentationLeft = 30;
 
                 doc.Add(paragraph);
             }
-            var p = new Paragraph($"{totalDistance}");
+
+            var p = new Paragraph("Total Distance: "+$"{totalDistance}"+"\n");
             doc.Add(p);
 
-  
+
+            //Main sets section
+            Paragraph Mainset = new Paragraph("Main Sets:"+ "\n",fontSub);
+            doc.Add(Mainset); 
 
             int remainingMS = practice.mainset();
 
@@ -341,7 +369,7 @@ namespace The_Big_Pool.UserControls
             totalDistance = 0;
             totaltime = 0;
             // keep selecting sets until the total distance is greater than or equal to the target distance
-            while (totalDistance < remainingMS|| totaltime < mainsettime)
+            while (totalDistance < remainingMS || totaltime < mainsettime)
             {
                 // randomly select a set from the warmup sets
                 var index = rng.Next(MainSets.Count);
@@ -392,12 +420,14 @@ namespace The_Big_Pool.UserControls
                 distance = distance.Replace(",", "x");
 
                 // create a paragraph with the set description, reps, and distance
-                var paragraph = new Paragraph($" {reps}     x      {distance}              {interval}\t                    \t{description}");
+                var paragraph = new Paragraph($" {reps} x {distance}     {interval}          {description}");
 
                 // add the paragraph to the document
+                paragraph.IndentationLeft = 30;
                 doc.Add(paragraph);
             }
-            p = new Paragraph($"{totalDistance}");
+
+            p = new Paragraph("Total Distance:"+  $" {totalDistance}\n");
             doc.Add(p);
 
             int remainingWD = practice.warmdown();
@@ -412,13 +442,13 @@ namespace The_Big_Pool.UserControls
             totalDistance = 0;
             totaltime = 0;
             // keep selecting sets until the total distance is greater than or equal to the target distance
-            while (totalDistance < remainingWD|| totaltime<warmdowntime)
+            while (totalDistance < remainingWD || totaltime < warmdowntime)
             {
                 // randomly select a set from the warmup sets
-                if((warmdownSets.Count==0))
-                    {
+                if ((warmdownSets.Count == 0))
+                {
                     break;
-                    }
+                }
                 var index = rng.Next(warmdownSets.Count);
                 var set = warmdownSets[index];
 
@@ -457,6 +487,10 @@ namespace The_Big_Pool.UserControls
                     }
                 }
             }
+
+            Paragraph Sideset = new Paragraph("Side Sets: ", fontSub);
+            doc.Add(Sideset);
+
             foreach (var setD in selectedSets)
             {
                 var description = setD.GetValue("Set Description").ToString();
@@ -468,12 +502,14 @@ namespace The_Big_Pool.UserControls
                 distance = distance.Replace(",", "x");
 
                 // create a paragraph with the set description, reps, and distance
-                var paragraph = new Paragraph($" {reps}     x      {distance}                                                                                                {description}");
+                var paragraph = new Paragraph($" {reps} x {distance}                                                                                                {description}");
 
                 // add the paragraph to the document
+                paragraph.IndentationLeft = 30;
                 doc.Add(paragraph);
             }
-            p = new Paragraph($"{totalDistance}");
+
+            p = new Paragraph("Total Distance:" + $" {totalDistance}\n");
             doc.Add(p);
             doc.Close();
             try
@@ -502,7 +538,7 @@ namespace The_Big_Pool.UserControls
                 };
                 var updatedDocument = collection.FindOneAndUpdate(filter_user, update, options);
 
-               // Divide the PDF file into chunks and add each chunk to the document
+                // Divide the PDF file into chunks and add each chunk to the document
                 var filePath = output;
                 int chunkSize = 1024 * 1024; // 1 MB chunk size
                 int chunkNumber = 1;
@@ -552,7 +588,7 @@ namespace The_Big_Pool.UserControls
 
                 if (File.Exists(output))
                 {
-                    File.Delete(output);
+                    //File.Delete(output);
                     Console.WriteLine("File deleted successfully.");
                 }
                 else
@@ -567,25 +603,5 @@ namespace The_Big_Pool.UserControls
             }
         }
 
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void UC_Swim_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBoxCategory_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
     }
 }
