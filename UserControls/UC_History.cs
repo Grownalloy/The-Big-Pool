@@ -73,6 +73,11 @@ namespace The_Big_Pool.UserControls
                 label5.Text = x.ToString();
                 label8.Text = firstChunk["Total Time"].ToString();
             }
+            else
+            {
+                label5.Text = "0";
+                label8.Text = "00:00:00";
+            }
         }
         private void button1_Click(object sender, EventArgs e)
         {
