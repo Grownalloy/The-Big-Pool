@@ -203,16 +203,26 @@ namespace The_Big_Pool.UserControls
                 var reps = set.GetValue("Reps").ToString();
                 var distance = set.GetValue("Distance").ToString();
                 var interval = set.GetValue("interval").ToString();
+                if (interval != "00:00")
+                {
+                    // replace the comma in the distance with an x
+                    distance = distance.Replace(",", "x");
 
+                    // create a paragraph with the set description, reps, and distance
+                    var paragraph = new Paragraph($" {reps} x {distance}     {interval}          {description}");
 
-                distance = distance.Replace(",", "x");
+                    // add the paragraph to the document
+                    paragraph.IndentationLeft = 30;
+                    doc.Add(paragraph);
+                }
+                else
+                {
+                    var paragraph = new Paragraph($" {reps} x {distance}                 {description}");
 
-
-                var paragraph = new Paragraph($" {reps}x{distance} ");
-                var tab = new Paragraph("\t");
-                paragraph.IndentationLeft = 30;
-
-                doc.Add(paragraph);
+                    // add the paragraph to the document
+                    paragraph.IndentationLeft = 30;
+                    doc.Add(paragraph);
+                }
             }
 
             var p = new Paragraph("Total Distance: " + $"{totalDistance}" + "\n");
@@ -303,16 +313,26 @@ namespace The_Big_Pool.UserControls
                 var reps = setb.GetValue("Reps").ToString();
                 var distance = setb.GetValue("Distance").ToString();
                 var interval = setb.GetValue("interval").ToString();
+                if (interval != "00:00")
+                {
+                    // replace the comma in the distance with an x
+                    distance = distance.Replace(",", "x");
 
-                // replace the comma in the distance with an x
-                distance = distance.Replace(",", "x");
+                    // create a paragraph with the set description, reps, and distance
+                    var paragraph = new Paragraph($" {reps} x {distance}     {interval}          {description}");
 
-                // create a paragraph with the set description, reps, and distance
-                var paragraph = new Paragraph($" {reps} x {distance}     {interval}          {description}");
+                    // add the paragraph to the document
+                    paragraph.IndentationLeft = 30;
+                    doc.Add(paragraph);
+                }
+                else
+                {
+                    var paragraph = new Paragraph($" {reps} x {distance}                 {description}");
 
-                // add the paragraph to the document
-                paragraph.IndentationLeft = 30;
-                doc.Add(paragraph);
+                    // add the paragraph to the document
+                    paragraph.IndentationLeft = 30;
+                    doc.Add(paragraph);
+                }
             }
 
             p = new Paragraph("Total Distance:" + $" {totalDistance}\n");
@@ -389,19 +409,33 @@ namespace The_Big_Pool.UserControls
                 var reps = setD.GetValue("Reps").ToString();
                 var distance = setD.GetValue("Distance").ToString();
                 var interval = setD.GetValue("interval").ToString();
+                if (interval != "00:00")
+                {
+                    // replace the comma in the distance with an x
+                    distance = distance.Replace(",", "x");
 
-                // replace the comma in the distance with an x
-                distance = distance.Replace(",", "x");
+                    // create a paragraph with the set description, reps, and distance
+                    var paragraph = new Paragraph($" {reps} x {distance}     {interval}          {description}");
 
-                // create a paragraph with the set description, reps, and distance
-                var paragraph = new Paragraph($" {reps} x {distance}                                                                                                {description}");
+                    // add the paragraph to the document
+                    paragraph.IndentationLeft = 30;
+                    doc.Add(paragraph);
+                }
+                else
+                {
+                    var paragraph = new Paragraph($" {reps} x {distance}                 {description}");
 
-                // add the paragraph to the document
-                paragraph.IndentationLeft = 30;
-                doc.Add(paragraph);
+                    // add the paragraph to the document
+                    paragraph.IndentationLeft = 30;
+                    doc.Add(paragraph);
+                }
             }
 
-            p = new Paragraph("Total Distance:" + $" {totalDistance}\n");
+            
+            
+            p = new Paragraph("Total Duration of Practice:" + $" {ConvertSecondsToTime(elapsedtime)}\n");
+            doc.Add(p);
+            p = new Paragraph("Total Distance of Practice:" + $" {elapsedist}\n");
             doc.Add(p);
             doc.Close();
             try
