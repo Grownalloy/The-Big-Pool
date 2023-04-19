@@ -21,9 +21,9 @@ namespace The_Big_Pool.UserControls
         {
             InitializeComponent();
             label1.Text = UserSession.Instance.Username;
-            categoryLabel.Text = UserSession.Instance.Username;
-            skillLabel.Text = UserSession.Instance.Username;
-            distanceLabel.Text = UserSession.Instance.Username;
+            //categoryLabel.Text = UserSession.Instance.Username;
+            //skillLabel.Text = UserSession.Instance.Username;
+            //distanceLabel.Text = UserSession.Instance.Username;
         }
         private void addUserControl(UserControl usercontrol)
         {

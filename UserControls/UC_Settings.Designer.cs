@@ -47,16 +47,11 @@
             button1 = new Button();
             panel1 = new Panel();
             labelSwimmerProfileCard = new Label();
-            distanceLabel = new Label();
-            skillLabel = new Label();
-            categoryLabel = new Label();
-            label5 = new Label();
-            label4 = new Label();
-            label3 = new Label();
             label1 = new Label();
             profilePicture = new PictureBox();
             panel2 = new Panel();
             label2 = new Label();
+            label3 = new Label();
             tableLayoutPanel1.SuspendLayout();
             panelSide.SuspendLayout();
             panel1.SuspendLayout();
@@ -252,13 +247,8 @@
             // panel1
             // 
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
-            panel1.Controls.Add(labelSwimmerProfileCard);
-            panel1.Controls.Add(distanceLabel);
-            panel1.Controls.Add(skillLabel);
-            panel1.Controls.Add(categoryLabel);
-            panel1.Controls.Add(label5);
-            panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
+            panel1.Controls.Add(labelSwimmerProfileCard);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(profilePicture);
             panel1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
@@ -278,78 +268,6 @@
             labelSwimmerProfileCard.Size = new Size(263, 32);
             labelSwimmerProfileCard.TabIndex = 8;
             labelSwimmerProfileCard.Text = "Swimmer Profile Card";
-            // 
-            // distanceLabel
-            // 
-            distanceLabel.AutoSize = true;
-            distanceLabel.BackColor = Color.Transparent;
-            distanceLabel.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            distanceLabel.ForeColor = Color.White;
-            distanceLabel.Location = new Point(300, 510);
-            distanceLabel.Name = "distanceLabel";
-            distanceLabel.Size = new Size(88, 25);
-            distanceLabel.TabIndex = 7;
-            distanceLabel.Text = "Distance";
-            // 
-            // skillLabel
-            // 
-            skillLabel.AutoSize = true;
-            skillLabel.BackColor = Color.Transparent;
-            skillLabel.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            skillLabel.ForeColor = Color.White;
-            skillLabel.Location = new Point(300, 464);
-            skillLabel.Name = "skillLabel";
-            skillLabel.Size = new Size(100, 25);
-            skillLabel.TabIndex = 6;
-            skillLabel.Text = "Skill Level";
-            // 
-            // categoryLabel
-            // 
-            categoryLabel.AutoSize = true;
-            categoryLabel.BackColor = Color.Transparent;
-            categoryLabel.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            categoryLabel.ForeColor = Color.White;
-            categoryLabel.Location = new Point(300, 418);
-            categoryLabel.Name = "categoryLabel";
-            categoryLabel.Size = new Size(92, 25);
-            categoryLabel.TabIndex = 5;
-            categoryLabel.Text = "Category";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.Transparent;
-            label5.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(190, 507);
-            label5.Name = "label5";
-            label5.Size = new Size(94, 28);
-            label5.TabIndex = 4;
-            label5.Text = "Distance";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(182, 461);
-            label4.Name = "label4";
-            label4.Size = new Size(107, 28);
-            label4.TabIndex = 3;
-            label4.Text = "Skill Level";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(185, 415);
-            label3.Name = "label3";
-            label3.Size = new Size(98, 28);
-            label3.TabIndex = 2;
-            label3.Text = "Category";
             // 
             // label1
             // 
@@ -398,6 +316,17 @@
             label2.TabIndex = 0;
             label2.Text = "Settings";
             // 
+            // label3
+            // 
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(131, 457);
+            label3.Name = "label3";
+            label3.Size = new Size(304, 69);
+            label3.TabIndex = 9;
+            label3.Text = "Here is your Swimmer Profile Card. To the right is where you can edit your account settings.";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // UC_Settings
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -427,12 +356,6 @@
         private Panel panelSide;
         private Panel panel2;
         private Label label2;
-        private Label distanceLabel;
-        private Label skillLabel;
-        private Label categoryLabel;
-        private Label label5;
-        private Label label4;
-        private Label label3;
         private Label labelSwimmerProfileCard;
         private Button button1;
         private TextBox textBox1;
@@ -448,5 +371,6 @@
         private TextBox textBox3;
         private Label label13;
         private Label label14;
+        private Label label3;
     }
 }
