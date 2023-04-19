@@ -36,8 +36,6 @@
             label10 = new Label();
             label8 = new Label();
             label9 = new Label();
-            label6 = new Label();
-            label7 = new Label();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
@@ -92,8 +90,6 @@
             panel4.Controls.Add(label10);
             panel4.Controls.Add(label8);
             panel4.Controls.Add(label9);
-            panel4.Controls.Add(label6);
-            panel4.Controls.Add(label7);
             panel4.Controls.Add(label5);
             panel4.Controls.Add(label4);
             panel4.Controls.Add(label3);
@@ -119,7 +115,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 24F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(12, 176);
+            label8.Location = new Point(5, 185);
             label8.Margin = new Padding(2, 0, 2, 0);
             label8.Name = "label8";
             label8.Size = new Size(83, 45);
@@ -131,36 +127,12 @@
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI Light", 8F, FontStyle.Italic, GraphicsUnit.Point);
             label9.ForeColor = Color.MidnightBlue;
-            label9.Location = new Point(12, 215);
+            label9.Location = new Point(10, 230);
             label9.Margin = new Padding(2, 0, 2, 0);
             label9.Name = "label9";
             label9.Size = new Size(47, 13);
             label9.TabIndex = 10;
             label9.Text = "Duration";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 24F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label6.ForeColor = Color.White;
-            label6.Location = new Point(12, 253);
-            label6.Margin = new Padding(2, 0, 2, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(38, 45);
-            label6.TabIndex = 9;
-            label6.Text = "0";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI Light", 8F, FontStyle.Italic, GraphicsUnit.Point);
-            label7.ForeColor = Color.MidnightBlue;
-            label7.Location = new Point(12, 292);
-            label7.Margin = new Padding(2, 0, 2, 0);
-            label7.Name = "label7";
-            label7.Size = new Size(103, 13);
-            label7.TabIndex = 8;
-            label7.Text = "Number of Workouts";
             // 
             // label5
             // 
@@ -173,13 +145,14 @@
             label5.Size = new Size(83, 45);
             label5.TabIndex = 7;
             label5.Text = "0.00";
+            label5.Click += label5_Click;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Light", 8F, FontStyle.Italic, GraphicsUnit.Point);
             label4.ForeColor = Color.MidnightBlue;
-            label4.Location = new Point(12, 142);
+            label4.Location = new Point(10, 145);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
             label4.Size = new Size(45, 13);
