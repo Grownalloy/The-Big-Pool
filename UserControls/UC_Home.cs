@@ -52,6 +52,7 @@ namespace The_Big_Pool.UserControls
             string username = UserSession.Instance.Username;
             var filter_user = Builders<BsonDocument>.Filter.Eq("Username", username);
 
+
             var document = users.Find(filter_user).FirstOrDefault();
             int preferredDistance = 1;
             string durationOfWorkout = "";
