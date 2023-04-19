@@ -31,13 +31,24 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Settings));
             tableLayoutPanel1 = new TableLayoutPanel();
             panelSide = new Panel();
-            button1 = new Button();
+            label14 = new Label();
+            textBox1 = new TextBox();
+            comboBox2 = new ComboBox();
+            comboBox1 = new ComboBox();
+            label6 = new Label();
             label9 = new Label();
+            label10 = new Label();
+            textBox6 = new TextBox();
+            label11 = new Label();
+            textBox4 = new TextBox();
+            label12 = new Label();
+            textBox3 = new TextBox();
+            label13 = new Label();
+            button1 = new Button();
             panel1 = new Panel();
             labelSwimmerProfileCard = new Label();
-            button2 = new Button();
-            label8 = new Label();
-            label7 = new Label();
+            distanceLabel = new Label();
+            skillLabel = new Label();
             categoryLabel = new Label();
             label5 = new Label();
             label4 = new Label();
@@ -70,52 +81,188 @@
             // panelSide
             // 
             panelSide.BackgroundImage = (Image)resources.GetObject("panelSide.BackgroundImage");
-            panelSide.Controls.Add(button1);
+            panelSide.Controls.Add(label14);
+            panelSide.Controls.Add(textBox1);
+            panelSide.Controls.Add(comboBox2);
+            panelSide.Controls.Add(comboBox1);
+            panelSide.Controls.Add(label6);
             panelSide.Controls.Add(label9);
+            panelSide.Controls.Add(label10);
+            panelSide.Controls.Add(textBox6);
+            panelSide.Controls.Add(label11);
+            panelSide.Controls.Add(textBox4);
+            panelSide.Controls.Add(label12);
+            panelSide.Controls.Add(textBox3);
+            panelSide.Controls.Add(label13);
+            panelSide.Controls.Add(button1);
             panelSide.Dock = DockStyle.Fill;
             panelSide.Location = new Point(573, 3);
             panelSide.Name = "panelSide";
             panelSide.Size = new Size(221, 586);
             panelSide.TabIndex = 1;
             // 
-            // button1
+            // label14
             // 
-            button1.BackColor = Color.White;
-            button1.FlatStyle = FlatStyle.Popup;
-            button1.ForeColor = Color.MidnightBlue;
-            button1.Location = new Point(27, 20);
-            button1.Name = "button1";
-            button1.Size = new Size(163, 37);
-            button1.TabIndex = 0;
-            button1.Text = "Edit";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            label14.AutoSize = true;
+            label14.BackColor = Color.Transparent;
+            label14.Font = new Font("Segoe UI Semibold", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            label14.ForeColor = Color.MidnightBlue;
+            label14.Location = new Point(27, 34);
+            label14.Name = "label14";
+            label14.Size = new Size(167, 21);
+            label14.TabIndex = 33;
+            label14.Text = "Edit Account Settings";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(15, 424);
+            textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "100 yds";
+            textBox1.Size = new Size(190, 31);
+            textBox1.TabIndex = 32;
+            // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "Garnet", "Bronze", "Silver", "Gold", "Senior" });
+            comboBox2.Location = new Point(15, 357);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(190, 33);
+            comboBox2.TabIndex = 31;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Stroke", "Medley", "Freestyle", "Pace", "Sprint" });
+            comboBox1.Location = new Point(15, 291);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(190, 33);
+            comboBox1.TabIndex = 30;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.BackColor = Color.Transparent;
+            label6.Font = new Font("Segoe UI", 8F, FontStyle.Italic, GraphicsUnit.Point);
+            label6.ForeColor = Color.Black;
+            label6.Location = new Point(15, 396);
+            label6.Name = "label6";
+            label6.Size = new Size(69, 21);
+            label6.TabIndex = 29;
+            label6.Text = "Distance";
             // 
             // label9
             // 
+            label9.AutoSize = true;
             label9.BackColor = Color.Transparent;
-            label9.ForeColor = Color.White;
-            label9.Location = new Point(0, 75);
+            label9.Font = new Font("Segoe UI", 8F, FontStyle.Italic, GraphicsUnit.Point);
+            label9.ForeColor = Color.Black;
+            label9.Location = new Point(15, 331);
             label9.Name = "label9";
-            label9.Size = new Size(221, 297);
-            label9.TabIndex = 0;
-            label9.Text = resources.GetString("label9.Text");
-            label9.TextAlign = ContentAlignment.MiddleCenter;
+            label9.Size = new Size(77, 21);
+            label9.TabIndex = 28;
+            label9.Text = "Skill Level";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.BackColor = Color.Transparent;
+            label10.Font = new Font("Segoe UI", 8F, FontStyle.Italic, GraphicsUnit.Point);
+            label10.ForeColor = Color.Black;
+            label10.Location = new Point(15, 266);
+            label10.Name = "label10";
+            label10.Size = new Size(74, 21);
+            label10.TabIndex = 27;
+            label10.Text = "Category";
+            // 
+            // textBox6
+            // 
+            textBox6.Location = new Point(15, 226);
+            textBox6.Name = "textBox6";
+            textBox6.PlaceholderText = "Confirm Password";
+            textBox6.Size = new Size(190, 31);
+            textBox6.TabIndex = 26;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.BackColor = Color.Transparent;
+            label11.Font = new Font("Segoe UI", 8F, FontStyle.Italic, GraphicsUnit.Point);
+            label11.ForeColor = Color.Black;
+            label11.Location = new Point(15, 201);
+            label11.Name = "label11";
+            label11.Size = new Size(137, 21);
+            label11.TabIndex = 25;
+            label11.Text = "Confirm Password";
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(15, 161);
+            textBox4.Name = "textBox4";
+            textBox4.PlaceholderText = "Password";
+            textBox4.Size = new Size(190, 31);
+            textBox4.TabIndex = 24;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.BackColor = Color.Transparent;
+            label12.Font = new Font("Segoe UI", 8F, FontStyle.Italic, GraphicsUnit.Point);
+            label12.ForeColor = Color.Black;
+            label12.Location = new Point(15, 136);
+            label12.Name = "label12";
+            label12.Size = new Size(76, 21);
+            label12.TabIndex = 23;
+            label12.Text = "Password";
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(15, 96);
+            textBox3.Name = "textBox3";
+            textBox3.PlaceholderText = "Username";
+            textBox3.Size = new Size(190, 31);
+            textBox3.TabIndex = 22;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.BackColor = Color.Transparent;
+            label13.Font = new Font("Segoe UI", 8F, FontStyle.Italic, GraphicsUnit.Point);
+            label13.ForeColor = Color.Black;
+            label13.Location = new Point(15, 71);
+            label13.Name = "label13";
+            label13.Size = new Size(81, 21);
+            label13.TabIndex = 21;
+            label13.Text = "Username";
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.MidnightBlue;
+            button1.FlatStyle = FlatStyle.Popup;
+            button1.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(42, 530);
+            button1.Name = "button1";
+            button1.Size = new Size(138, 41);
+            button1.TabIndex = 1;
+            button1.Text = "Save";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click_1;
             // 
             // panel1
             // 
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
             panel1.Controls.Add(labelSwimmerProfileCard);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(label8);
-            panel1.Controls.Add(label7);
+            panel1.Controls.Add(distanceLabel);
+            panel1.Controls.Add(skillLabel);
             panel1.Controls.Add(categoryLabel);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(profilePicture);
-            panel1.Location = new Point(0, 65);
+            panel1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            panel1.Location = new Point(0, 66);
             panel1.Name = "panel1";
             panel1.Size = new Size(567, 586);
             panel1.TabIndex = 0;
@@ -132,52 +279,39 @@
             labelSwimmerProfileCard.TabIndex = 8;
             labelSwimmerProfileCard.Text = "Swimmer Profile Card";
             // 
-            // button2
+            // distanceLabel
             // 
-            button2.BackColor = Color.MidnightBlue;
-            button2.FlatStyle = FlatStyle.Popup;
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(175, 513);
-            button2.Name = "button2";
-            button2.Size = new Size(216, 37);
-            button2.TabIndex = 1;
-            button2.Text = "Upload Profile Picture";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            distanceLabel.AutoSize = true;
+            distanceLabel.BackColor = Color.Transparent;
+            distanceLabel.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            distanceLabel.ForeColor = Color.White;
+            distanceLabel.Location = new Point(300, 510);
+            distanceLabel.Name = "distanceLabel";
+            distanceLabel.Size = new Size(88, 25);
+            distanceLabel.TabIndex = 7;
+            distanceLabel.Text = "Distance";
             // 
-            // label8
+            // skillLabel
             // 
-            label8.AutoSize = true;
-            label8.BackColor = Color.Transparent;
-            label8.Font = new Font("Segoe UI Semilight", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.ForeColor = Color.White;
-            label8.Location = new Point(291, 470);
-            label8.Name = "label8";
-            label8.Size = new Size(77, 25);
-            label8.TabIndex = 7;
-            label8.Text = "Distance";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.BackColor = Color.Transparent;
-            label7.Font = new Font("Segoe UI Semilight", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.ForeColor = Color.White;
-            label7.Location = new Point(291, 440);
-            label7.Name = "label7";
-            label7.Size = new Size(84, 25);
-            label7.TabIndex = 6;
-            label7.Text = "Skill Level";
+            skillLabel.AutoSize = true;
+            skillLabel.BackColor = Color.Transparent;
+            skillLabel.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            skillLabel.ForeColor = Color.White;
+            skillLabel.Location = new Point(300, 464);
+            skillLabel.Name = "skillLabel";
+            skillLabel.Size = new Size(100, 25);
+            skillLabel.TabIndex = 6;
+            skillLabel.Text = "Skill Level";
             // 
             // categoryLabel
             // 
             categoryLabel.AutoSize = true;
             categoryLabel.BackColor = Color.Transparent;
-            categoryLabel.Font = new Font("Segoe UI Semilight", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            categoryLabel.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             categoryLabel.ForeColor = Color.White;
-            categoryLabel.Location = new Point(291, 410);
+            categoryLabel.Location = new Point(300, 418);
             categoryLabel.Name = "categoryLabel";
-            categoryLabel.Size = new Size(82, 25);
+            categoryLabel.Size = new Size(92, 25);
             categoryLabel.TabIndex = 5;
             categoryLabel.Text = "Category";
             // 
@@ -185,11 +319,11 @@
             // 
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
-            label5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(197, 470);
+            label5.Location = new Point(190, 507);
             label5.Name = "label5";
-            label5.Size = new Size(79, 25);
+            label5.Size = new Size(94, 28);
             label5.TabIndex = 4;
             label5.Text = "Distance";
             // 
@@ -197,11 +331,11 @@
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(189, 440);
+            label4.Location = new Point(182, 461);
             label4.Name = "label4";
-            label4.Size = new Size(87, 25);
+            label4.Size = new Size(107, 28);
             label4.TabIndex = 3;
             label4.Text = "Skill Level";
             // 
@@ -209,23 +343,22 @@
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(192, 410);
+            label3.Location = new Point(185, 415);
             label3.Name = "label3";
-            label3.Size = new Size(84, 25);
+            label3.Size = new Size(98, 28);
             label3.TabIndex = 2;
             label3.Text = "Category";
             // 
             // label1
             // 
-            label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.MidnightBlue;
-            label1.Location = new Point(237, 375);
+            label1.Location = new Point(221, 375);
             label1.Name = "label1";
-            label1.Size = new Size(96, 25);
+            label1.Size = new Size(124, 32);
             label1.TabIndex = 1;
             label1.Text = "Username";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -233,8 +366,9 @@
             // profilePicture
             // 
             profilePicture.BackColor = Color.White;
-            profilePicture.Image = (Image)resources.GetObject("profilePicture.Image");
-            profilePicture.InitialImage = (Image)resources.GetObject("profilePicture.InitialImage");
+            profilePicture.BackgroundImage = (Image)resources.GetObject("profilePicture.BackgroundImage");
+            profilePicture.BackgroundImageLayout = ImageLayout.Zoom;
+            profilePicture.InitialImage = null;
             profilePicture.Location = new Point(130, 75);
             profilePicture.Name = "profilePicture";
             profilePicture.Size = new Size(304, 292);
@@ -275,6 +409,7 @@
             Size = new Size(797, 654);
             tableLayoutPanel1.ResumeLayout(false);
             panelSide.ResumeLayout(false);
+            panelSide.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)profilePicture).EndInit();
@@ -290,17 +425,28 @@
         private Label label1;
         private PictureBox profilePicture;
         private Panel panelSide;
-        private Button button2;
-        private Button button1;
         private Panel panel2;
         private Label label2;
-        private Label label8;
-        private Label label7;
+        private Label distanceLabel;
+        private Label skillLabel;
         private Label categoryLabel;
         private Label label5;
         private Label label4;
         private Label label3;
         private Label labelSwimmerProfileCard;
+        private Button button1;
+        private TextBox textBox1;
+        private ComboBox comboBox2;
+        private ComboBox comboBox1;
+        private Label label6;
         private Label label9;
+        private Label label10;
+        private TextBox textBox6;
+        private Label label11;
+        private TextBox textBox4;
+        private Label label12;
+        private TextBox textBox3;
+        private Label label13;
+        private Label label14;
     }
 }

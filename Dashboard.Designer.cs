@@ -52,6 +52,7 @@
             // 
             // panelSide
             // 
+            panelSide.BackColor = Color.Gainsboro;
             panelSide.BorderStyle = BorderStyle.FixedSingle;
             panelSide.Controls.Add(buttonSettings);
             panelSide.Controls.Add(panel2);
@@ -92,13 +93,13 @@
             // 
             // labelUsername
             // 
-            labelUsername.AutoSize = true;
-            labelUsername.ForeColor = Color.Black;
-            labelUsername.Location = new Point(85, 113);
+            labelUsername.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            labelUsername.ForeColor = Color.MidnightBlue;
+            labelUsername.Location = new Point(5, 106);
             labelUsername.Name = "labelUsername";
-            labelUsername.Size = new Size(25, 25);
+            labelUsername.Size = new Size(184, 32);
             labelUsername.TabIndex = 1;
-            labelUsername.Text = "H";
+            labelUsername.Text = "username";
             labelUsername.TextAlign = ContentAlignment.MiddleCenter;
             labelUsername.Click += labelUsername_Click;
             // 
@@ -235,7 +236,6 @@
             Text = "Dashboard";
             panelSide.ResumeLayout(false);
             panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panelDashboard.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
