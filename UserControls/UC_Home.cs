@@ -139,7 +139,7 @@ namespace The_Big_Pool.UserControls
                 BsonValue x = set.GetValue("Distance");
                 BsonValue y = set.GetValue("Reps");
                 BsonValue w = set.GetValue("interval");
-                MessageBox.Show(w.ToString());
+           
                 var t = ConvertTimeStringToSeconds(w.ToString()) * y.ToInt32();
                 var z = x.ToInt32() * y.ToInt32();
                 if (((z + totalDistance) >= (remainingWU + (remainingWU / 8))) || ((t + totaltime) >= (warmuptime + (int)(warmuptime / 8))))
@@ -230,8 +230,6 @@ namespace The_Big_Pool.UserControls
             doc.Add(p);
 
 
-            MessageBox.Show("PDF file created on your desktop.");
-
             int remainingMS = practice.mainset();
 
             var filterBuilder = Builders<BsonDocument>.Filter;
@@ -256,12 +254,7 @@ namespace The_Big_Pool.UserControls
 
             filter = Builders<BsonDocument>.Filter.And(filter, skillFilter);
             var MainSets = sets.Find(filter).ToList();
-            string bsonFiles = "";
-            foreach (var set in MainSets)
-            {
-                bsonFiles += set.ToBson() + "\n\n";
-            }
-            MessageBox.Show(bsonFiles);
+    
 
             // create variables to keep track of the selected sets and the total distance
             selectedSets = new List<BsonDocument>();
