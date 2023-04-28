@@ -32,12 +32,6 @@ namespace The_Big_Pool.UserControls
             panelSide.Controls.Add(usercontrol);
             usercontrol.BringToFront();
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            UC_Edit uc = new UC_Edit();
-            addUserControl(uc);
-            //categoryLabel.Refresh();
-        }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
