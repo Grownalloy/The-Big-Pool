@@ -36,7 +36,7 @@ namespace The_Big_Pool.UserControls
         {
             UC_Edit uc = new UC_Edit();
             addUserControl(uc);
-            categoryLabel.Refresh();
+            //categoryLabel.Refresh();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
