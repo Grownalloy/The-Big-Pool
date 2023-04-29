@@ -109,36 +109,43 @@ namespace The_Big_Pool.UserControls
             DialogResult result = MessageBox.Show("There are: " + count + " Practices from:  " + Date + " Would you like to download them?", "Selected Date", MessageBoxButtons.YesNo);
 
             // Check the user's response
-            if (result == DialogResult.Yes)
+            if (count != 0)
             {
-                try
+                if (result == DialogResult.Yes)
                 {
-                    if (chunks.Any())
+                    try
                     {
-                        var desktopFolder = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-                        var downloadPath = Path.Combine(desktopFolder, Date2);
-
-                        using (var outputStream = File.Create(downloadPath))
+                        if (chunks.Any())
                         {
-                            foreach (var chunk in chunks)
+                            var desktopFolder = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                            var downloadPath = Path.Combine(desktopFolder, Date2);
+
+                            using (var outputStream = File.Create(downloadPath))
                             {
-                                foreach (var chunkDoc in chunk["chunks"].AsBsonArray)
+                                foreach (var chunk in chunks)
                                 {
-                                    var data = chunkDoc["data"].AsByteArray;
-                                    var chunkNumber = chunkDoc["chunkNumber"].ToInt32();
-                                    outputStream.Write(data, 0, data.Length);
+                                    foreach (var chunkDoc in chunk["chunks"].AsBsonArray)
+                                    {
+                                        var data = chunkDoc["data"].AsByteArray;
+                                        var chunkNumber = chunkDoc["chunkNumber"].ToInt32();
+                                        outputStream.Write(data, 0, data.Length);
+                                    }
                                 }
                             }
                         }
                     }
+                    catch (Exception ex) { MessageBox.Show(ex.Message); }
+                    return;
                 }
-                catch (Exception ex) { MessageBox.Show(ex.Message); }
-                return;
+                else
+                {
+                    // User clicked "No" button, do something else or just return
+                    return;
+                }
             }
             else
             {
-                // User clicked "No" button, do something else or just return
-                return;
+                MessageBox.Show("There are no practices from: " + Date);
             }
 
         }
